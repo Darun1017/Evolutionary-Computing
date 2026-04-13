@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# C/C++ compiled files
+*.exe
+*.obj
+*.ilk
+*.pdb
+*.o
+*.out
+
+# Java compiled files
+*.class
+
+# Editor / IDE
+.vscode/
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
