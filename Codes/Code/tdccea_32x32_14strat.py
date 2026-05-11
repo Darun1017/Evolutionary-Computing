@@ -1,35 +1,12 @@
-"""
-===========================================================================
-TD-CCEA: 14-STRATEGY EVOLUTION ON CUSTOM 32x32 BLOCKADE MAP
-===========================================================================
 
-This script evolves an agent across ALL 14 available microRTS strategies
-on a custom 32x32 map with random wall blockades. The blockades force
-pathfinding-dependent strategies and make the optimal choice non-obvious.
-
-Strategies (14 total):
-  AGGRESSIVE:  WorkerRush, WorkerRushPlusPlus, LightRush, HeavyRush, RangedRush
-  DEFENSIVE:   LightDefense, HeavyDefense, RangedDefense, WorkerDefense
-  ECONOMY:     EconomyRush, EconomyMilitaryRush
-  BASELINE:    RandomBiased, Random, Passive
-
-Key: The 14-dimensional search space makes this MUCH harder for simple 
-baselines (GA, HC, ES) while TD-CCEA's trajectory memory and adaptive
-mutation should discover the optimal strategy efficiently.
-===========================================================================
-"""
 
 import math
 import random
 import time
 import subprocess
 import os
-
-# ─── microRTS Server Configuration ───
 MICRORTS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                             "Simulation", "microrts")
-
-# ALL 14 strategies available in microRTS
 BOT_TYPES = [
     # Aggressive Rush Strategies (5)
     "WorkerRush",           # 0: Swarm with workers — fast, cheap, no barracks needed
@@ -53,18 +30,18 @@ BOT_TYPES = [
 
 # Custom 32x32 blockade map
 MAP_PATH = "maps/chambers32x32.xml"
-OPPONENT_BOT = "WorkerRush"  
+OPPONENT_BOT = "EconomyMilitaryRush"  
 MAX_CYCLES = 10000           # 32x32 maps need more cycles
 
 # ─── TD-CCEA Hyperparameters ───
-N_POP = 20               # Population size
+N_POP = 20             # Population size
 K_GAMES = 2              # Games per fitness evaluation
 H_WINDOW = 5             # Trajectory history window
 MU_BASE = 0.20           # Base mutation rate
 DELTA_F = 0.25           # Fitness pruning threshold
 DELTA_S = 0.85           # Similarity pruning threshold
 A_MAX = 15               # Maximum archive size
-TOTAL_GENERATIONS = 30   # Number of evolutionary generations
+TOTAL_GENERATIONS = 10   # Number of evolutionary generations
 DIMENSIONS = len(BOT_TYPES)  # 14 dimensions!
 
 print(f"[CONFIG] Strategy Space: {DIMENSIONS} dimensions")
@@ -219,12 +196,6 @@ def run_tdccea_14strat():
             s = agent.get_bot_type()
             strat_count[s] = strat_count.get(s, 0) + 1
         
-        print(f"\n{'─'*70}")
-        print(f"  Generation {gen:02d}/{TOTAL_GENERATIONS:02d} | Population Strategy Distribution:")
-        for s, c in sorted(strat_count.items(), key=lambda x: -x[1]):
-            bar = "█" * c + "░" * (N_POP - c)
-            print(f"    {s:22s}: {c:2d}/{N_POP} {bar}")
-        
         strategy_history.append(strat_count.copy())
         
         # Evaluate each agent
@@ -243,13 +214,9 @@ def run_tdccea_14strat():
             
         # Find and display best agent
         best_agent = max(population, key=lambda a: a.e_i)
-        top3 = best_agent.get_top_strategies(3)
-        top3_str = " | ".join([f"{name}:{w:.2f}" for name, w in top3])
-        
         avg_ei = sum(a.e_i for a in population) / len(population)
-        print(f"\n  Best: {best_agent.get_bot_type()} (e_i={best_agent.e_i:.3f}) | Avg e_i={avg_ei:.3f}")
-        print(f"  Top-3 weights: {top3_str}")
-        print(f"  Mutation rate: {best_agent.mu_i:.3f}")
+        unique_strats = len(strat_count)
+        print(f"  Gen {gen:3d}/{TOTAL_GENERATIONS} | Best: {best_agent.get_bot_type():22s} | e_i={best_agent.e_i:.3f} | Avg={avg_ei:.3f} | Diversity: {unique_strats} strategies")
 
         # Diversity-based survival selection
         max_dist = math.sqrt(DIMENSIONS) * 1.0
@@ -298,43 +265,17 @@ def run_tdccea_14strat():
     
     # ─── Final Results ───
     best = archive[-1]
-    print("\n" + "=" * 70)
-    print("  TD-CCEA 14-STRATEGY EVOLUTION COMPLETE")
-    print("=" * 70)
-    print(f"  Dominant Strategy: {best.get_bot_type()}")
-    print(f"  Total Time: {elapsed:.1f}s ({elapsed/60:.1f} min)")
-    print(f"  Total Games Played: {TOTAL_GENERATIONS * N_POP * K_GAMES}")
-    print()
+    print(f"\n{'='*60}")
+    print(f"  RESULT: {best.get_bot_type()}")
+    print(f"  Time: {elapsed:.1f}s | Games: {TOTAL_GENERATIONS * N_POP * K_GAMES}")
+    print(f"{'='*60}")
     
     # Show final weight distribution across all 14 strategies
-    print("  Final Weight Distribution (14D DNA):")
+    print(f"\n  Strategy DNA (14 weights):")
     indexed_weights = sorted(enumerate(best.params), key=lambda x: x[1], reverse=True)
     for idx, weight in indexed_weights:
-        bar = "█" * int(weight * 40)
-        marker = " ← SELECTED" if idx == best.params.index(max(best.params)) else ""
-        print(f"    {BOT_TYPES[idx]:22s}: {weight:.3f} {bar}{marker}")
-    
-    # Show strategy evolution over generations
-    print(f"\n  Strategy Evolution Over {TOTAL_GENERATIONS} Generations:")
-    all_strats_seen = set()
-    for sh in strategy_history:
-        all_strats_seen.update(sh.keys())
-    
-    for strat in sorted(all_strats_seen):
-        timeline = ""
-        for sh in strategy_history:
-            count = sh.get(strat, 0)
-            if count == 0:
-                timeline += "·"
-            elif count <= 3:
-                timeline += "░"
-            elif count <= 7:
-                timeline += "▒"
-            elif count <= 12:
-                timeline += "▓"
-            else:
-                timeline += "█"
-        print(f"    {strat:22s}: [{timeline}]")
+        marker = " <-- BEST" if idx == best.params.index(max(best.params)) else ""
+        print(f"    {BOT_TYPES[idx]:22s}: {weight:.3f}{marker}")
     
     # Save best model
     with open("best_model_32x32_14strat.txt", "w") as f:

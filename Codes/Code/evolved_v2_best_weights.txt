@@ -1,0 +1,27 @@
+# TD-CCEA Evolved Brain v2 — Best Generalist Weight Vector
+# Opponents: EconomyMilitaryRush, LightRush, WorkerRush, HeavyDefense, RangedRush, EconomyRush, WorkerRushPlusPlus
+# Map: maps/chambers32x32.xml
+# Fitness: 0.000
+# Profile: Heavy-focused | balanced | early-barracks
+# Generated: 2026-04-23 15:49:22
+#
+worker_ratio=0.466347
+max_workers=0.157783
+expand_threshold=0.773023
+light_preference=0.136726
+heavy_preference=0.965748
+ranged_preference=0.279604
+barracks_timing=0.156291
+aggression=0.535022
+attack_threshold=0.901201
+defend_radius=0.627935
+target_priority=0.925408
+defense_trigger=0.038409
+counter_rush=0.640405
+tech_switch=0.805152
+economy_pressure=0.296461
+scout_priority=0.261003
+group_attack=0.373316
+second_barracks=0.779736
+worker_fight_ratio=0.342947
+focus_fire=0.062917

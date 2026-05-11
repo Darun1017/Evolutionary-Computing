@@ -1,0 +1,22 @@
+# TD-CCEA Evolved Brain — Best Weight Vector
+# Opponent: EconomyMilitaryRush
+# Map: maps/chambers32x32.xml
+# Fitness: 0.000
+# Profile: Light-focused | defensive | early-barracks
+# Generated: 2026-04-20 14:26:07
+#
+worker_ratio=0.319047
+max_workers=0.622825
+expand_threshold=0.311703
+light_preference=0.821748
+heavy_preference=0.616594
+ranged_preference=0.000000
+barracks_timing=0.233657
+aggression=0.052400
+attack_threshold=0.466128
+defend_radius=0.488522
+target_priority=0.044329
+defense_trigger=0.883185
+counter_rush=0.447502
+tech_switch=0.315900
+economy_pressure=0.213056
