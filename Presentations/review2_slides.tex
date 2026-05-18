@@ -1,0 +1,194 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\IfFileExists{opensans.sty}{\usepackage[default,scale=0.95]{opensans}}{}
+
+\definecolor{amritaMaroon}{HTML}{A4123F}
+
+\usetheme{Madrid}
+\usecolortheme[named=amritaMaroon]{structure}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+% --- SLIDE 1: Technical Change Overview ---
+\begin{frame}{Technical Change: Fixed Strategies to Evolved Strategies}
+
+\textbf{\textcolor{amritaMaroon}{Before (Review 1)}}
+\begin{itemize}
+    \item The algorithm chose from \textbf{14 predefined strategies} like LightRush, HeavyDefense, WorkerRush.
+    \item Each strategy was a \textbf{hardcoded script} written by a human programmer.
+    \item The AI could only \textbf{select} a strategy --- it could not create one.
+    \item This is a \textbf{discrete choice problem} with only 14 possible solutions.
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{\textcolor{amritaMaroon}{After (Review 2)}}
+\begin{itemize}
+    \item The AI now has \textbf{20 continuous weight parameters} (each 0.0 to 1.0).
+    \item These weights control every aspect of game behavior --- the AI \textbf{creates its own strategy}.
+    \item The search space went from \textbf{14 options to infinite combinations}.
+\end{itemize}
+
+\end{frame}
+
+
+% --- SLIDE 2: The 20 Weights (compact) ---
+\begin{frame}{The 20 Evolved Parameters}
+
+{\small
+\begin{columns}[T]
+
+\begin{column}{0.32\textwidth}
+\textbf{\textcolor{amritaMaroon}{Economy}}\\[0.1cm]
+\texttt{w0} worker\_ratio\\
+\texttt{w1} max\_workers\\
+\texttt{w6} barracks\_timing\\
+\texttt{w2} expand\_threshold\\
+\texttt{w17} second\_barracks
+\end{column}
+
+\begin{column}{0.32\textwidth}
+\textbf{\textcolor{amritaMaroon}{Unit Production}}\\[0.1cm]
+\texttt{w3} light\_preference\\
+\texttt{w4} heavy\_preference\\
+\texttt{w5} ranged\_preference\\
+\texttt{w13} tech\_switch
+\end{column}
+
+\begin{column}{0.32\textwidth}
+\textbf{\textcolor{amritaMaroon}{Combat \& Defense}}\\[0.1cm]
+\texttt{w7} aggression\\
+\texttt{w8} attack\_threshold\\
+\texttt{w9} defend\_radius\\
+\texttt{w10} target\_priority\\
+\texttt{w11} defense\_trigger\\
+\texttt{w12} counter\_rush\\
+\texttt{w14} economy\_pressure\\
+\texttt{w15} scout\_priority\\
+\texttt{w16} group\_attack\\
+\texttt{w18} worker\_fight\_ratio\\
+\texttt{w19} focus\_fire
+\end{column}
+
+\end{columns}
+}
+
+\vspace{0.4cm}
+Each weight is a continuous value between 0.0 and 1.0. The combination of all 20 weights defines a \textbf{unique strategy} that no built-in bot has.
+
+\end{frame}
+
+
+% --- SLIDE 3: New Approaches ---
+\begin{frame}{New Approaches for Improving TD-CCEA}
+
+\textbf{\textcolor{amritaMaroon}{Approach 1: Sensitivity Analysis (SA-TDCCEA)}}
+\begin{itemize}
+    \item Not all 20 weights are equally important. Some heavily affect the outcome, others barely matter.
+    \item We measure each weight's \textbf{influence} on the game result independently.
+    \item Important weights get \textbf{careful, small mutations}. Unimportant weights get \textbf{large, free mutations}.
+    \item Focuses the evolution effort where it matters most.
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{\textcolor{amritaMaroon}{Approach 2: Dynamic Programming (DP-TDCCEA)}}
+\begin{itemize}
+    \item The same opponents repeat every 7 generations --- this creates \textbf{overlapping subproblems}.
+    \item Instead of solving each generation from scratch, we \textbf{store and reuse} past results.
+    \item The trajectory memory $H_i$ acts as a \textbf{DP table}, storing (fitness, environment) pairs.
+    \item Agents are scored based on \textbf{consistent performance} across similar past situations.
+\end{itemize}
+
+\end{frame}
+
+
+% --- SLIDE 4: Sensitivity Analysis ---
+\begin{frame}{Sensitivity Analysis: How It Works}
+
+\textbf{\textcolor{amritaMaroon}{Step 1: Measure Influence}}
+\begin{itemize}
+    \item Set all 20 weights to 0.5 (neutral baseline).
+    \item For each weight individually:
+    \begin{itemize}
+        \item Set it to 0.0 (all others stay 0.5) $\rightarrow$ play games $\rightarrow$ measure win rate.
+        \item Set it to 1.0 (all others stay 0.5) $\rightarrow$ play games $\rightarrow$ measure win rate.
+    \end{itemize}
+    \item \textbf{Influence} = $|$win rate at 1.0 $-$ win rate at 0.0$|$
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{\textcolor{amritaMaroon}{Step 2: Assign Per-Weight Mutation Rates}}
+\begin{itemize}
+    \item Standard TD-CCEA: $\mu = 0.15$ for all 20 weights (same everywhere).
+    \item SA-TDCCEA: each weight gets its \textbf{own mutation rate} based on influence.
+    \begin{itemize}
+        \item High influence (e.g., \texttt{aggression}) $\rightarrow$ $\mu_j = 0.08$ (fine-tune carefully).
+        \item Low influence (e.g., \texttt{second\_barracks}) $\rightarrow$ $\mu_j = 0.20$ (explore freely).
+    \end{itemize}
+    \item Like studying harder for subjects that carry more marks.
+\end{itemize}
+
+\end{frame}
+
+
+% --- SLIDE 5: Why DP Is Good ---
+\begin{frame}{Dynamic Programming: Why It Works for TD-CCEA}
+
+\textbf{\textcolor{amritaMaroon}{The Problem It Solves}}
+\begin{itemize}
+    \item Opponents rotate every 7 generations: the \textbf{same opponent reappears} multiple times.
+    \item Without DP, the algorithm evaluates agents from scratch each time --- even if it faced the same situation before.
+    \item This wastes computation and \textbf{forgets} what strategies worked in the past.
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{\textcolor{amritaMaroon}{How DP Helps}}
+\begin{itemize}
+    \item Each agent stores its last 7 results as (fitness, environment) pairs in a \textbf{trajectory memory}.
+    \item When the same or similar environment appears again, the agent \textbf{already knows} how well it performed.
+    \item The agent's score is a \textbf{weighted average} of all past results --- not just the latest game.
+    \item Past results from similar situations are \textbf{trusted more}, results from different situations are \textbf{trusted less}.
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{\textcolor{amritaMaroon}{The Benefit}}
+\begin{itemize}
+    \item An agent that won once by luck gets \textbf{exposed} --- its average across all past situations is low.
+    \item An agent that wins consistently across similar opponents \textbf{rises to the top}.
+    \item The algorithm avoids re-solving problems it has already solved --- \textbf{classic DP principle}.
+\end{itemize}
+
+\end{frame}
+
+
+% --- SLIDE 6: Why DP Is Better ---
+\begin{frame}{Why DP Proves to Be Better}
+
+\textbf{\textcolor{amritaMaroon}{Without DP (Greedy)}}
+\begin{itemize}
+    \item An agent wins one game by luck $\rightarrow$ gets high fitness $\rightarrow$ survives.
+    \item Next generation against a different opponent $\rightarrow$ loses badly.
+    \item No way to tell a \textbf{lucky agent} from a \textbf{genuinely good agent}.
+    \item The algorithm is easily fooled by single-generation noise.
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{\textcolor{amritaMaroon}{With DP (Trajectory Memory)}}
+\begin{itemize}
+    \item The trajectory score $e_i$ averages performance across \textbf{all similar past situations}.
+    \item Lucky one-time winners get \textbf{diluted} --- their single high score is averaged with past losses.
+    \item Consistently good agents \textbf{rise to the top} because they score well across multiple environments.
+    \item Adaptive mutation is also based on $e_i$: good agents are \textbf{fine-tuned}, bad agents \textbf{explore more}.
+    \item The algorithm makes \textbf{smarter survival decisions} based on accumulated evidence, not just the latest result.
+\end{itemize}
+
+\end{frame}
+
+
+\end{document}

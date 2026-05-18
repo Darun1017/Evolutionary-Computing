@@ -1,0 +1,86 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\IfFileExists{opensans.sty}{\usepackage[default,scale=0.95]{opensans}}{}
+
+\definecolor{amritaMaroon}{HTML}{A4123F}
+\definecolor{macroBlue}{HTML}{2B5B84}
+\definecolor{microOrange}{HTML}{D97925}
+
+\usetheme{Madrid}
+\usecolortheme[named=amritaMaroon]{structure}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+% --- SLIDE 1 ---
+\begin{frame}{Cooperative Co-Evolution: Splitting the Brain}
+
+\textbf{The Problem:} Searching a massive 20-dimensional continuous space is computationally expensive. Good behaviors are often lost if another part of the brain mutates poorly (a "tragic flaw").
+
+\vspace{0.3cm}
+\textbf{The Solution:} Decompose the single "monolithic" brain into two distinct, specialized sub-populations. 
+
+\vspace{0.4cm}
+\begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+        \begin{block}{\textbf{\textcolor{macroBlue}{Population A: Macro / Economy}}}
+            \begin{itemize}
+                \item Evolves \textbf{8 parameters} independently.
+                \item Focuses on base building, worker allocation, and resource timing.
+                \item \textit{e.g., worker\_ratio, barracks\_timing}
+            \end{itemize}
+        \end{block}
+    \end{column}
+    
+    \begin{column}{0.48\textwidth}
+        \begin{block}{\textbf{\textcolor{microOrange}{Population B: Micro / Combat}}}
+            \begin{itemize}
+                \item Evolves \textbf{12 parameters} independently.
+                \item Focuses on unit targeting, aggression, and tactical combat behavior.
+                \item \textit{e.g., target\_priority, focus\_fire}
+            \end{itemize}
+        \end{block}
+    \end{column}
+\end{columns}
+
+\vspace{0.4cm}
+\textit{Why? Mathematically, searching two smaller spaces (8D + 12D) converges exponentially faster than searching one large space (20D).}
+
+\end{frame}
+
+% --- SLIDE 2 ---
+\begin{frame}{The Cooperative "Handshake" (Evaluation Phase)}
+
+Since the game engine strictly requires all 20 weights to play a match, the sub-populations must \textbf{cooperate} to be evaluated.
+
+\vspace{0.4cm}
+
+\textbf{\textcolor{macroBlue}{1. Evaluating an Economy Agent (Pop A):}}
+\begin{itemize}
+    \item We take an 8-weight Macro agent from Pop A.
+    \item We \textbf{borrow} the 12-weight Micro parameters from the \textbf{current best} agent in Pop B.
+    \item We combine them (8 + 12 = 20 weights) and play the game. The win/loss fitness is assigned \textbf{only} to the Macro agent.
+\end{itemize}
+
+\vspace{0.2cm}
+\textbf{\textcolor{microOrange}{2. Evaluating a Combat Agent (Pop B):}}
+\begin{itemize}
+    \item We take a 12-weight Micro agent from Pop B.
+    \item We \textbf{borrow} the 8-weight Macro parameters from the \textbf{current best} agent in Pop A.
+    \item We combine them and play the game. The fitness is assigned \textbf{only} to the Micro agent.
+\end{itemize}
+
+\vspace{0.3cm}
+\begin{alertblock}{The Advantage}
+This architecture ensures that a brilliant economic strategy isn't penalized just because it was randomly generated with a terrible combat behavior. Good partial solutions are protected and combined!
+\end{alertblock}
+
+\end{frame}
+
+\end{document}
