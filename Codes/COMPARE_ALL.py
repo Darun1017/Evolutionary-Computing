@@ -107,66 +107,124 @@ def load_sensitivity():
 
 
 # ===============================================================
-#  CCEA CHROMOSOME
+#  CCE-TDCCEA SUB-AGENT (full TD-CCEA per sub-population)
 # ===============================================================
-class Chromosome:
-    def __init__(self, indices, params=None):
-        self.indices = indices
-        self.dim = len(indices)
-        self.genes = [random.random() for _ in range(self.dim)] if params is None \
-            else [max(0.0, min(1.0, float(x))) for x in params]
-        self.fitness = 0.0
-    def mutate(self, mu=0.12):
-        return Chromosome(self.indices, [max(0.0, min(1.0, g + random.gauss(0, mu))) for g in self.genes])
+TOP_PARTNERS = 3
 
-def combine_chromosomes(macro, micro):
+class SubAgent:
+    def __init__(self, dim, params=None):
+        self.dim = dim
+        self.params = [random.random() for _ in range(dim)] if params is None \
+            else [max(0.0, min(1.0, float(x))) for x in params]
+        self.H_i = []
+        self.e_i = 0.0
+        self.mu_i = 0.0
+
+    def update_history(self, fitness, env):
+        self.H_i.append((fitness, env))
+        if len(self.H_i) > 7: self.H_i.pop(0)
+
+    def compute_trajectory(self, env):
+        if not self.H_i: self.e_i = 0.0; return
+        md = math.sqrt(self.dim)
+        ws = [1.0 - euclidean_dist(env[:self.dim], pe[:self.dim])/md
+              if len(pe) >= self.dim else 1.0 for _, pe in self.H_i]
+        t = sum(ws)
+        ws = [w/t for w in ws] if t > 0 else [1.0/len(ws)]*len(ws)
+        self.e_i = sum(w * self.H_i[i][0] for i, w in enumerate(ws))
+
+    def compute_mutation(self):
+        self.mu_i = 0.15 * (1.0 - self.e_i) + 0.03
+
+    def mutate(self):
+        return SubAgent(self.dim, [max(0.0, min(1.0, p + random.gauss(0, self.mu_i))) for p in self.params])
+
+def combine_subagents(macro, micro):
     full = [0.5] * DIMENSIONS
-    for i, idx in enumerate(macro.indices): full[idx] = macro.genes[i]
-    for i, idx in enumerate(micro.indices): full[idx] = micro.genes[i]
+    for i, idx in enumerate(MACRO_INDICES): full[idx] = macro.params[i]
+    for i, idx in enumerate(MICRO_INDICES): full[idx] = micro.params[i]
     return full
 
+def subpop_survival(population, archive):
+    dim = population[0].dim
+    md = math.sqrt(dim)
+    survivors = []
+    for a in sorted(population, key=lambda a: a.e_i, reverse=True):
+        if not any(1.0 - euclidean_dist(a.params, u.params)/md > DELTA_S for u in survivors):
+            survivors.append(a)
+    final = [a for a in survivors if not (a.e_i < DELTA_F and len(a.H_i) >= 3)]
+    while len(final) < 8 and len(survivors) > len(final):
+        for a in sorted(survivors, key=lambda a: a.e_i, reverse=True):
+            if a not in final: final.append(a); break
+    for top in sorted(population, key=lambda a: a.e_i, reverse=True)[:3]:
+        ar = SubAgent(dim, top.params)
+        ar.e_i, ar.H_i, ar.mu_i = top.e_i, top.H_i[:], top.mu_i
+        archive.append(ar)
+    archive.sort(key=lambda a: a.e_i, reverse=True)
+    del archive[A_MAX:]
+    pool = final + archive
+    new_pop = final[:]
+    while len(new_pop) < N_POP:
+        cands = random.sample(pool, min(3, len(pool)))
+        new_pop.append(max(cands, key=lambda a: a.e_i).mutate())
+    return new_pop, archive
+
 
 # ===============================================================
-#  1. CCEA-TDCCEA
+#  1. CCE-TDCCEA (Full TD-CCEA + Co-Evolution, TOP_PARTNERS=3)
 # ===============================================================
 def run_ccea(server):
     print(f"\n{'='*60}")
-    print(f"  RUNNING: CCEA-TDCCEA (Cooperative Co-Evolution)")
-    print(f"  Pop A (Macro): {len(MACRO_INDICES)} weights | Pop B (Micro): {len(MICRO_INDICES)} weights")
+    print(f"  RUNNING: CCE-TDCCEA (TD-CCEA + Co-Evolution)")
+    print(f"  Pop A (Macro): {len(MACRO_INDICES)}w | Pop B (Micro): {len(MICRO_INDICES)}w | Partners: {TOP_PARTNERS}")
     print(f"{'='*60}")
 
-    pop_a = [Chromosome(MACRO_INDICES) for _ in range(N_POP)]
-    pop_b = [Chromosome(MICRO_INDICES) for _ in range(N_POP)]
-    best_a, best_b = pop_a[0], pop_b[0]
+    pop_a = [SubAgent(len(MACRO_INDICES)) for _ in range(N_POP)]
+    pop_b = [SubAgent(len(MICRO_INDICES)) for _ in range(N_POP)]
+    archive_a, archive_b = [], []
+    top_b_partners = pop_b[:TOP_PARTNERS]
+    top_a_partners = pop_a[:TOP_PARTNERS]
     gen_scores = []
     t0 = time.time()
 
     for gen in range(1, TOTAL_GENERATIONS + 1):
         opponent = OPPONENT_ROTATION[(gen - 1) % len(OPPONENT_ROTATION)]
 
-        for a in pop_a:
-            a.fitness = evaluate_weights(server, combine_chromosomes(a, best_b), opponent)
-        for b in pop_b:
-            b.fitness = evaluate_weights(server, combine_chromosomes(best_a, b), opponent)
+        cent_a = [sum(a.params[j] for a in pop_a)/len(pop_a) for j in range(len(MACRO_INDICES))]
+        cent_b = [sum(b.params[j] for b in pop_b)/len(pop_b) for j in range(len(MICRO_INDICES))]
+        combined_env = cent_a + cent_b
 
-        best_a = max(pop_a, key=lambda x: x.fitness)
-        best_b = max(pop_b, key=lambda x: x.fitness)
-        combined_fit = evaluate_weights(server, combine_chromosomes(best_a, best_b), opponent)
+        # Evaluate Pop A: pair each macro with top micro partners
+        for agent_a in pop_a:
+            fits = [evaluate_weights(server, combine_subagents(agent_a, pb), opponent) for pb in top_b_partners]
+            avg_fit = sum(fits) / len(fits)
+            agent_a.update_history(avg_fit, combined_env)
+            agent_a.compute_trajectory(combined_env)
+            agent_a.compute_mutation()
+
+        # Evaluate Pop B: pair each micro with top macro partners
+        for agent_b in pop_b:
+            fits = [evaluate_weights(server, combine_subagents(pa, agent_b), opponent) for pa in top_a_partners]
+            avg_fit = sum(fits) / len(fits)
+            agent_b.update_history(avg_fit, combined_env)
+            agent_b.compute_trajectory(combined_env)
+            agent_b.compute_mutation()
+
+        best_a = max(pop_a, key=lambda a: a.e_i)
+        best_b = max(pop_b, key=lambda a: a.e_i)
+        top_a_partners = sorted(pop_a, key=lambda a: a.e_i, reverse=True)[:TOP_PARTNERS]
+        top_b_partners = sorted(pop_b, key=lambda a: a.e_i, reverse=True)[:TOP_PARTNERS]
+
+        combined_fit = evaluate_weights(server, combine_subagents(best_a, best_b), opponent)
         gen_scores.append(combined_fit)
 
         print(f"  Gen {gen:2d}/{TOTAL_GENERATIONS} | {opponent:25s} | "
-              f"Macro={best_a.fitness:.3f} Micro={best_b.fitness:.3f} Combined={combined_fit:.3f}")
+              f"A={best_a.e_i:.3f} B={best_b.e_i:.3f} Cmb={combined_fit:.3f}")
 
-        # Evolve each population independently
-        for pop, best in [(pop_a, best_a), (pop_b, best_b)]:
-            new_pop = [best]
-            while len(new_pop) < N_POP:
-                t1, t2 = random.sample(pop, 2)
-                parent = t1 if t1.fitness >= t2.fitness else t2
-                new_pop.append(parent.mutate(0.15 * (1.0 - parent.fitness) + 0.03))
-            pop[:] = new_pop
+        pop_a, archive_a = subpop_survival(pop_a, archive_a)
+        pop_b, archive_b = subpop_survival(pop_b, archive_b)
 
-    return combine_chromosomes(best_a, best_b), time.time() - t0, gen_scores
+    return combine_subagents(best_a, best_b), time.time() - t0, gen_scores
 
 
 # ===============================================================

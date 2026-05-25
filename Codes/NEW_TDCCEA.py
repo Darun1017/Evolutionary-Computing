@@ -29,8 +29,7 @@ DIMENSIONS = len(WEIGHT_NAMES)
 MAP_PATH = "maps/chambers32x32.xml"
 MAX_CYCLES = 10000
 OPPONENT_ROTATION = [
-    "EconomyMilitaryRush", "LightRush", "WorkerRush",
-    "HeavyDefense", "RangedRush", "EconomyRush", "WorkerRushPlusPlus",
+    "LightRush"
 ]
 MACRO_INDICES = [0, 1, 2, 6, 14, 15, 17, 18]
 MICRO_INDICES = [3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 16, 19]
