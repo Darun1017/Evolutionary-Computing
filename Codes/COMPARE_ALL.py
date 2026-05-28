@@ -1389,68 +1389,74 @@ def main():
     print(f"\n  Results saved → {out}")
 
     # ── EXCEL EXPORT ─────────────────────────────────────────────
-    # First run  → create file with 'Algorithm' column + 'Run1' column.
-    # Each run   → open existing file, find the next free run column, append.
+    # Layout: Algorithm | Run1 | Time1 | Run2 | Time2 | ...
+    # First run  → create fresh file.
+    # Each run   → open existing file, append paired RunN + TimeN columns.
     if _OPENPYXL_AVAILABLE:
         xlsx_path = os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
             "benchmark_winrates.xlsx"
         )
 
-        # Build ordered list of algo names and their overall win-rates
+        # Build lookup dicts: name → win-rate (%) and name → elapsed time (s)
         algo_names = [r["name"] for r in results]
-        algo_wr    = {r["name"]: round(r["wr"], 2) for r in results}
+        algo_wr    = {r["name"]: round(r["wr"],   2) for r in results}
+        algo_time  = {r["name"]: round(r["time"], 1) for r in results}
 
         if not os.path.exists(xlsx_path):
             # ── First run: create fresh workbook ──────────────────
             wb = openpyxl.Workbook()
             ws = wb.active
             ws.title = "Win Rates"
-            ws.append(["Algorithm", "Run1"])
+            ws.append(["Algorithm", "Run1", "Time1"])
             for algo in algo_names:
-                ws.append([algo, algo_wr[algo]])
+                ws.append([algo, algo_wr[algo], algo_time[algo]])
             wb.save(xlsx_path)
-            run_col_name = "Run1"
+            run_col_name  = "Run1"
+            time_col_name = "Time1"
         else:
-            # ── Subsequent runs: append a new RunN column ─────────
+            # ── Subsequent runs: append paired RunN + TimeN columns ─
             wb = openpyxl.load_workbook(xlsx_path)
             ws = wb.active
 
-            # Determine the next run number
+            # Determine next run number from existing RunN headers
             header_row  = [cell.value for cell in ws[1]]
             run_numbers = [
                 int(h[3:]) for h in header_row
                 if isinstance(h, str) and h.lower().startswith("run")
                 and h[3:].isdigit()
             ]
-            next_run    = (max(run_numbers) + 1) if run_numbers else 1
-            run_col_name = f"Run{next_run}"
+            next_run      = (max(run_numbers) + 1) if run_numbers else 1
+            run_col_name  = f"Run{next_run}"
+            time_col_name = f"Time{next_run}"
 
-            # Write header for the new column
-            new_col_idx = len(header_row) + 1
-            ws.cell(row=1, column=new_col_idx, value=run_col_name)
+            # Two new columns: RunN then TimeN, right after existing headers
+            run_col_idx  = len(header_row) + 1
+            time_col_idx = len(header_row) + 2
+            ws.cell(row=1, column=run_col_idx,  value=run_col_name)
+            ws.cell(row=1, column=time_col_idx, value=time_col_name)
 
-            # Match rows by algorithm name in column A
+            # Build a map of algorithm name → row index
             algo_row_map = {}
             for row_idx in range(2, ws.max_row + 1):
                 cell_val = ws.cell(row=row_idx, column=1).value
                 if cell_val:
                     algo_row_map[cell_val] = row_idx
 
-            # Add win-rates for algorithms already in the sheet
+            # Write win-rate and time for every algorithm
             for algo in algo_names:
                 if algo in algo_row_map:
-                    ws.cell(row=algo_row_map[algo], column=new_col_idx,
-                            value=algo_wr[algo])
+                    ri = algo_row_map[algo]
                 else:
                     # New algorithm not seen before → append a new row
-                    new_row = ws.max_row + 1
-                    ws.cell(row=new_row, column=1,          value=algo)
-                    ws.cell(row=new_row, column=new_col_idx, value=algo_wr[algo])
+                    ri = ws.max_row + 1
+                    ws.cell(row=ri, column=1, value=algo)
+                ws.cell(row=ri, column=run_col_idx,  value=algo_wr[algo])
+                ws.cell(row=ri, column=time_col_idx, value=algo_time[algo])
 
             wb.save(xlsx_path)
 
-        print(f"  Excel updated  → {xlsx_path}  (column: {run_col_name})")
+        print(f"  Excel updated  → {xlsx_path}  (columns: {run_col_name}, {time_col_name})")
     else:
         print("  [SKIP] Excel export skipped — install openpyxl to enable.")
     print(f"\n{'='*70}")
