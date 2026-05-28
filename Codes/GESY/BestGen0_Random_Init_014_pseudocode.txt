@@ -1,0 +1,7 @@
+# Evolved Strategy: BestGen0_Random_Init_014
+# Fitness: 1.0000  |  Nodes: 1  |  Depth: 0
+# W/L/D: 11/0/0  |  Generation: 0
+# ──────────────────────────────────────────────────
+STRATEGY BEGIN
+    BUILD MELEE
+STRATEGY END

@@ -1,0 +1,942 @@
+[
+  {
+    "generation": 1,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.05,
+    "pop_size": 20,
+    "archive_size": 3,
+    "elapsed_sec": 0.59,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_003",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_005",
+        "e_i": 0.0,
+        "bot": "Random",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 2,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.05,
+    "pop_size": 20,
+    "archive_size": 6,
+    "elapsed_sec": 0.45,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_003",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_005",
+        "e_i": 0.0,
+        "bot": "Random",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 3,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.0999,
+    "pop_size": 20,
+    "archive_size": 9,
+    "elapsed_sec": 0.36,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G2_0029",
+        "e_i": 0.998,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_003",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 4,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.1,
+    "pop_size": 20,
+    "archive_size": 12,
+    "elapsed_sec": 0.36,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_003",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 5,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.1,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.4,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_003",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 6,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.1,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.34,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_003",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 7,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.1,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.25,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_003",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 8,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.1,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.3,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_003",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 9,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.1,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.21,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_003",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 10,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.15,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.26,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G9_0154",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 11,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.15,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.28,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G9_0154",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 12,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.15,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.25,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G9_0154",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 13,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.15,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.25,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G9_0154",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 14,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.15,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.22,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G9_0154",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 15,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.15,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.2,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G9_0154",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 16,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.15,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.21,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G9_0154",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 17,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.15,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.24,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G9_0154",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 18,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.15,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.21,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G9_0154",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 19,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.15,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.19,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G9_0154",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  },
+  {
+    "generation": 20,
+    "best_e_i": 1.0,
+    "avg_e_i": 0.15,
+    "pop_size": 20,
+    "archive_size": 15,
+    "elapsed_sec": 0.24,
+    "best_name": "Rush_Seed",
+    "best_bot": "WorkerRush",
+    "top5": [
+      {
+        "name": "Rush_Seed",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G3_0042",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Child_G9_0154",
+        "e_i": 1.0,
+        "bot": "WorkerRush",
+        "wld": "3/0/0",
+        "mu": 0.05
+      },
+      {
+        "name": "Defensive_Seed",
+        "e_i": 0.0,
+        "bot": "LightRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      },
+      {
+        "name": "Random_Init_001",
+        "e_i": 0.0,
+        "bot": "HeavyRush",
+        "wld": "0/3/0",
+        "mu": 0.25
+      }
+    ]
+  }
+]

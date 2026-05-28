@@ -2,26 +2,26 @@
 # Opponents: EconomyMilitaryRush, LightRush, WorkerRush, HeavyDefense, RangedRush, EconomyRush, WorkerRushPlusPlus
 # Map: maps/chambers32x32.xml
 # Fitness: 0.000
-# Profile: Heavy-focused | balanced | early-barracks
-# Generated: 2026-04-23 15:49:22
+# Profile: heavy-economy | Heavy-focused | balanced | early-barracks | focus-fire
+# Generated: 2026-05-18 10:04:33
 #
-worker_ratio=0.466347
-max_workers=0.157783
-expand_threshold=0.773023
-light_preference=0.136726
-heavy_preference=0.965748
-ranged_preference=0.279604
-barracks_timing=0.156291
-aggression=0.535022
-attack_threshold=0.901201
-defend_radius=0.627935
-target_priority=0.925408
-defense_trigger=0.038409
-counter_rush=0.640405
-tech_switch=0.805152
-economy_pressure=0.296461
-scout_priority=0.261003
-group_attack=0.373316
-second_barracks=0.779736
-worker_fight_ratio=0.342947
-focus_fire=0.062917
+worker_ratio=0.826682
+max_workers=0.092490
+expand_threshold=0.000000
+light_preference=0.450214
+heavy_preference=0.790892
+ranged_preference=0.073965
+barracks_timing=0.049490
+aggression=0.608174
+attack_threshold=1.000000
+defend_radius=0.096418
+target_priority=0.947651
+defense_trigger=0.000000
+counter_rush=0.640403
+tech_switch=0.490601
+economy_pressure=0.740444
+scout_priority=0.082806
+group_attack=0.383357
+second_barracks=0.871267
+worker_fight_ratio=0.228322
+focus_fire=0.515178
