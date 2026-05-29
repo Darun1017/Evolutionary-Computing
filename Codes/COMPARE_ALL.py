@@ -65,7 +65,7 @@ except ImportError:
 #  CONFIGURATION
 # ===============================================================
 MICRORTS_DIR = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)),
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     "Simulation", "microrts"
 )
 WEIGHT_NAMES = [
@@ -1335,6 +1335,12 @@ def main():
     cce = next((r for r in results if r["key"] == "ccea"), None)
     if cce:
         cce_rates = [cce["per_opp"].get(o, 0) for o in OPPONENT_ROTATION]
+        
+        now_str = time.strftime("%Y-%m-%d %H:%M:%S")
+        w_out = [f"\nRun Date: {now_str}"]
+        w_out.append(f"  {'Baseline':<20s}  {'p-value':>9s}  {'Significant?':>13s}  Direction")
+        w_out.append(f"  {'_'*20}  {'_'*9}  {'_'*13}  {'_'*22}")
+        
         print(f"\n  {'Baseline':<20s}  {'p-value':>9s}  {'Significant?':>13s}  Direction")
         print(f"  {'_'*20}  {'_'*9}  {'_'*13}  {'_'*22}")
         for r in results:
@@ -1342,42 +1348,72 @@ def main():
             other = [r["per_opp"].get(o, 0) for o in OPPONENT_ROTATION]
             p     = wilcoxon_test(cce_rates, other)
             if p is None:
-                print(f"  {r['name']:<20s}  {'N/A':>9s}  {'N/A':>13s}  —")
+                line = f"  {r['name']:<20s}  {'N/A':>9s}  {'N/A':>13s}  —"
             else:
                 sig  = "YES (p<0.05)" if p < 0.05 else "NO  (p>=0.05)"
                 dirn = ("CCE-TDCCEA BETTER" if sum(cce_rates) > sum(other)
                         else "BASELINE BETTER")
-                print(f"  {r['name']:<20s}  {p:>9.4f}  {sig:>13s}  {dirn}")
+                line = f"  {r['name']:<20s}  {p:>9.4f}  {sig:>13s}  {dirn}"
+            print(line)
+            w_out.append(line)
+            
+        w_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "wilcoxon_results.txt")
+        with open(w_path, "a", encoding="utf-8") as f:
+            f.write("\n".join(w_out) + "\n\n")
 
     # ── ABLATION ANALYSIS [FIX 3] ────────────────────────────────
     print(f"\n{'='*70}")
     print(f"  ABLATION ANALYSIS")
     print(f"{'='*70}")
+    
+    abl_out = [f"\nRun Date: {time.strftime('%Y-%m-%d %H:%M:%S')}"]
+    
     cce   = next((r for r in results if r["key"] == "ccea"),     None)
     sccea = next((r for r in results if r["key"] == "std_ccea"), None)
     cent  = next((r for r in results if r["key"] == "centroid"), None)
     gesy  = next((r for r in results if r["key"] == "gesy"),     None)
     if cce and sccea:
         d = cce["wr"] - sccea["wr"]
-        print(f"\n  Trajectory memory contribution:")
-        print(f"    CCE-TDCCEA ({cce['wr']:.1f}%) vs Std-CCEA ({sccea['wr']:.1f}%)")
-        print(f"    Result: {'Trajectory HELPS (+' if d >= 0 else 'Trajectory HURTS ('}{abs(d):.1f}%)")
+        lines = [
+            f"\n  Trajectory memory contribution:",
+            f"    CCE-TDCCEA ({cce['wr']:.1f}%) vs Std-CCEA ({sccea['wr']:.1f}%)",
+            f"    Result: {'Trajectory HELPS (+' if d >= 0 else 'Trajectory HURTS ('}{abs(d):.1f}%)"
+        ]
+        for line in lines: print(line)
+        abl_out.extend(lines)
     if cce and cent:
         d = cce["wr"] - cent["wr"]
-        print(f"\n  Cooperative decomposition contribution:")
-        print(f"    CCE-TDCCEA ({cce['wr']:.1f}%) vs TD-CCEA ({cent['wr']:.1f}%)")
-        print(f"    Result: {'Decomposition HELPS (+' if d >= 0 else 'Decomposition HURTS ('}{abs(d):.1f}%)")
+        lines = [
+            f"\n  Cooperative decomposition contribution:",
+            f"    CCE-TDCCEA ({cce['wr']:.1f}%) vs TD-CCEA ({cent['wr']:.1f}%)",
+            f"    Result: {'Decomposition HELPS (+' if d >= 0 else 'Decomposition HURTS ('}{abs(d):.1f}%)"
+        ]
+        for line in lines: print(line)
+        abl_out.extend(lines)
     if gesy and cce:
         d = gesy["wr"] - cce["wr"]
-        print(f"\n  GESY seeded GP contribution:")
-        print(f"    GESY ({gesy['wr']:.1f}%) vs CCE-TDCCEA ({cce['wr']:.1f}%)")
-        print(f"    Result: {'GESY BETTER (+' if d >= 0 else 'GESY WORSE ('}{abs(d):.1f}%)")
+        lines = [
+            f"\n  GESY seeded GP contribution:",
+            f"    GESY ({gesy['wr']:.1f}%) vs CCE-TDCCEA ({cce['wr']:.1f}%)",
+            f"    Result: {'GESY BETTER (+' if d >= 0 else 'GESY WORSE ('}{abs(d):.1f}%)"
+        ]
+        for line in lines: print(line)
+        abl_out.extend(lines)
     pdcoea = next((r for r in results if r["key"] == "sa_pdcoea"), None)
     if pdcoea and cce:
         d = pdcoea["wr"] - cce["wr"]
-        print(f"\n  SA-PDCoEA pairwise dominance contribution:")
-        print(f"    SA-PDCoEA ({pdcoea['wr']:.1f}%) vs CCE-TDCCEA ({cce['wr']:.1f}%)")
-        print(f"    Pairwise dominance selection: {'SA-PDCoEA BETTER (+' if d >= 0 else 'SA-PDCoEA WORSE ('}{abs(d):.1f}%)")
+        lines = [
+            f"\n  SA-PDCoEA pairwise dominance contribution:",
+            f"    SA-PDCoEA ({pdcoea['wr']:.1f}%) vs CCE-TDCCEA ({cce['wr']:.1f}%)",
+            f"    Pairwise dominance selection: {'SA-PDCoEA BETTER (+' if d >= 0 else 'SA-PDCoEA WORSE ('}{abs(d):.1f}%)"
+        ]
+        for line in lines: print(line)
+        abl_out.extend(lines)
+
+    abl_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ablation_results.txt")
+    with open(abl_path, "a", encoding="utf-8") as f:
+        f.write("\n".join(abl_out) + "\n\n")
+
 
     # ── SAVE JSON [FIX 4] ────────────────────────────────────────
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
