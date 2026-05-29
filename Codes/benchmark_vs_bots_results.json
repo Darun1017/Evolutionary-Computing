@@ -4,149 +4,149 @@
     "key": "ccea",
     "overall_winrate": 85.71428571428571,
     "per_opponent": {
-      "EconomyMilitaryRush": 100.0,
-      "LightRush": 100.0,
+      "EconomyMilitaryRush": 80.0,
+      "LightRush": 60.0,
       "WorkerRush": 100.0,
-      "HeavyDefense": 0.0,
+      "HeavyDefense": 60.0,
       "RangedRush": 100.0,
       "EconomyRush": 100.0,
       "WorkerRushPlusPlus": 100.0
     },
-    "time": 915.257838010788
+    "time": 380.93760347366333
   },
   {
     "name": "Standard CCEA",
     "key": "std_ccea",
-    "overall_winrate": 62.857142857142854,
+    "overall_winrate": 37.142857142857146,
     "per_opponent": {
-      "EconomyMilitaryRush": 80.0,
+      "EconomyMilitaryRush": 60.0,
       "LightRush": 20.0,
-      "WorkerRush": 100.0,
-      "HeavyDefense": 80.0,
+      "WorkerRush": 0.0,
+      "HeavyDefense": 20.0,
       "RangedRush": 100.0,
-      "EconomyRush": 20.0,
-      "WorkerRushPlusPlus": 40.0
+      "EconomyRush": 40.0,
+      "WorkerRushPlusPlus": 20.0
     },
-    "time": 978.0324223041534
+    "time": 417.79870891571045
   },
   {
     "name": "CMA-ES",
     "key": "cmaes",
-    "overall_winrate": 14.285714285714285,
+    "overall_winrate": 54.285714285714285,
     "per_opponent": {
       "EconomyMilitaryRush": 100.0,
       "LightRush": 0.0,
-      "WorkerRush": 0.0,
+      "WorkerRush": 40.0,
       "HeavyDefense": 0.0,
-      "RangedRush": 0.0,
-      "EconomyRush": 0.0,
-      "WorkerRushPlusPlus": 0.0
+      "RangedRush": 80.0,
+      "EconomyRush": 100.0,
+      "WorkerRushPlusPlus": 60.0
     },
-    "time": 135.76604437828064
+    "time": 63.672887325286865
   },
   {
     "name": "DE/rand/1/bin",
     "key": "de",
-    "overall_winrate": 68.57142857142857,
+    "overall_winrate": 71.42857142857143,
     "per_opponent": {
       "EconomyMilitaryRush": 100.0,
       "LightRush": 0.0,
       "WorkerRush": 100.0,
-      "HeavyDefense": 100.0,
-      "RangedRush": 80.0,
-      "EconomyRush": 0.0,
+      "HeavyDefense": 20.0,
+      "RangedRush": 100.0,
+      "EconomyRush": 80.0,
       "WorkerRushPlusPlus": 100.0
     },
-    "time": 159.1487317085266
+    "time": 75.01261830329895
   },
   {
     "name": "PSO",
     "key": "pso",
-    "overall_winrate": 80.0,
+    "overall_winrate": 22.857142857142858,
     "per_opponent": {
-      "EconomyMilitaryRush": 100.0,
-      "LightRush": 100.0,
-      "WorkerRush": 60.0,
-      "HeavyDefense": 60.0,
-      "RangedRush": 100.0,
-      "EconomyRush": 100.0,
-      "WorkerRushPlusPlus": 40.0
+      "EconomyMilitaryRush": 60.0,
+      "LightRush": 0.0,
+      "WorkerRush": 0.0,
+      "HeavyDefense": 80.0,
+      "RangedRush": 20.0,
+      "EconomyRush": 0.0,
+      "WorkerRushPlusPlus": 0.0
     },
-    "time": 165.92589020729065
+    "time": 100.86970353126526
   },
   {
     "name": "TD-CCEA",
     "key": "centroid",
-    "overall_winrate": 51.42857142857142,
+    "overall_winrate": 22.857142857142858,
     "per_opponent": {
-      "EconomyMilitaryRush": 20.0,
+      "EconomyMilitaryRush": 80.0,
       "LightRush": 0.0,
-      "WorkerRush": 80.0,
-      "HeavyDefense": 100.0,
-      "RangedRush": 80.0,
-      "EconomyRush": 80.0,
-      "WorkerRushPlusPlus": 0.0
+      "WorkerRush": 0.0,
+      "HeavyDefense": 0.0,
+      "RangedRush": 0.0,
+      "EconomyRush": 60.0,
+      "WorkerRushPlusPlus": 20.0
     },
-    "time": 182.4788510799408
+    "time": 79.99802684783936
   },
   {
     "name": "SA-TDCCEA",
     "key": "sa",
-    "overall_winrate": 45.714285714285715,
-    "per_opponent": {
-      "EconomyMilitaryRush": 100.0,
-      "LightRush": 0.0,
-      "WorkerRush": 60.0,
-      "HeavyDefense": 100.0,
-      "RangedRush": 20.0,
-      "EconomyRush": 0.0,
-      "WorkerRushPlusPlus": 40.0
-    },
-    "time": 174.5302062034607
-  },
-  {
-    "name": "Hill Climbing",
-    "key": "hc",
     "overall_winrate": 28.57142857142857,
     "per_opponent": {
       "EconomyMilitaryRush": 100.0,
       "LightRush": 0.0,
       "WorkerRush": 0.0,
-      "HeavyDefense": 0.0,
+      "HeavyDefense": 100.0,
+      "RangedRush": 0.0,
+      "EconomyRush": 0.0,
+      "WorkerRushPlusPlus": 0.0
+    },
+    "time": 69.40267825126648
+  },
+  {
+    "name": "Hill Climbing",
+    "key": "hc",
+    "overall_winrate": 42.857142857142854,
+    "per_opponent": {
+      "EconomyMilitaryRush": 100.0,
+      "LightRush": 0.0,
+      "WorkerRush": 0.0,
+      "HeavyDefense": 100.0,
       "RangedRush": 0.0,
       "EconomyRush": 100.0,
       "WorkerRushPlusPlus": 0.0
     },
-    "time": 163.20121002197266
+    "time": 71.70724844932556
   },
   {
     "name": "GESY",
     "key": "gesy",
-    "overall_winrate": 57.14285714285714,
+    "overall_winrate": 25.71428571428571,
     "per_opponent": {
-      "EconomyMilitaryRush": 80.0,
-      "LightRush": 20.0,
-      "WorkerRush": 60.0,
-      "HeavyDefense": 100.0,
-      "RangedRush": 0.0,
-      "EconomyRush": 100.0,
-      "WorkerRushPlusPlus": 40.0
+      "EconomyMilitaryRush": 20.0,
+      "LightRush": 0.0,
+      "WorkerRush": 0.0,
+      "HeavyDefense": 80.0,
+      "RangedRush": 20.0,
+      "EconomyRush": 60.0,
+      "WorkerRushPlusPlus": 0.0
     },
-    "time": 137.80560612678528
+    "time": 61.540292263031006
   },
   {
     "name": "SA-PDCoEA",
     "key": "sa_pdcoea",
-    "overall_winrate": 71.42857142857143,
+    "overall_winrate": 77.14285714285715,
     "per_opponent": {
       "EconomyMilitaryRush": 100.0,
-      "LightRush": 100.0,
-      "WorkerRush": 0.0,
-      "HeavyDefense": 100.0,
+      "LightRush": 20.0,
+      "WorkerRush": 100.0,
+      "HeavyDefense": 60.0,
       "RangedRush": 100.0,
-      "EconomyRush": 100.0,
-      "WorkerRushPlusPlus": 0.0
+      "EconomyRush": 80.0,
+      "WorkerRushPlusPlus": 80.0
     },
-    "time": 1885.794068813324
+    "time": 745.8756785392761
   }
 ]
