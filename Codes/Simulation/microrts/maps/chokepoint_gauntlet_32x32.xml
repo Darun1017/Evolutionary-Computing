@@ -31,13 +31,13 @@
     </rts.units.Unit>
     <rts.units.Unit type="Resource" ID="111" player="-1" x="31" y="30" resources="25" hitpoints="1" >
     </rts.units.Unit>
-    <rts.units.Unit type="Resource" ID="112" player="-1" x="15" y="7" resources="15" hitpoints="1" >
+    <rts.units.Unit type="Resource" ID="112" player="-1" x="8" y="7" resources="15" hitpoints="1" >
     </rts.units.Unit>
-    <rts.units.Unit type="Resource" ID="113" player="-1" x="16" y="24" resources="15" hitpoints="1" >
+    <rts.units.Unit type="Resource" ID="113" player="-1" x="23" y="24" resources="15" hitpoints="1" >
     </rts.units.Unit>
-    <rts.units.Unit type="Resource" ID="114" player="-1" x="8" y="11" resources="10" hitpoints="1" >
+    <rts.units.Unit type="Resource" ID="114" player="-1" x="15" y="11" resources="10" hitpoints="1" >
     </rts.units.Unit>
-    <rts.units.Unit type="Resource" ID="115" player="-1" x="23" y="20" resources="10" hitpoints="1" >
+    <rts.units.Unit type="Resource" ID="115" player="-1" x="16" y="20" resources="10" hitpoints="1" >
     </rts.units.Unit>
   </units>
 </rts.PhysicalGameState>

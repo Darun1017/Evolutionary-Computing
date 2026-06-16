@@ -1,6 +1,9 @@
 """
 Generate 4 MORE symmetric 32x32 microRTS maps with HEAVY blockades.
 These maps have significantly more walls than the first batch.
+
+FIXED: Resources are now placed in accessible open areas outside
+wall enclosures, ensuring workers can always reach them.
 """
 
 import os
@@ -52,9 +55,29 @@ def std_units(extra=[]):
         {"type": "Resource", "player": -1, "x": 31, "y": 30, "resources": 25},
     ] + extra
 
+
+def is_accessible_from_base(grid, start_x, start_y, target_x, target_y):
+    """BFS flood fill to verify a target tile is reachable from a start tile."""
+    n = len(grid)
+    visited = set()
+    queue = [(start_x, start_y)]
+    visited.add((start_x, start_y))
+    while queue:
+        cx, cy = queue.pop(0)
+        if cx == target_x and cy == target_y:
+            return True
+        for dx, dy in [(0,1),(0,-1),(1,0),(-1,0)]:
+            nx, ny = cx + dx, cy + dy
+            if 0 <= nx < n and 0 <= ny < n and (nx, ny) not in visited and grid[ny][nx] == 0:
+                visited.add((nx, ny))
+                queue.append((nx, ny))
+    return False
+
+
 # =====================================================================
 # MAP 5: "Labyrinth"
-# Dense maze with narrow 1-tile-wide corridors throughout.
+# Dense maze with narrow corridors. Resources placed in the CORRIDORS
+# between the rings, not inside the innermost ring.
 # =====================================================================
 def make_labyrinth():
     g = empty()
@@ -63,7 +86,7 @@ def make_labyrinth():
     for i in range(4, 28):
         g[4][i] = 1; g[27][i] = 1
         g[i][4] = 1; g[i][27] = 1
-    # Gaps in outer ring
+    # Gaps in outer ring (wide enough for units)
     g[4][8] = 0; g[4][9] = 0
     g[8][4] = 0; g[9][4] = 0
     
@@ -83,14 +106,7 @@ def make_labyrinth():
     g[12][15] = 0; g[12][16] = 0
     g[15][12] = 0; g[16][12] = 0
     
-    # Internal cross walls
-    for i in range(14, 18):
-        g[i][15] = 1; g[i][16] = 1
-        g[15][i] = 1; g[16][i] = 1
-    # Center opening
-    g[15][15] = 0; g[16][16] = 0
-    
-    # Connecting corridors between rings
+    # Connecting corridor walls between rings
     for y in range(5, 8):
         g[y][14] = 1; g[y][17] = 1
     g[6][14] = 0; g[6][17] = 0
@@ -101,18 +117,21 @@ def make_labyrinth():
     
     g = make_symmetric(g)
     
+    # Resources placed in the OPEN CORRIDORS between rings (accessible!)
+    # Between outer wall and inner wall (corridor area)
     units = std_units([
-        {"type": "Resource", "player": -1, "x": 15, "y": 15, "resources": 10},
-        {"type": "Resource", "player": -1, "x": 16, "y": 16, "resources": 10},
         {"type": "Resource", "player": -1, "x": 6, "y": 6, "resources": 15},
         {"type": "Resource", "player": -1, "x": 25, "y": 25, "resources": 15},
+        # Between inner ring and core ring (reachable via gaps)
+        {"type": "Resource", "player": -1, "x": 10, "y": 10, "resources": 10},
+        {"type": "Resource", "player": -1, "x": 21, "y": 21, "resources": 10},
     ])
     return g, units
 
 # =====================================================================
 # MAP 6: "Chokepoint Gauntlet"
 # Multiple parallel horizontal walls with staggered gaps force
-# a zig-zag path. Very heavy blockade.
+# a zig-zag path. Resources placed in open areas between walls.
 # =====================================================================
 def make_gauntlet():
     g = empty()
@@ -145,18 +164,20 @@ def make_gauntlet():
     
     g = make_symmetric(g)
     
+    # Resources placed in OPEN lanes between horizontal walls
     units = std_units([
-        {"type": "Resource", "player": -1, "x": 15, "y": 7, "resources": 15},
-        {"type": "Resource", "player": -1, "x": 16, "y": 24, "resources": 15},
-        {"type": "Resource", "player": -1, "x": 8, "y": 11, "resources": 10},
-        {"type": "Resource", "player": -1, "x": 23, "y": 20, "resources": 10},
+        {"type": "Resource", "player": -1, "x": 8, "y": 7, "resources": 15},
+        {"type": "Resource", "player": -1, "x": 23, "y": 24, "resources": 15},
+        {"type": "Resource", "player": -1, "x": 15, "y": 11, "resources": 10},
+        {"type": "Resource", "player": -1, "x": 16, "y": 20, "resources": 10},
     ])
     return g, units
 
 # =====================================================================
 # MAP 7: "Fortress Islands"
 # Heavy wall enclosures around each base with only 2 exits,
-# plus a heavily walled center arena.
+# plus a walled center. Resources placed OUTSIDE the fortress
+# walls in the open battlefield.
 # =====================================================================
 def make_fortress_islands():
     g = empty()
@@ -184,14 +205,6 @@ def make_fortress_islands():
     g[20][15] = 0; g[20][16] = 0
     g[15][20] = 0; g[16][20] = 0
     
-    # Internal arena cross
-    for i in range(13, 19):
-        g[15][i] = 1; g[16][i] = 1
-        g[i][15] = 1; g[i][16] = 1
-    # Center gap
-    g[15][15] = 0; g[15][16] = 0
-    g[16][15] = 0; g[16][16] = 0
-    
     # Connecting walls from fortress to arena
     for x in range(6, 11):
         g[9][x] = 1
@@ -202,23 +215,25 @@ def make_fortress_islands():
     
     g = make_symmetric(g)
     
+    # Resources placed in OPEN BATTLEFIELD outside fortress walls
     units = std_units([
-        {"type": "Resource", "player": -1, "x": 15, "y": 13, "resources": 10},
-        {"type": "Resource", "player": -1, "x": 16, "y": 18, "resources": 10},
-        {"type": "Resource", "player": -1, "x": 6, "y": 3, "resources": 15},
-        {"type": "Resource", "player": -1, "x": 25, "y": 28, "resources": 15},
+        {"type": "Resource", "player": -1, "x": 8, "y": 9, "resources": 15},
+        {"type": "Resource", "player": -1, "x": 23, "y": 22, "resources": 15},
+        {"type": "Resource", "player": -1, "x": 5, "y": 14, "resources": 10},
+        {"type": "Resource", "player": -1, "x": 26, "y": 17, "resources": 10},
     ])
     return g, units
 
 # =====================================================================
 # MAP 8: "Siege Walls"
 # Three concentric defensive wall layers around each base,
-# each with a single narrow opening. Must breach all 3 to attack.
+# each with a single narrow opening. Resources placed in the
+# open space between the outermost layer and mid-field.
 # =====================================================================
 def make_siege_walls():
     g = empty()
     
-    # Layer 1 (outermost) — L-shaped wall near top-left
+    # Layer 1 (outermost) - L-shaped wall near top-left
     for x in range(0, 16):
         g[14][x] = 1
     for y in range(0, 15):
@@ -247,17 +262,18 @@ def make_siege_walls():
     
     g = make_symmetric(g)
     
+    # Resources placed BETWEEN wall layers (accessible via gaps)
     units = std_units([
-        {"type": "Resource", "player": -1, "x": 4, "y": 4, "resources": 20},
-        {"type": "Resource", "player": -1, "x": 27, "y": 27, "resources": 20},
-        {"type": "Resource", "player": -1, "x": 15, "y": 15, "resources": 10},
-        {"type": "Resource", "player": -1, "x": 16, "y": 16, "resources": 10},
+        {"type": "Resource", "player": -1, "x": 4, "y": 8, "resources": 20},
+        {"type": "Resource", "player": -1, "x": 27, "y": 23, "resources": 20},
+        {"type": "Resource", "player": -1, "x": 9, "y": 12, "resources": 10},
+        {"type": "Resource", "player": -1, "x": 22, "y": 19, "resources": 10},
     ])
     return g, units
 
 
 # =====================================================================
-# Generate all maps
+# Generate all maps + verify accessibility
 # =====================================================================
 maps_dir = r"C:\Users\Pradeep S\Desktop\Semester VI\Project Phase - 1\Simulation\microrts\maps"
 
@@ -283,6 +299,22 @@ for filename, make_fn, desc in configs:
     print(f"{'='*50}")
     for row in grid:
         print(''.join(['#' if c == 1 else '.' for c in row]))
+    
+    # Verify accessibility of all resources from Player 0 base (2,2)
+    print(f"\n  Accessibility Check (from P0 base at 2,2):")
+    all_ok = True
+    for u in units:
+        if u["type"] == "Resource":
+            reachable = is_accessible_from_base(grid, 2, 2, u["x"], u["y"])
+            status = "OK" if reachable else "BLOCKED!"
+            if not reachable:
+                all_ok = False
+            print(f"    Resource at ({u['x']},{u['y']}): {status}")
+    if all_ok:
+        print(f"  All resources accessible!")
+    else:
+        print(f"  WARNING: Some resources are blocked!")
+    
     print(f"Saved to: {filepath}")
 
 print("\n\nAll 4 heavy-blockade maps created successfully!")
