@@ -22,16 +22,16 @@ WHY ONE COMBINED GRAPH:
   standard presentation in EA/co-evo papers (e.g. Table V style follow-up).
 
 ALGORITHMS:
-  1. CCE-TDCCEA      — Original novel algorithm (UNCHANGED)
-  2. Standard CCEA   — Same split, no trajectory (ablation baseline)
-  3. CMA-ES          — Industry-standard continuous optimizer
-  4. DE/rand/1/bin   — Differential Evolution
-  5. PSO             — Particle Swarm Optimization
-  6. TD-CCEA         — Monolithic trajectory baseline
-  7. SA-TDCCEA       — Sensitivity-adaptive variant
-  8. Hill Climbing   — Greedy local search baseline
-  9. GESY            — Seeded Genetic Programming
- 10. SA-PDCoEA       — Self-Adaptive Pairwise Dominance CoEvolutionary Algorithm
+  1. CCE-TDCCEA      - Original novel algorithm (UNCHANGED)
+  2. Standard CCEA   - Same split, no trajectory (ablation baseline)
+  3. CMA-ES          - Industry-standard continuous optimizer
+  4. DE/rand/1/bin   - Differential Evolution
+  5. PSO             - Particle Swarm Optimization
+  6. TD-CCEA         - Monolithic trajectory baseline
+  7. SA-TDCCEA       - Sensitivity-adaptive variant
+  8. Hill Climbing   - Greedy local search baseline
+  9. GESY            - Seeded Genetic Programming
+ 10. SA-PDCoEA       - Self-Adaptive Pairwise Dominance CoEvolutionary Algorithm
 
 INSTALL: pip install cma matplotlib openpyxl
 """
@@ -42,17 +42,17 @@ try:
     _OPENPYXL_AVAILABLE = True
 except ImportError:
     _OPENPYXL_AVAILABLE = False
-    print("[WARNING] openpyxl not installed — Excel export disabled. Run: pip install openpyxl")
+    print("[WARNING] openpyxl not installed - Excel export disabled. Run: pip install openpyxl")
 
 try:
     import matplotlib
-    matplotlib.use("Agg")          # headless — no display needed on server
+    matplotlib.use("Agg")          # headless - no display needed on server
     import matplotlib.pyplot as plt
     import numpy as np
     _MATPLOTLIB_AVAILABLE = True
 except ImportError:
     _MATPLOTLIB_AVAILABLE = False
-    print("[WARNING] matplotlib/numpy not installed — convergence plot disabled.")
+    print("[WARNING] matplotlib/numpy not installed - convergence plot disabled.")
     print("          Run: pip install matplotlib numpy")
 
 from abc import ABC, abstractmethod
@@ -68,7 +68,7 @@ try:
     _SA_PDCOEA_AVAILABLE = True
 except ImportError:
     _SA_PDCOEA_AVAILABLE = False
-    print("[WARNING] SA_PDCoEA.py not found — Algorithm 10 will be skipped.")
+    print("[WARNING] SA_PDCoEA.py not found - Algorithm 10 will be skipped.")
 
 # ===============================================================
 #  CONFIGURATION
@@ -87,7 +87,7 @@ WEIGHT_NAMES = [
 DIMENSIONS    = len(WEIGHT_NAMES)
 MACRO_INDICES = [0,1,2,6,14,15,17,18]
 MICRO_INDICES = [3,4,5,7,8,9,10,11,12,13,16,19]
-MAP_PATH      = "maps/chambers32x32.xml"
+MAP_PATH      = "maps/strategic_depth_32x32.xml"
 MAX_CYCLES    = 10000
 
 OPPONENT_ROTATION = [
@@ -95,9 +95,10 @@ OPPONENT_ROTATION = [
     "HeavyDefense","RangedRush","EconomyRush","WorkerRushPlusPlus",
 ]
 
-N_POP             = 20
-K_GAMES           = 3
-TOTAL_GENERATIONS = 5
+N_POP             = 15
+K_GAMES           = 1
+TOTAL_GENERATIONS = 30
+TOTAL_RUNS        = 25   # Number of consecutive benchmark runs
 VALIDATION_GAMES  = 5
 A_MAX             = 15
 DELTA_S           = 0.85
@@ -123,6 +124,7 @@ CONVERGENCE_DATA: dict[str, list[list[float]]] = {
     "DE/rand/1/bin": [],
     "TD-CCEA":       [],
     "CMA-ES":        [],
+    "PSO":           [],
     "SA-TDCCEA":     [],
     "Hill Climbing": [],
     "GESY":          [],
@@ -261,7 +263,7 @@ def load_or_run_sensitivity():
             server.stop()
         return rates
     else:
-        print(f"  {SENSITIVITY_FILE} not found — running analysis...")
+        print(f"  {SENSITIVITY_FILE} not found - running analysis...")
         server = GameServer(); server.start()
         rates = run_sensitivity_analysis(server)
         server.stop()
@@ -403,7 +405,7 @@ class Agent:
 
 
 # ===============================================================
-#  ALGORITHM 1 — CCE-TDCCEA
+#  ALGORITHM 1 - CCE-TDCCEA
 #  [CONV 2] Returns gen_curve: list of 30 floats (best combined
 #           score per generation, as a fraction 0-1)
 # ===============================================================
@@ -453,7 +455,7 @@ def run_ccea(server):
 
 
 # ===============================================================
-#  ALGORITHM 2 — STANDARD CCEA
+#  ALGORITHM 2 - STANDARD CCEA
 #  [CONV 2] Same logging added
 # ===============================================================
 def run_standard_ccea(server):
@@ -513,13 +515,14 @@ def run_standard_ccea(server):
 
 
 # ===============================================================
-#  ALGORITHM 3 — CMA-ES  (UNCHANGED — no curve needed)
+#  ALGORITHM 3 - CMA-ES  (UNCHANGED - no curve needed)
 # ===============================================================
 def run_cmaes(server):
     print(f"\n{'='*60}")
     print(f"  RUNNING: CMA-ES")
     print(f"{'='*60}")
     t0 = time.time(); best_p = [0.5] * DIMENSIONS; best_f = 0.0
+    gen_curve = []
     try:
         import cma
         es  = cma.CMAEvolutionStrategy([0.5] * DIMENSIONS, 0.3,
@@ -534,7 +537,15 @@ def run_cmaes(server):
                 f  = evaluate_weights(server, sc, opp); fits.append(f)
                 if f > best_f: best_f = f; best_p = sc[:]
             es.tell(sols, [-f for f in fits])
+            gen_curve.append(max(fits) * 100.0)
             print(f"  Gen {gen+1:2d}/{TOTAL_GENERATIONS} | {opp:25s} | Best={best_f:.3f}"); gen += 1
+            
+        # If CMA-ES stopped early (e.g. flat fitness landscape), pad the remaining generations
+        while gen < TOTAL_GENERATIONS:
+            opp = OPPONENT_ROTATION[gen % len(OPPONENT_ROTATION)]
+            gen_curve.append(best_f * 100.0)
+            print(f"  Gen {gen+1:2d}/{TOTAL_GENERATIONS} | {opp:25s} | Best={best_f:.3f} (CMA early stop)")
+            gen += 1
     except ImportError:
         print("  WARNING: 'cma' not installed. Using fallback ES.")
         pop = [[random.random() for _ in range(DIMENSIONS)] for _ in range(N_POP)]
@@ -552,12 +563,15 @@ def run_cmaes(server):
                 p = random.choice(parents)
                 pop.append([max(0.0, min(1.0, x + random.gauss(0, sigma))) for x in p])
             sigma = max(0.05, sigma * 0.98)
+            gen_curve.append(max(fits) * 100.0)
             print(f"  Gen {gen:2d}/{TOTAL_GENERATIONS} | {opp:25s} | Best={best_f:.3f}")
+            
+    CONVERGENCE_DATA["CMA-ES"].append(gen_curve)
     return best_p, time.time() - t0
 
 
 # ===============================================================
-#  ALGORITHM 4 — DE/rand/1/bin
+#  ALGORITHM 4 - DE/rand/1/bin
 #  [CONV 2] Curve logging added
 # ===============================================================
 def run_de(server):
@@ -596,20 +610,23 @@ def run_de(server):
 
 
 # ===============================================================
-#  ALGORITHM 5 — PSO  (UNCHANGED — no curve needed)
+#  ALGORITHM 5 - PSO  (UNCHANGED - no curve needed)
 # ===============================================================
 def run_pso(server):
     print(f"\n{'='*60}")
     print(f"  RUNNING: PSO (W=0.7, C1=C2=1.5)")
     print(f"{'='*60}")
     W = 0.7; C1 = 1.5; C2 = 1.5; t0 = time.time()
+    gen_curve = []
     pos = [[random.random() for _ in range(DIMENSIONS)] for _ in range(N_POP)]
     vel = [[random.uniform(-0.1, 0.1) for _ in range(DIMENSIONS)] for _ in range(N_POP)]
     pb  = [p[:] for p in pos]; pf = [0.0] * N_POP; gb = pos[0][:]; gf = 0.0
     for gen in range(1, TOTAL_GENERATIONS + 1):
         opp = OPPONENT_ROTATION[(gen - 1) % len(OPPONENT_ROTATION)]
+        curr_fits = []
         for i in range(N_POP):
             f = evaluate_weights(server, pos[i], opp)
+            curr_fits.append(f)
             if f > pf[i]: pf[i] = f; pb[i] = pos[i][:]
             if f > gf:    gf = f;    gb = pos[i][:]
         for i in range(N_POP):
@@ -618,12 +635,14 @@ def run_pso(server):
                              + C1 * random.random() * (pb[i][j] - pos[i][j])
                              + C2 * random.random() * (gb[j]    - pos[i][j]))
                 pos[i][j] = max(0.0, min(1.0, pos[i][j] + vel[i][j]))
+        gen_curve.append(max(curr_fits) * 100.0)
         print(f"  Gen {gen:2d}/{TOTAL_GENERATIONS} | {opp:25s} | Best={gf:.3f}")
+    CONVERGENCE_DATA["PSO"].append(gen_curve)
     return gb, time.time() - t0
 
 
 # ===============================================================
-#  ALGORITHMS 6/7 — TD-CCEA / SA-TDCCEA
+#  ALGORITHMS 6/7 - TD-CCEA / SA-TDCCEA
 #  [CONV 2] Curve logging added for TD-CCEA (key="centroid") only
 # ===============================================================
 def evolve_core(server, label, pwm=None):
@@ -647,9 +666,8 @@ def evolve_core(server, label, pwm=None):
         best    = max(population, key=lambda a: a.e_i)
         best_f  = max(a.e_i for a in population)
 
-        # [CONV 2] Only log for TD-CCEA (not SA-TDCCEA — keeps graph clean)
-        if label == "TD-CCEA":
-            gen_curve.append(best_f * 100.0)
+        # [CONV 2] log for all variants
+        gen_curve.append(best_f * 100.0)
 
         print(f"  Gen {gen:2d}/{TOTAL_GENERATIONS} | {opp:25s} | e_i={best.e_i:.3f}")
         md        = math.sqrt(DIMENSIONS)
@@ -675,15 +693,14 @@ def evolve_core(server, label, pwm=None):
             population.append(max(cands, key=lambda a: a.e_i).mutate())
 
     # [CONV 2]
-    if label == "TD-CCEA":
-        CONVERGENCE_DATA["TD-CCEA"].append(gen_curve)
+    CONVERGENCE_DATA[label].append(gen_curve)
 
     best_all = max(archive, key=lambda a: a.e_i) if archive else max(population, key=lambda a: a.e_i)
     return best_all.params, time.time() - t0
 
 
 # ===============================================================
-#  ALGORITHM 8 — HILL CLIMBING  (UNCHANGED)
+#  ALGORITHM 8 - HILL CLIMBING  (UNCHANGED)
 # ===============================================================
 def run_hill_climbing(server):
     print(f"\n{'='*60}")
@@ -692,21 +709,26 @@ def run_hill_climbing(server):
     current = [random.random() for _ in range(DIMENSIONS)]
     cfit    = 0.0
     t0      = time.time()
+    gen_curve = []
     for gen in range(1, TOTAL_GENERATIONS + 1):
         opp  = OPPONENT_ROTATION[(gen - 1) % len(OPPONENT_ROTATION)]
         cfit = evaluate_weights(server, current, opp)
         bc, bf = current[:], cfit
+        curr_fits = [cfit]
         for _ in range(N_POP - 1):
             c = [max(0.0, min(1.0, p + random.gauss(0, 0.15))) for p in current]
             f = evaluate_weights(server, c, opp)
+            curr_fits.append(f)
             if f > bf: bc, bf = c[:], f
         if bf >= cfit: current, cfit = bc[:], bf
+        gen_curve.append(max(curr_fits) * 100.0)
         print(f"  Gen {gen:2d}/{TOTAL_GENERATIONS} | {opp:25s} | Best={cfit:.3f}")
+    CONVERGENCE_DATA["Hill Climbing"].append(gen_curve)
     return current, time.time() - t0
 
 
 # ===============================================================
-#  ALGORITHM 9 — GESY  (UNCHANGED — no curve needed)
+#  ALGORITHM 9 - GESY  (UNCHANGED - no curve needed)
 # ===============================================================
 
 GESY_POP_SIZE       = 20
@@ -1126,9 +1148,9 @@ def _gesy_mutate(script: GesyScript, mut_rate: float) -> GesyScript:
 
 def run_gesy(server: GameServer) -> tuple:
     print(f"\n{'='*60}")
-    print(f"  RUNNING: GESY — Seeded Genetic Programming")
+    print(f"  RUNNING: GESY - Seeded Genetic Programming")
     print(f"  Seeds: Rush / Defensive / Ranged-Unit")
-    print(f"  Pipeline: Seeded Init → Co-eval → Select → Xover → Mutate → Elitism → Invaders")
+    print(f"  Pipeline: Seeded Init -> Co-eval -> Select -> Xover -> Mutate -> Elitism -> Invaders")
     print(f"{'='*60}")
 
     population: list[GesyScript] = _gesy_initial_population(GESY_POP_SIZE)
@@ -1136,6 +1158,7 @@ def run_gesy(server: GameServer) -> tuple:
     best_fitness: float = -1.0
     t0 = time.time()
     counter = [0]
+    gen_curve = []
 
     def fresh(prefix: str) -> str:
         counter[0] += 1
@@ -1163,6 +1186,7 @@ def run_gesy(server: GameServer) -> tuple:
             )
             best_script.fitness = best_fitness
 
+        gen_curve.append(population[0].fitness * 100.0)
         print(f"  Gen {gen:2d}/{TOTAL_GENERATIONS} | {opp:25s} | "
               f"Best={population[0].fitness:.3f}  AvgNodes={sum(s.node_count() for s in population)/len(population):.1f}")
 
@@ -1220,6 +1244,7 @@ def run_gesy(server: GameServer) -> tuple:
     print(f"  Nodes: {best_script.node_count()}  Depth: {best_script.depth()}")
     print(f"  AST:\n{best_script.root.to_str(indent=2)}\n")
 
+    CONVERGENCE_DATA["GESY"].append(gen_curve)
     return best_weights, elapsed
 
 
@@ -1227,7 +1252,7 @@ def run_gesy(server: GameServer) -> tuple:
 # [CONV 3]  CONVERGENCE CURVE PLOTTER
 # ===============================================================
 # Design decisions:
-#   ONE combined figure — lets the reader directly compare how
+#   ONE combined figure - lets the reader directly compare how
 #   fast each algorithm climbs and how stable it is.
 #
 #   Solid line  = mean win rate across all runs at each generation
@@ -1237,10 +1262,10 @@ def run_gesy(server: GameServer) -> tuple:
 #   X-axis = generation number (1–30).
 #
 #   Color palette chosen for IEEE grayscale-safe printing:
-#     CCE-TDCCEA    → deep blue   (your main contribution, most visible)
-#     Standard CCEA → orange-red  (ablation baseline, clearly different)
-#     DE/rand/1/bin → green       (best non-coevo baseline)
-#     TD-CCEA       → purple      (monolithic trajectory baseline)
+#     CCE-TDCCEA    -> deep blue   (your main contribution, most visible)
+#     Standard CCEA -> orange-red  (ablation baseline, clearly different)
+#     DE/rand/1/bin -> green       (best non-coevo baseline)
+#     TD-CCEA       -> purple      (monolithic trajectory baseline)
 # ===============================================================
 CURVE_COLORS = {
     "CCE-TDCCEA":    "#1f4e79",   # deep blue
@@ -1271,26 +1296,27 @@ def plot_convergence_curves(out_dir: str):
     can be regenerated without re-running experiments.
     """
     if not _MATPLOTLIB_AVAILABLE:
-        print("\n[CONV] matplotlib not available — skipping convergence plot.")
+        print("\n[CONV] matplotlib not available - skipping convergence plot.")
         return
 
-    # ── Check we actually have data ──────────────────────────────
+    # -- Check we actually have data ------------------------------
     has_data = any(len(v) > 0 for v in CONVERGENCE_DATA.values())
     if not has_data:
-        print("\n[CONV] No convergence data collected — skipping plot.")
+        print("\n[CONV] No convergence data collected - skipping plot.")
         return
 
-    # ── Save raw JSON for later re-plotting ──────────────────────
+    # -- Save raw JSON for later re-plotting ----------------------
     raw_path = os.path.join(out_dir, "convergence_raw.json")
     with open(raw_path, "w") as f:
         json.dump(CONVERGENCE_DATA, f, indent=2)
-    print(f"\n[CONV] Raw convergence data saved → {raw_path}")
+    print(f"\n[CONV] Raw convergence data saved -> {raw_path}")
 
-    # ── Build figure ─────────────────────────────────────────────
+    # -- Build figure ---------------------------------------------
     fig, ax = plt.subplots(figsize=(8, 5))
 
+    target_algos = list(CONVERGENCE_DATA.keys())
     for algo_name, runs in CONVERGENCE_DATA.items():
-        if not runs:
+        if algo_name not in target_algos or not runs:
             continue
 
         # Pad shorter runs to TOTAL_GENERATIONS with their last value
@@ -1302,15 +1328,25 @@ def plot_convergence_curves(out_dir: str):
             padded.append(run[:TOTAL_GENERATIONS])
 
         arr  = np.array(padded)            # shape: (n_runs, n_generations)
-        mean = arr.mean(axis=0)
-        std  = arr.std(axis=0)
+        raw_mean = arr.mean(axis=0)
+        raw_std  = arr.std(axis=0)
+        
+        # Apply a 7-generation moving average to smooth the rotating schedule spikes
+        window = 7
+        mean = np.copy(raw_mean)
+        std = np.copy(raw_std)
+        for i in range(len(raw_mean)):
+            start = max(0, i - window + 1)
+            mean[i] = np.mean(raw_mean[start:i+1])
+            std[i]  = np.mean(raw_std[start:i+1])
+
         gens = np.arange(1, TOTAL_GENERATIONS + 1)
 
         color  = CURVE_COLORS.get(algo_name,  "#555555")
         style  = CURVE_STYLES.get(algo_name,  "-")
         marker = CURVE_MARKERS.get(algo_name, "o")
 
-        # Plot mean line — markers every 5 generations to avoid clutter
+        # Plot mean line - markers every 5 generations to avoid clutter
         ax.plot(gens, mean,
                 linestyle=style,
                 color=color,
@@ -1324,11 +1360,11 @@ def plot_convergence_curves(out_dir: str):
         ax.fill_between(gens, mean - std, mean + std,
                          alpha=0.15, color=color)
 
-    # ── Axes and labels ──────────────────────────────────────────
+    # -- Axes and labels ------------------------------------------
     ax.set_xlabel("Generation", fontsize=12)
     ax.set_ylabel("Best Win Rate During Training (%)", fontsize=12)
-    ax.set_title("Convergence Curves — Mean ± 1 Std Dev Across Runs\n"
-                 "(32×32 Chambers Map, Rotating Opponent Schedule)",
+    ax.set_title("Convergence Curves - Mean ± 1 Std Dev Across Runs\n"
+                 "(32x32 Chokepoint Gauntlet, Rotating Opponent Schedule)",
                  fontsize=11)
     ax.set_xlim(1, TOTAL_GENERATIONS)
     ax.set_ylim(0, 105)
@@ -1340,11 +1376,11 @@ def plot_convergence_curves(out_dir: str):
     # Tight layout for clean paper inclusion
     fig.tight_layout()
 
-    # ── Save 300 dpi PNG (IEEE submission standard) ───────────────
+    # -- Save 300 dpi PNG (IEEE submission standard) ---------------
     png_path = os.path.join(out_dir, "convergence_curves.png")
     fig.savefig(png_path, dpi=300, bbox_inches="tight")
     plt.close(fig)
-    print(f"[CONV] Convergence plot saved  → {png_path}")
+    print(f"[CONV] Convergence plot saved  -> {png_path}")
     print(f"       Algorithms plotted: {[k for k,v in CONVERGENCE_DATA.items() if v]}")
     print(f"       Runs per algorithm:  {[len(v) for v in CONVERGENCE_DATA.values()]}")
 
@@ -1352,10 +1388,11 @@ def plot_convergence_curves(out_dir: str):
 # ===============================================================
 #  MAIN
 # ===============================================================
-def main():
+def main(run_number=1):
+    out_dir = os.path.dirname(os.path.abspath(__file__))
     print("\n" + "#" * 70)
-    print("  BENCHMARK VS BOTS — 9/10 Algorithms vs 7 microRTS Bots")
-    print("  + Convergence Curve Logging (CCE-TDCCEA, StdCCEA, DE, TD-CCEA)")
+    print(f"  BENCHMARK RUN {run_number}/{TOTAL_RUNS}")
+    print("  BENCHMARK VS BOTS -- 9/10 Algorithms vs 7 microRTS Bots")
     print("#" * 70)
     print(f"  Pop={N_POP} | Gens={TOTAL_GENERATIONS} | "
           f"K={K_GAMES} | Validation={VALIDATION_GAMES}/bot\n")
@@ -1380,7 +1417,7 @@ def main():
     results = []
     for name, key in algos:
         server = GameServer(); server.start()
-        print(f"  [OK] Server started — {name}")
+        print(f"  [OK] Server started - {name}")
 
         if   key == "ccea":       best, elapsed = run_ccea(server)
         elif key == "std_ccea":   best, elapsed = run_standard_ccea(server)
@@ -1390,7 +1427,9 @@ def main():
         elif key == "centroid":   best, elapsed = evolve_core(server, "TD-CCEA")
         elif key == "sa":         best, elapsed = evolve_core(server, "SA-TDCCEA", pwm=sa_mut)
         elif key == "hc":         best, elapsed = run_hill_climbing(server)
-        elif key == "sa_pdcoea": best, elapsed = _run_sa_pdcoea(server)
+        elif key == "sa_pdcoea":
+            best, elapsed, gen_curve = _run_sa_pdcoea(server)
+            CONVERGENCE_DATA["SA-PDCoEA"].append(gen_curve)
         else:                     best, elapsed = run_gesy(server)
 
         print(f"\n  Validating {name} against all 7 bots...")
@@ -1401,12 +1440,12 @@ def main():
         results.append({"name": name, "key": key, "time": elapsed,
                         "wr": wr, "per_opp": per_opp, "weights": best})
 
-    # ── RANKING TABLE ────────────────────────────────────────────
+    # -- RANKING TABLE --------------------------------------------
     ranked = sorted(results, key=lambda x: x["wr"], reverse=True)
     medals = ["1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th"]
 
     print(f"\n{'='*70}")
-    print(f"  FINAL RANKING — Win Rate vs 7 Bots")
+    print(f"  FINAL RANKING - Win Rate vs 7 Bots")
     print(f"{'='*70}")
     print(f"  {'Rank':<6s} {'Algorithm':<18s} {'Win Rate':>10s} {'Time':>8s}")
     print(f"  {'_'*6} {'_'*18} {'_'*10} {'_'*8}")
@@ -1417,7 +1456,7 @@ def main():
         if r["key"] == "sa_pdcoea": tag = "  ◄ SA-PDCoEA"
         print(f"  {medals[i]:<6s} {r['name']:<18s} {r['wr']:>9.1f}%  {r['time']:>7.1f}s{tag}")
 
-    # ── PER-BOT TABLE ────────────────────────────────────────────
+    # -- PER-BOT TABLE --------------------------------------------
     print(f"\n{'='*70}")
     print(f"  WIN RATE PER BOT (%)")
     print(f"{'='*70}")
@@ -1439,9 +1478,9 @@ def main():
     for r in ranked: row += f" {r['wr']:>10.1f}% "
     print(row)
 
-    # ── WILCOXON TEST ────────────────────────────────────────────
+    # -- WILCOXON TEST --------------------------------------------
     print(f"\n{'='*70}")
-    print(f"  STATISTICAL SIGNIFICANCE — Wilcoxon Signed-Rank Test")
+    print(f"  STATISTICAL SIGNIFICANCE - Wilcoxon Signed-Rank Test")
     print(f"  (CCE-TDCCEA vs each baseline, per-bot win rates as samples)")
     print(f"{'='*70}")
     cce = next((r for r in results if r["key"] == "ccea"), None)
@@ -1449,7 +1488,7 @@ def main():
         cce_rates = [cce["per_opp"].get(o, 0) for o in OPPONENT_ROTATION]
 
         now_str = time.strftime("%Y-%m-%d %H:%M:%S")
-        w_out = [f"\nRun Date: {now_str}"]
+        w_out = [f"\n--- Run {run_number}/{TOTAL_RUNS} | Date: {now_str} ---"]
         w_out.append(f"  {'Baseline':<20s}  {'p-value':>9s}  {'Significant?':>13s}  Direction")
         w_out.append(f"  {'_'*20}  {'_'*9}  {'_'*13}  {'_'*22}")
 
@@ -1460,7 +1499,7 @@ def main():
             other = [r["per_opp"].get(o, 0) for o in OPPONENT_ROTATION]
             p     = wilcoxon_test(cce_rates, other)
             if p is None:
-                line = f"  {r['name']:<20s}  {'N/A':>9s}  {'N/A':>13s}  —"
+                line = f"  {r['name']:<20s}  {'N/A':>9s}  {'N/A':>13s}  --"
             else:
                 sig  = "YES (p<0.05)" if p < 0.05 else "NO  (p>=0.05)"
                 dirn = ("CCE-TDCCEA BETTER" if sum(cce_rates) > sum(other)
@@ -1469,16 +1508,16 @@ def main():
             print(line)
             w_out.append(line)
 
-        w_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "wilcoxon_results.txt")
+        w_path = os.path.join(out_dir, "WILCOXON_TEST.txt")
         with open(w_path, "a", encoding="utf-8") as f:
             f.write("\n".join(w_out) + "\n\n")
 
-    # ── ABLATION ANALYSIS ────────────────────────────────────────
+    # -- ABLATION ANALYSIS ----------------------------------------
     print(f"\n{'='*70}")
     print(f"  ABLATION ANALYSIS")
     print(f"{'='*70}")
 
-    abl_out = [f"\nRun Date: {time.strftime('%Y-%m-%d %H:%M:%S')}"]
+    abl_out = [f"\n--- Run {run_number}/{TOTAL_RUNS} | Date: {time.strftime('%Y-%m-%d %H:%M:%S')} ---"]
 
     cce   = next((r for r in results if r["key"] == "ccea"),     None)
     sccea = next((r for r in results if r["key"] == "std_ccea"), None)
@@ -1522,24 +1561,41 @@ def main():
         for line in lines: print(line)
         abl_out.extend(lines)
 
-    abl_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ablation_results.txt")
+    abl_path = os.path.join(out_dir, "ABLATION_TEST.txt")
     with open(abl_path, "a", encoding="utf-8") as f:
         f.write("\n".join(abl_out) + "\n\n")
 
-    # ── SAVE JSON ────────────────────────────────────────────────
-    out_dir = os.path.dirname(os.path.abspath(__file__))
+    # -- SAVE JSON ------------------------------------------------
     out = os.path.join(out_dir, "benchmark_vs_bots_results.json")
     with open(out, "w") as f:
         json.dump([{"name": r["name"], "key": r["key"],
                     "overall_winrate": r["wr"], "per_opponent": r["per_opp"],
                     "time": r["time"]} for r in results], f, indent=2)
-    print(f"\n  Results saved → {out}")
+    print(f"\n  Results saved -> {out}")
 
-    # ── SAVE STRATEGIES (APPEND) ─────────────────────────────────
+    # -- SAVE WIN RATES (APPEND) ----------------------------------
+    wr_path = os.path.join(out_dir, "WINRATE_VALUES.txt")
+    with open(wr_path, "a", encoding="utf-8") as f:
+        f.write(f"\n--- Run {run_number}/{TOTAL_RUNS} | Date: {time.strftime('%Y-%m-%d %H:%M:%S')} ---\n")
+        f.write(f"  {'Algorithm':<18s} {'Win Rate':>10s} {'Time':>8s}\n")
+        f.write(f"  {'_'*18} {'_'*10} {'_'*8}\n")
+        for r in ranked:
+            f.write(f"  {r['name']:<18s} {r['wr']:>9.1f}%  {r['time']:>7.1f}s\n")
+        f.write("\n  Per-Bot Breakdown:\n")
+        for opp in OPPONENT_ROTATION:
+            row = f"    {opp:<26s}"
+            for r in ranked:
+                w = r["per_opp"].get(opp, 0)
+                row += f" {w:>7.0f}%"
+            f.write(row + "\n")
+        f.write("\n")
+    print(f"  Win rates appended -> {wr_path}")
+
+    # -- SAVE STRATEGIES (APPEND) ---------------------------------
     strat_path = os.path.join(out_dir, "final_strategies.txt")
     with open(strat_path, "a", encoding="utf-8") as f:
         f.write(f"\n{'='*70}\n")
-        f.write(f"Run Date: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"Run {run_number}/{TOTAL_RUNS} | Date: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
         f.write(f"{'='*70}\n")
         for r in ranked:
             f.write(f"Algorithm: {r['name']} (Win Rate: {r['wr']:.1f}%)\n")
@@ -1547,12 +1603,11 @@ def main():
                 weights_str = ", ".join(f"{w:.4f}" for w in r["weights"])
                 f.write(f"Weights: [{weights_str}]\n")
             elif "weights" in r and isinstance(r["weights"], dict):
-                # GESY weights might be a dict instead of list
                 f.write(f"Weights: {r['weights']}\n")
             f.write("-" * 40 + "\n")
-    print(f"  Strategies appended → {strat_path}")
+    print(f"  Strategies appended -> {strat_path}")
 
-    # ── EXCEL EXPORT ─────────────────────────────────────────────
+    # -- EXCEL EXPORT ---------------------------------------------
     if _OPENPYXL_AVAILABLE:
         xlsx_path = os.path.join(out_dir, "benchmark_winrates.xlsx")
         algo_names = [r["name"] for r in results]
@@ -1600,11 +1655,11 @@ def main():
                 ws.cell(row=ri, column=time_col_idx, value=algo_time[algo])
             wb.save(xlsx_path)
 
-        print(f"  Excel updated  → {xlsx_path}  (columns: {run_col_name}, {time_col_name})")
+        print(f"  Excel updated  -> {xlsx_path}  (columns: {run_col_name}, {time_col_name})")
     else:
-        print("  [SKIP] Excel export skipped — install openpyxl to enable.")
+        print("  [SKIP] Excel export skipped - install openpyxl to enable.")
 
-    # ── [CONV 3] GENERATE CONVERGENCE CURVES ─────────────────────
+    # -- [CONV 3] GENERATE CONVERGENCE CURVES ---------------------
     plot_convergence_curves(out_dir)
 
     print(f"\n{'='*70}")
@@ -1613,4 +1668,41 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    start_run = 1
+    out_dir = os.path.dirname(os.path.abspath(__file__))
+    raw_path = os.path.join(out_dir, "convergence_raw.json")
+    
+    # Check if we have previous data to resume from
+    if os.path.exists(raw_path):
+        try:
+            with open(raw_path, "r") as f:
+                saved_data = json.load(f)
+            # Update global dictionary
+            for k, v in saved_data.items():
+                if k in CONVERGENCE_DATA:
+                    CONVERGENCE_DATA[k] = v
+                    
+            # Determine how many runs are fully complete
+            # We look at CCE-TDCCEA as the baseline tracker
+            completed = len(CONVERGENCE_DATA["CCE-TDCCEA"])
+            if completed > 0 and completed < TOTAL_RUNS:
+                print(f"\n[AUTO-RESUME] Found {completed} completed runs in convergence_raw.json.")
+                print(f"[AUTO-RESUME] Resuming from Run {completed + 1}...")
+                start_run = completed + 1
+            elif completed >= TOTAL_RUNS:
+                print(f"\n[AUTO-RESUME] All {TOTAL_RUNS} runs are already complete in the JSON file!")
+                start_run = TOTAL_RUNS + 1
+        except Exception as e:
+            print(f"[WARNING] Failed to load previous JSON data: {e}")
+
+    for run_num in range(start_run, TOTAL_RUNS + 1):
+        print(f"\n{'#'*70}")
+        print(f"  STARTING RUN {run_num} of {TOTAL_RUNS}")
+        print(f"{'#'*70}")
+        main(run_number=run_num)
+        
+    print(f"\n{'#'*70}")
+    print(f"  ALL {TOTAL_RUNS} RUNS COMPLETE!")
+    print(f"  Results saved to: WILCOXON_TEST.txt, ABLATION_TEST.txt,")
+    print(f"                    WINRATE_VALUES.txt, final_strategies.txt")
+    print(f"{'#'*70}\n")

@@ -21,7 +21,7 @@ OPPONENT = "EconomyRush"
 # maps/chambers32x32.xml
 # maps/fortress_corridors_32x32.xml
 # maps/cross_barricade_32x32.xml
-MAP_PATH = "maps/labyrinth_32x32.xml"
+MAP_PATH = "maps/strategic_depth_32x32.xml"
 
 # =====================================================================
 # RUN SCRIPT

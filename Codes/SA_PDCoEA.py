@@ -64,9 +64,9 @@ from typing import List, Optional, Dict, Tuple
 # ─────────────────────────────────────────────────────────────────────────────
 
 N_DIMS            = 20      # strategy dimensionality (must match DIMENSIONS)
-N_POP             = 20      # population size for both X and Y
+N_POP             = 20     # population size for both X and Y
 TOTAL_GENERATIONS = 30      # must match COMPARE_ALL.py
-K_GAMES           = 3       # games per evaluation (must match COMPARE_ALL.py)
+K_GAMES           = 1      # games per evaluation (must match COMPARE_ALL.py)
 
 # --- SA-PDCoEA-specific hyperparameters ---
 ALPHA             = 2.0                      # χ scaling factor
@@ -542,7 +542,7 @@ def _init_population(size: int, tag: str, n_dims: int = N_DIMS) -> Population:
 #  MAIN ORCHESTRATION LOOP
 # ─────────────────────────────────────────────────────────────────────────────
 
-def run_sa_pdcoea(server) -> Tuple[List[float], float]:
+def run_sa_pdcoea(server) -> Tuple[List[float], float, List[float]]:
     """
     Run the Self-Adaptive Pairwise Dominance Coevolutionary Algorithm.
 
@@ -617,6 +617,7 @@ def run_sa_pdcoea(server) -> Tuple[List[float], float]:
 
     best_weights: List[float] = pop_x[0].strategy[:]
     best_fitness: float       = 0.0
+    gen_curve: List[float]    = []
 
     for gen in range(1, TOTAL_GENERATIONS + 1):
         opp_name = OPPONENT_ROTATION[(gen - 1) % len(OPPONENT_ROTATION)]
@@ -742,8 +743,12 @@ def run_sa_pdcoea(server) -> Tuple[List[float], float]:
 
         # ── Step 6: Telemetry ─────────────────────────────────────────────
         _log_generation(gen, TOTAL_GENERATIONS, pop_x, hof, opp_name)
+        
+        # Track convergence
+        current_best = max([ind.fitness for ind in pd_survivors]) if pd_survivors else 0.0
+        gen_curve.append(current_best * 100.0)
 
     elapsed = time.time() - t0
 
     print(f"\n  SA-PDCoEA complete — best fitness: {best_fitness:.3f} | time: {elapsed:.1f}s")
-    return best_weights, elapsed
+    return best_weights, elapsed, gen_curve
