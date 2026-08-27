@@ -1,0 +1,83 @@
+{
+  "timestamp": "20260811_145844",
+  "map": "AcropolisAIE",
+  "difficulty": 5,
+  "difficulty_name": "Harder",
+  "param_vector": [
+    0.8,
+    0.3,
+    0.4,
+    0.75,
+    0.7,
+    0.55,
+    0.65,
+    0.45,
+    0.8,
+    0.5,
+    0.35,
+    0.3,
+    0.5,
+    0.3,
+    0.75,
+    0.4,
+    0.45,
+    0.65,
+    0.55,
+    0.7,
+    0.6,
+    0.7,
+    0.25
+  ],
+  "result": "LOSS",
+  "metrics": {
+    "WINRATE": 0.0,
+    "PBR": 0.0033,
+    "RUR": 28.91,
+    "APU": 0.7328,
+    "TR": 0.1333
+  },
+  "observations_sample": {
+    "step": 5161,
+    "resources": {
+      "probe_supply": 0,
+      "mineral_amount": 7355,
+      "gas_amount": 2897,
+      "supply_left": 0,
+      "supply_cap": 0,
+      "supply_used": 0,
+      "base_count": 0
+    },
+    "units": {},
+    "buildings": {
+      "ASSIMILATOR": 1
+    },
+    "in_process": {},
+    "enemy_status": {
+      "units": {
+        "ULTRALISK": 4,
+        "CORRUPTOR": 5,
+        "OVERSEER": 2,
+        "MUTALISK": 10,
+        "ROACH": 4,
+        "RAVAGER": 2,
+        "INFESTOR": 2,
+        "HYDRALISK": 2
+      },
+      "buildings": {
+        "EXTRACTOR": 2,
+        "HYDRALISKDEN": 1,
+        "EVOLUTIONCHAMBER": 2,
+        "SPAWNINGPOOL": 1,
+        "HATCHERY": 3
+      }
+    },
+    "research_progress": {
+      "WARPGATERESEARCH": 1.0,
+      "BLINKTECH": 0.0,
+      "CHARGE": 0.0,
+      "PROTOSSGROUNDWEAPONSLEVEL1": 1.0,
+      "PROTOSSGROUNDARMORSLEVEL1": 0.0
+    }
+  },
+  "elapsed_seconds": 421.27
+}

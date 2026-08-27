@@ -1,0 +1,77 @@
+{
+  "timestamp": "20260808_210529",
+  "map": "AcropolisAIE",
+  "difficulty": 5,
+  "difficulty_name": "Hard",
+  "param_vector": [
+    0.8,
+    0.3,
+    0.4,
+    0.75,
+    0.7,
+    0.55,
+    0.65,
+    0.45,
+    0.8,
+    0.5,
+    0.35,
+    0.3,
+    0.5,
+    0.3,
+    0.75,
+    0.4,
+    0.45,
+    0.65,
+    0.55,
+    0.7,
+    0.6,
+    0.7,
+    0.25
+  ],
+  "result": "LOSS",
+  "metrics": {
+    "WINRATE": 0.0,
+    "PBR": 0.0022,
+    "RUR": 19.81,
+    "APU": 0.6482,
+    "TR": 0.1333
+  },
+  "observations_sample": {
+    "step": 5306,
+    "resources": {
+      "probe_supply": 0,
+      "mineral_amount": 120,
+      "gas_amount": 790,
+      "supply_left": 0,
+      "supply_cap": 0,
+      "supply_used": 0,
+      "base_count": 0
+    },
+    "units": {},
+    "buildings": {
+      "ASSIMILATOR": 1
+    },
+    "in_process": {},
+    "enemy_status": {
+      "units": {
+        "MUTALISK": 11,
+        "ROACH": 12,
+        "ZERGLING": 28,
+        "HYDRALISK": 7,
+        "INFESTOR": 2,
+        "OVERSEER": 3,
+        "OVERLORDTRANSPORT": 3,
+        "RAVAGER": 3
+      },
+      "buildings": {}
+    },
+    "research_progress": {
+      "WARPGATERESEARCH": 1.0,
+      "BLINKTECH": 0.0,
+      "CHARGE": 0.0,
+      "PROTOSSGROUNDWEAPONSLEVEL1": 1.0,
+      "PROTOSSGROUNDARMORSLEVEL1": 0.0
+    }
+  },
+  "elapsed_seconds": 289.49
+}
