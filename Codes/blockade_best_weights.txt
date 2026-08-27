@@ -1,0 +1,52 @@
+# TD-CCEA Co-Evolution — Best Strategy + Environment
+# Fitness: 0.000 | Walls: 13
+# Profile: 13-walls | balanced | anti-rush | Light-focused
+# Generated: 2026-07-28 14:05:57
+#
+worker_ratio=0.873214
+max_workers=1.000000
+expand_threshold=1.000000
+light_preference=0.990264
+heavy_preference=0.322857
+ranged_preference=0.905908
+barracks_timing=0.653443
+aggression=0.302237
+attack_threshold=0.168299
+defend_radius=0.359386
+target_priority=0.900594
+defense_trigger=0.025251
+counter_rush=0.915167
+tech_switch=0.805410
+economy_pressure=0.523975
+scout_priority=0.128066
+group_attack=0.001057
+second_barracks=0.031494
+worker_fight_ratio=0.363781
+focus_fire=1.000000
+seg0_cx=0.187514
+seg0_cy=0.177564
+seg0_len=0.791119
+seg0_dir=0.476686
+seg1_cx=0.717415
+seg1_cy=0.270503
+seg1_len=0.270413
+seg1_dir=0.532584
+seg2_cx=0.000000
+seg2_cy=0.876113
+seg2_len=0.798913
+seg2_dir=0.547003
+
+# Wall positions:
+wall=2,4
+wall=3,4
+wall=3,9
+wall=3,10
+wall=3,11
+wall=3,12
+wall=3,13
+wall=4,4
+wall=5,4
+wall=6,4
+wall=10,4
+wall=10,5
+wall=10,6

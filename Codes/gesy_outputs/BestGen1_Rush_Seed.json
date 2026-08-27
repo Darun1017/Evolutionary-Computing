@@ -1,0 +1,60 @@
+{
+  "name": "BestGen1_Rush_Seed",
+  "fitness": 0.0,
+  "generation": 0,
+  "wins": 0,
+  "losses": 0,
+  "draws": 0,
+  "node_count": 12,
+  "depth": 3,
+  "ast": {
+    "type": "IfThenElseNode",
+    "condition": {
+      "type": "AndCondition",
+      "children": [
+        {
+          "type": "SimpleCondition",
+          "name": "early_game",
+          "threshold": 0.5
+        },
+        {
+          "type": "SimpleCondition",
+          "name": "can_attack",
+          "threshold": 0.5
+        }
+      ]
+    },
+    "then_branch": {
+      "type": "LeafAction",
+      "command": "rush"
+    },
+    "else_branch": {
+      "type": "IfThenElseNode",
+      "condition": {
+        "type": "SimpleCondition",
+        "name": "can_build",
+        "threshold": 0.5
+      },
+      "then_branch": {
+        "type": "LeafAction",
+        "command": "build_melee"
+      },
+      "else_branch": {
+        "type": "IfThenElseNode",
+        "condition": {
+          "type": "SimpleCondition",
+          "name": "can_attack",
+          "threshold": 0.5
+        },
+        "then_branch": {
+          "type": "LeafAction",
+          "command": "attack"
+        },
+        "else_branch": {
+          "type": "LeafAction",
+          "command": "hold_position"
+        }
+      }
+    }
+  }
+}

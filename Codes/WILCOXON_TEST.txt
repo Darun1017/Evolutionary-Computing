@@ -1,0 +1,434 @@
+
+--- Run 1/10 | Date: 2026-06-19 12:23:52 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                   0.7893  NO  (p>=0.05)  BASELINE BETTER
+  DE/rand/1/bin            0.4652  NO  (p>=0.05)  BASELINE BETTER
+  PSO                      0.6858  NO  (p>=0.05)  BASELINE BETTER
+  TD-CCEA                  0.2850  NO  (p>=0.05)  BASELINE BETTER
+  SA-TDCCEA                0.2012  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.0935  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 1/10 | Date: 2026-06-19 21:13:22 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                   0.3452  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.4227  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.1380  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.0796  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.5930  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 1/10 | Date: 2026-06-19 21:31:46 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                   0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                         N/A            N/A  --
+  TD-CCEA                  0.2012  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.1056  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.3613  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.0277   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                   N/A            N/A  --
+
+
+--- Run 1/10 | Date: 2026-06-19 22:39:28 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  CMA-ES                   0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.2733  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.0277   YES (p<0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.0277   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                   N/A            N/A  --
+  Hill Climbing            1.0000  NO  (p>=0.05)  BASELINE BETTER
+  GESY                     0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                1.0000  NO  (p>=0.05)  BASELINE BETTER
+
+
+--- Run 1/10 | Date: 2026-06-20 10:16:50 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.1380  NO  (p>=0.05)  BASELINE BETTER
+  CMA-ES                      N/A            N/A  --
+  DE/rand/1/bin            0.2012  NO  (p>=0.05)  BASELINE BETTER
+  PSO                      0.2012  NO  (p>=0.05)  BASELINE BETTER
+  TD-CCEA                  0.3613  NO  (p>=0.05)  BASELINE BETTER
+  SA-TDCCEA                0.2733  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.2733  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.3452  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.4652  NO  (p>=0.05)  BASELINE BETTER
+
+
+--- Run 2/10 | Date: 2026-06-20 10:47:40 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                   0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                     N/A            N/A  --
+  SA-TDCCEA                0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing               N/A            N/A  --
+  GESY                     0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 3/10 | Date: 2026-06-20 11:07:39 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.0679  NO  (p>=0.05)  BASELINE BETTER
+  CMA-ES                   0.0679  NO  (p>=0.05)  BASELINE BETTER
+  DE/rand/1/bin            0.4227  NO  (p>=0.05)  BASELINE BETTER
+  PSO                      0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.2012  NO  (p>=0.05)  BASELINE BETTER
+  SA-TDCCEA                0.7532  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.2012  NO  (p>=0.05)  BASELINE BETTER
+  GESY                     0.4227  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.2012  NO  (p>=0.05)  BASELINE BETTER
+
+
+--- Run 4/10 | Date: 2026-06-20 11:27:01 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.7893  NO  (p>=0.05)  BASELINE BETTER
+  CMA-ES                   0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.1380  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.5930  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.2733  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                1.0000  NO  (p>=0.05)  BASELINE BETTER
+
+
+--- Run 1/10 | Date: 2026-06-20 12:18:41 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  CMA-ES                   0.0277   YES (p<0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                     N/A            N/A  --
+  SA-TDCCEA                   N/A            N/A  --
+  Hill Climbing               N/A            N/A  --
+  GESY                     0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                   N/A            N/A  --
+
+
+--- Run 1/10 | Date: 2026-06-20 12:49:20 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                   0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.0277   YES (p<0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                     N/A            N/A  --
+  SA-TDCCEA                   N/A            N/A  --
+  Hill Climbing               N/A            N/A  --
+  GESY                     0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                   N/A            N/A  --
+
+
+--- Run 1/10 | Date: 2026-06-20 14:45:01 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.2850  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  CMA-ES                   0.0277   YES (p<0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.4227  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.1380  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.5930  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.3452  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.5930  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 1/10 | Date: 2026-06-20 15:07:57 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  CMA-ES                   0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  PSO                         N/A            N/A  --
+  TD-CCEA                  0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                        N/A            N/A  --
+  SA-PDCoEA                0.0277   YES (p<0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 2/10 | Date: 2026-06-20 15:40:05 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                      N/A            N/A  --
+  DE/rand/1/bin               N/A            N/A  --
+  PSO                      0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.4227  NO  (p>=0.05)  BASELINE BETTER
+  SA-TDCCEA                   N/A            N/A  --
+  Hill Climbing            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                        N/A            N/A  --
+  SA-PDCoEA                0.1056  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 3/10 | Date: 2026-06-20 16:36:04 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.1088  NO  (p>=0.05)  BASELINE BETTER
+  CMA-ES                   0.3454  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.0796  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.4185  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.7893  NO  (p>=0.05)  BASELINE BETTER
+  SA-TDCCEA                0.7874  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.1282  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.2489  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.0431   YES (p<0.05)  BASELINE BETTER
+
+
+--- Run 1/10 | Date: 2026-06-20 20:37:22 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.4652  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  CMA-ES                      N/A            N/A  --
+  DE/rand/1/bin            0.1441  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.5930  NO  (p>=0.05)  BASELINE BETTER
+  Hill Climbing            0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 2/10 | Date: 2026-06-20 21:05:49 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                   0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.1380  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                     N/A            N/A  --
+  SA-TDCCEA                   N/A            N/A  --
+  Hill Climbing            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.0180   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.5930  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 3/10 | Date: 2026-06-20 21:23:39 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  CMA-ES                   0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin               N/A            N/A  --
+  PSO                         N/A            N/A  --
+  TD-CCEA                     N/A            N/A  --
+  SA-TDCCEA                0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                   N/A            N/A  --
+
+
+--- Run 4/10 | Date: 2026-06-20 21:48:51 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                   0.1056  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.0747  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                     N/A            N/A  --
+  SA-TDCCEA                   N/A            N/A  --
+  Hill Climbing               N/A            N/A  --
+  GESY                     0.1056  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.7893  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 5/10 | Date: 2026-06-20 22:17:58 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.7893  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  CMA-ES                   0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.3613  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.0796  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                   N/A            N/A  --
+  Hill Climbing            0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.0796  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                   N/A            N/A  --
+
+
+--- Run 6/10 | Date: 2026-06-20 22:54:54 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  CMA-ES                   0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.0180   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing               N/A            N/A  --
+  GESY                     0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 7/10 | Date: 2026-06-20 23:23:12 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                      N/A            N/A  --
+  DE/rand/1/bin            0.5930  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                         N/A            N/A  --
+  TD-CCEA                  0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  Hill Climbing               N/A            N/A  --
+  GESY                     0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 8/25 | Date: 2026-06-21 09:13:44 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.0180   YES (p<0.05)  CCE-TDCCEA BETTER
+  CMA-ES                   1.0000  NO  (p>=0.05)  BASELINE BETTER
+  DE/rand/1/bin            0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  PSO                      0.3452  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing               N/A            N/A  --
+  GESY                        N/A            N/A  --
+  SA-PDCoEA                   N/A            N/A  --
+
+
+--- Run 9/25 | Date: 2026-06-21 09:37:06 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            1.0000  NO  (p>=0.05)  BASELINE BETTER
+  CMA-ES                   0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.2733  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.2850  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                   N/A            N/A  --
+  Hill Climbing               N/A            N/A  --
+  GESY                     0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                   N/A            N/A  --
+
+
+--- Run 10/25 | Date: 2026-06-21 10:16:45 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                   0.4652  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin               N/A            N/A  --
+  PSO                         N/A            N/A  --
+  TD-CCEA                  0.7150  NO  (p>=0.05)  BASELINE BETTER
+  SA-TDCCEA                0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.5002  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.2733  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 11/25 | Date: 2026-06-21 10:37:29 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.4990  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  CMA-ES                   1.0000  NO  (p>=0.05)  BASELINE BETTER
+  DE/rand/1/bin            0.5930  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                         N/A            N/A  --
+  TD-CCEA                     N/A            N/A  --
+  SA-TDCCEA                0.2850  NO  (p>=0.05)  BASELINE BETTER
+  Hill Climbing            0.5896  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                   N/A            N/A  --
+
+
+--- Run 12/25 | Date: 2026-06-21 10:56:08 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  CMA-ES                   0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin               N/A            N/A  --
+  PSO                      0.7150  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.2249  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.2249  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 13/25 | Date: 2026-06-21 11:22:32 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                   0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin               N/A            N/A  --
+  PSO                      0.2012  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                     N/A            N/A  --
+  SA-TDCCEA                1.0000  NO  (p>=0.05)  BASELINE BETTER
+  Hill Climbing            1.0000  NO  (p>=0.05)  BASELINE BETTER
+  GESY                     0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.7893  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 14/25 | Date: 2026-06-21 11:58:07 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.5930  NO  (p>=0.05)  BASELINE BETTER
+  CMA-ES                   0.2850  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.4652  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.4652  NO  (p>=0.05)  BASELINE BETTER
+  SA-TDCCEA                1.0000  NO  (p>=0.05)  BASELINE BETTER
+  Hill Climbing            0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  GESY                     0.3613  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.5930  NO  (p>=0.05)  BASELINE BETTER
+
+
+--- Run 15/25 | Date: 2026-06-21 12:38:14 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                   0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.0180   YES (p<0.05)  CCE-TDCCEA BETTER
+  PSO                      0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing               N/A            N/A  --
+  GESY                     0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.4227  NO  (p>=0.05)  BASELINE BETTER
+
+
+--- Run 16/25 | Date: 2026-06-21 13:00:40 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA               N/A            N/A  --
+  CMA-ES                      N/A            N/A  --
+  DE/rand/1/bin            0.0431   YES (p<0.05)  CCE-TDCCEA BETTER
+  PSO                      0.4227  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  TD-CCEA                  0.2733  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing               N/A            N/A  --
+  GESY                     0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.1056  NO  (p>=0.05)  CCE-TDCCEA BETTER
+
+
+--- Run 17/25 | Date: 2026-06-21 13:20:36 ---
+  Baseline                p-value   Significant?  Direction
+  ____________________  _________  _____________  ______________________
+  Standard CCEA            0.1056  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  CMA-ES                   0.0679  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  DE/rand/1/bin            0.2012  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  PSO                      0.5930  NO  (p>=0.05)  BASELINE BETTER
+  TD-CCEA                  0.0519  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-TDCCEA                0.4227  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  Hill Climbing            0.1088  NO  (p>=0.05)  BASELINE BETTER
+  GESY                     0.1380  NO  (p>=0.05)  CCE-TDCCEA BETTER
+  SA-PDCoEA                0.1088  NO  (p>=0.05)  CCE-TDCCEA BETTER
+

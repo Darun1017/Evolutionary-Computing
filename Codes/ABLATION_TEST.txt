@@ -1,0 +1,589 @@
+
+--- Run 1/10 | Date: 2026-06-19 12:23:52 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (85.7%) vs Std-CCEA (97.1%)
+    Result: Trajectory HURTS (11.4%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (85.7%) vs TD-CCEA (94.3%)
+    Result: Decomposition HURTS (8.6%)
+
+  GESY seeded GP contribution:
+    GESY (62.9%) vs CCE-TDCCEA (85.7%)
+    Result: GESY WORSE (22.9%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (71.4%) vs CCE-TDCCEA (85.7%)
+    Result: SA-PDCoEA WORSE (14.3%)
+
+
+--- Run 1/10 | Date: 2026-06-19 21:13:22 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (91.4%) vs Std-CCEA (85.7%)
+    Result: Trajectory HELPS (+5.7%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (91.4%) vs TD-CCEA (77.1%)
+    Result: Decomposition HELPS (+14.3%)
+
+  GESY seeded GP contribution:
+    GESY (65.7%) vs CCE-TDCCEA (91.4%)
+    Result: GESY WORSE (25.7%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (88.6%) vs CCE-TDCCEA (91.4%)
+    Result: SA-PDCoEA WORSE (2.9%)
+
+
+--- Run 1/10 | Date: 2026-06-19 21:31:46 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (94.3%) vs Std-CCEA (91.4%)
+    Result: Trajectory HELPS (+2.9%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (94.3%) vs TD-CCEA (80.0%)
+    Result: Decomposition HELPS (+14.3%)
+
+  GESY seeded GP contribution:
+    GESY (45.7%) vs CCE-TDCCEA (94.3%)
+    Result: GESY WORSE (48.6%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (97.1%) vs CCE-TDCCEA (94.3%)
+    Result: SA-PDCoEA BETTER (+2.9%)
+
+
+--- Run 1/10 | Date: 2026-06-19 22:39:28 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (77.1%) vs Std-CCEA (34.3%)
+    Result: Trajectory HELPS (+42.9%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (77.1%) vs TD-CCEA (2.9%)
+    Result: Decomposition HELPS (+74.3%)
+
+  GESY seeded GP contribution:
+    GESY (62.9%) vs CCE-TDCCEA (77.1%)
+    Result: GESY WORSE (14.3%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (80.0%) vs CCE-TDCCEA (77.1%)
+    Result: SA-PDCoEA BETTER (+2.9%)
+
+
+--- Run 1/10 | Date: 2026-06-20 10:16:50 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (62.9%) vs Std-CCEA (77.1%)
+    Result: Trajectory HURTS (14.3%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (62.9%) vs TD-CCEA (68.6%)
+    Result: Decomposition HURTS (5.7%)
+
+  GESY seeded GP contribution:
+    GESY (37.1%) vs CCE-TDCCEA (62.9%)
+    Result: GESY WORSE (25.7%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (68.6%) vs CCE-TDCCEA (62.9%)
+    Result: SA-PDCoEA BETTER (+5.7%)
+
+
+--- Run 2/10 | Date: 2026-06-20 10:47:40 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (85.7%) vs Std-CCEA (88.6%)
+    Result: Trajectory HURTS (2.9%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (85.7%) vs TD-CCEA (82.9%)
+    Result: Decomposition HELPS (+2.9%)
+
+  GESY seeded GP contribution:
+    GESY (57.1%) vs CCE-TDCCEA (85.7%)
+    Result: GESY WORSE (28.6%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (65.7%) vs CCE-TDCCEA (85.7%)
+    Result: SA-PDCoEA WORSE (20.0%)
+
+
+--- Run 3/10 | Date: 2026-06-20 11:07:39 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (71.4%) vs Std-CCEA (88.6%)
+    Result: Trajectory HURTS (17.1%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (71.4%) vs TD-CCEA (82.9%)
+    Result: Decomposition HURTS (11.4%)
+
+  GESY seeded GP contribution:
+    GESY (65.7%) vs CCE-TDCCEA (71.4%)
+    Result: GESY WORSE (5.7%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (82.9%) vs CCE-TDCCEA (71.4%)
+    Result: SA-PDCoEA BETTER (+11.4%)
+
+
+--- Run 4/10 | Date: 2026-06-20 11:27:01 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (77.1%) vs Std-CCEA (80.0%)
+    Result: Trajectory HURTS (2.9%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (77.1%) vs TD-CCEA (74.3%)
+    Result: Decomposition HELPS (+2.9%)
+
+  GESY seeded GP contribution:
+    GESY (62.9%) vs CCE-TDCCEA (77.1%)
+    Result: GESY WORSE (14.3%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (77.1%) vs CCE-TDCCEA (77.1%)
+    Result: SA-PDCoEA BETTER (+0.0%)
+
+
+--- Run 1/10 | Date: 2026-06-20 12:18:41 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (85.7%) vs Std-CCEA (48.6%)
+    Result: Trajectory HELPS (+37.1%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (85.7%) vs TD-CCEA (82.9%)
+    Result: Decomposition HELPS (+2.9%)
+
+  GESY seeded GP contribution:
+    GESY (68.6%) vs CCE-TDCCEA (85.7%)
+    Result: GESY WORSE (17.1%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (77.1%) vs CCE-TDCCEA (85.7%)
+    Result: SA-PDCoEA WORSE (8.6%)
+
+
+--- Run 1/10 | Date: 2026-06-20 12:49:20 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (82.9%) vs Std-CCEA (80.0%)
+    Result: Trajectory HELPS (+2.9%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (82.9%) vs TD-CCEA (68.6%)
+    Result: Decomposition HELPS (+14.3%)
+
+  GESY seeded GP contribution:
+    GESY (71.4%) vs CCE-TDCCEA (82.9%)
+    Result: GESY WORSE (11.4%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (77.1%) vs CCE-TDCCEA (82.9%)
+    Result: SA-PDCoEA WORSE (5.7%)
+
+
+--- Run 1/10 | Date: 2026-06-20 14:45:01 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (88.6%) vs Std-CCEA (80.0%)
+    Result: Trajectory HELPS (+8.6%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (88.6%) vs TD-CCEA (85.7%)
+    Result: Decomposition HELPS (+2.9%)
+
+  GESY seeded GP contribution:
+    GESY (82.9%) vs CCE-TDCCEA (88.6%)
+    Result: GESY WORSE (5.7%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (60.0%) vs CCE-TDCCEA (88.6%)
+    Result: SA-PDCoEA WORSE (28.6%)
+
+
+--- Run 1/10 | Date: 2026-06-20 15:07:57 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (97.1%) vs Std-CCEA (68.6%)
+    Result: Trajectory HELPS (+28.6%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (97.1%) vs TD-CCEA (57.1%)
+    Result: Decomposition HELPS (+40.0%)
+
+  GESY seeded GP contribution:
+    GESY (71.4%) vs CCE-TDCCEA (97.1%)
+    Result: GESY WORSE (25.7%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (40.0%) vs CCE-TDCCEA (97.1%)
+    Result: SA-PDCoEA WORSE (57.1%)
+
+
+--- Run 2/10 | Date: 2026-06-20 15:40:05 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (82.9%) vs Std-CCEA (100.0%)
+    Result: Trajectory HURTS (17.1%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (82.9%) vs TD-CCEA (88.6%)
+    Result: Decomposition HURTS (5.7%)
+
+  GESY seeded GP contribution:
+    GESY (77.1%) vs CCE-TDCCEA (82.9%)
+    Result: GESY WORSE (5.7%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (54.3%) vs CCE-TDCCEA (82.9%)
+    Result: SA-PDCoEA WORSE (28.6%)
+
+
+--- Run 3/10 | Date: 2026-06-20 16:36:04 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (77.1%) vs Std-CCEA (88.6%)
+    Result: Trajectory HURTS (11.4%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (77.1%) vs TD-CCEA (80.0%)
+    Result: Decomposition HURTS (2.9%)
+
+  GESY seeded GP contribution:
+    GESY (54.3%) vs CCE-TDCCEA (77.1%)
+    Result: GESY WORSE (22.9%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (94.3%) vs CCE-TDCCEA (77.1%)
+    Result: SA-PDCoEA BETTER (+17.1%)
+
+
+--- Run 1/10 | Date: 2026-06-20 20:37:22 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (91.4%) vs Std-CCEA (71.4%)
+    Result: Trajectory HELPS (+20.0%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (91.4%) vs TD-CCEA (65.7%)
+    Result: Decomposition HELPS (+25.7%)
+
+  GESY seeded GP contribution:
+    GESY (60.0%) vs CCE-TDCCEA (91.4%)
+    Result: GESY WORSE (31.4%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (68.6%) vs CCE-TDCCEA (91.4%)
+    Result: SA-PDCoEA WORSE (22.9%)
+
+
+--- Run 2/10 | Date: 2026-06-20 21:05:49 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (88.6%) vs Std-CCEA (91.4%)
+    Result: Trajectory HURTS (2.9%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (88.6%) vs TD-CCEA (85.7%)
+    Result: Decomposition HELPS (+2.9%)
+
+  GESY seeded GP contribution:
+    GESY (42.9%) vs CCE-TDCCEA (88.6%)
+    Result: GESY WORSE (45.7%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (80.0%) vs CCE-TDCCEA (88.6%)
+    Result: SA-PDCoEA WORSE (8.6%)
+
+
+--- Run 3/10 | Date: 2026-06-20 21:23:39 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (97.1%) vs Std-CCEA (80.0%)
+    Result: Trajectory HELPS (+17.1%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (97.1%) vs TD-CCEA (85.7%)
+    Result: Decomposition HELPS (+11.4%)
+
+  GESY seeded GP contribution:
+    GESY (54.3%) vs CCE-TDCCEA (97.1%)
+    Result: GESY WORSE (42.9%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (97.1%) vs CCE-TDCCEA (97.1%)
+    Result: SA-PDCoEA BETTER (+0.0%)
+
+
+--- Run 4/10 | Date: 2026-06-20 21:48:51 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (91.4%) vs Std-CCEA (88.6%)
+    Result: Trajectory HELPS (+2.9%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (91.4%) vs TD-CCEA (91.4%)
+    Result: Decomposition HELPS (+0.0%)
+
+  GESY seeded GP contribution:
+    GESY (60.0%) vs CCE-TDCCEA (91.4%)
+    Result: GESY WORSE (31.4%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (88.6%) vs CCE-TDCCEA (91.4%)
+    Result: SA-PDCoEA WORSE (2.9%)
+
+
+--- Run 5/10 | Date: 2026-06-20 22:17:58 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (88.6%) vs Std-CCEA (85.7%)
+    Result: Trajectory HELPS (+2.9%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (88.6%) vs TD-CCEA (42.9%)
+    Result: Decomposition HELPS (+45.7%)
+
+  GESY seeded GP contribution:
+    GESY (54.3%) vs CCE-TDCCEA (88.6%)
+    Result: GESY WORSE (34.3%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (82.9%) vs CCE-TDCCEA (88.6%)
+    Result: SA-PDCoEA WORSE (5.7%)
+
+
+--- Run 6/10 | Date: 2026-06-20 22:54:54 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (100.0%) vs Std-CCEA (82.9%)
+    Result: Trajectory HELPS (+17.1%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (100.0%) vs TD-CCEA (28.6%)
+    Result: Decomposition HELPS (+71.4%)
+
+  GESY seeded GP contribution:
+    GESY (62.9%) vs CCE-TDCCEA (100.0%)
+    Result: GESY WORSE (37.1%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (77.1%) vs CCE-TDCCEA (100.0%)
+    Result: SA-PDCoEA WORSE (22.9%)
+
+
+--- Run 7/10 | Date: 2026-06-20 23:23:12 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (88.6%) vs Std-CCEA (91.4%)
+    Result: Trajectory HURTS (2.9%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (88.6%) vs TD-CCEA (71.4%)
+    Result: Decomposition HELPS (+17.1%)
+
+  GESY seeded GP contribution:
+    GESY (71.4%) vs CCE-TDCCEA (88.6%)
+    Result: GESY WORSE (17.1%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (80.0%) vs CCE-TDCCEA (88.6%)
+    Result: SA-PDCoEA WORSE (8.6%)
+
+
+--- Run 8/25 | Date: 2026-06-21 09:13:44 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (88.6%) vs Std-CCEA (51.4%)
+    Result: Trajectory HELPS (+37.1%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (88.6%) vs TD-CCEA (68.6%)
+    Result: Decomposition HELPS (+20.0%)
+
+  GESY seeded GP contribution:
+    GESY (82.9%) vs CCE-TDCCEA (88.6%)
+    Result: GESY WORSE (5.7%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (88.6%) vs CCE-TDCCEA (88.6%)
+    Result: SA-PDCoEA BETTER (+0.0%)
+
+
+--- Run 9/25 | Date: 2026-06-21 09:37:06 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (91.4%) vs Std-CCEA (91.4%)
+    Result: Trajectory HELPS (+0.0%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (91.4%) vs TD-CCEA (62.9%)
+    Result: Decomposition HELPS (+28.6%)
+
+  GESY seeded GP contribution:
+    GESY (71.4%) vs CCE-TDCCEA (91.4%)
+    Result: GESY WORSE (20.0%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (94.3%) vs CCE-TDCCEA (91.4%)
+    Result: SA-PDCoEA BETTER (+2.9%)
+
+
+--- Run 10/25 | Date: 2026-06-21 10:16:45 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (85.7%) vs Std-CCEA (97.1%)
+    Result: Trajectory HURTS (11.4%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (85.7%) vs TD-CCEA (88.6%)
+    Result: Decomposition HURTS (2.9%)
+
+  GESY seeded GP contribution:
+    GESY (60.0%) vs CCE-TDCCEA (85.7%)
+    Result: GESY WORSE (25.7%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (60.0%) vs CCE-TDCCEA (85.7%)
+    Result: SA-PDCoEA WORSE (25.7%)
+
+
+--- Run 11/25 | Date: 2026-06-21 10:37:29 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (74.3%) vs Std-CCEA (57.1%)
+    Result: Trajectory HELPS (+17.1%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (74.3%) vs TD-CCEA (68.6%)
+    Result: Decomposition HELPS (+5.7%)
+
+  GESY seeded GP contribution:
+    GESY (60.0%) vs CCE-TDCCEA (74.3%)
+    Result: GESY WORSE (14.3%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (91.4%) vs CCE-TDCCEA (74.3%)
+    Result: SA-PDCoEA BETTER (+17.1%)
+
+
+--- Run 12/25 | Date: 2026-06-21 10:56:08 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (91.4%) vs Std-CCEA (80.0%)
+    Result: Trajectory HELPS (+11.4%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (91.4%) vs TD-CCEA (62.9%)
+    Result: Decomposition HELPS (+28.6%)
+
+  GESY seeded GP contribution:
+    GESY (51.4%) vs CCE-TDCCEA (91.4%)
+    Result: GESY WORSE (40.0%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (82.9%) vs CCE-TDCCEA (91.4%)
+    Result: SA-PDCoEA WORSE (8.6%)
+
+
+--- Run 13/25 | Date: 2026-06-21 11:22:32 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (82.9%) vs Std-CCEA (88.6%)
+    Result: Trajectory HURTS (5.7%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (82.9%) vs TD-CCEA (77.1%)
+    Result: Decomposition HELPS (+5.7%)
+
+  GESY seeded GP contribution:
+    GESY (54.3%) vs CCE-TDCCEA (82.9%)
+    Result: GESY WORSE (28.6%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (80.0%) vs CCE-TDCCEA (82.9%)
+    Result: SA-PDCoEA WORSE (2.9%)
+
+
+--- Run 14/25 | Date: 2026-06-21 11:58:07 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (80.0%) vs Std-CCEA (85.7%)
+    Result: Trajectory HURTS (5.7%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (80.0%) vs TD-CCEA (85.7%)
+    Result: Decomposition HURTS (5.7%)
+
+  GESY seeded GP contribution:
+    GESY (68.6%) vs CCE-TDCCEA (80.0%)
+    Result: GESY WORSE (11.4%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (82.9%) vs CCE-TDCCEA (80.0%)
+    Result: SA-PDCoEA BETTER (+2.9%)
+
+
+--- Run 15/25 | Date: 2026-06-21 12:38:14 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (88.6%) vs Std-CCEA (82.9%)
+    Result: Trajectory HELPS (+5.7%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (88.6%) vs TD-CCEA (65.7%)
+    Result: Decomposition HELPS (+22.9%)
+
+  GESY seeded GP contribution:
+    GESY (60.0%) vs CCE-TDCCEA (88.6%)
+    Result: GESY WORSE (28.6%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (94.3%) vs CCE-TDCCEA (88.6%)
+    Result: SA-PDCoEA BETTER (+5.7%)
+
+
+--- Run 16/25 | Date: 2026-06-21 13:00:40 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (91.4%) vs Std-CCEA (82.9%)
+    Result: Trajectory HELPS (+8.6%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (91.4%) vs TD-CCEA (80.0%)
+    Result: Decomposition HELPS (+11.4%)
+
+  GESY seeded GP contribution:
+    GESY (74.3%) vs CCE-TDCCEA (91.4%)
+    Result: GESY WORSE (17.1%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (74.3%) vs CCE-TDCCEA (91.4%)
+    Result: SA-PDCoEA WORSE (17.1%)
+
+
+--- Run 17/25 | Date: 2026-06-21 13:20:36 ---
+
+  Trajectory memory contribution:
+    CCE-TDCCEA (91.4%) vs Std-CCEA (62.9%)
+    Result: Trajectory HELPS (+28.6%)
+
+  Cooperative decomposition contribution:
+    CCE-TDCCEA (91.4%) vs TD-CCEA (65.7%)
+    Result: Decomposition HELPS (+25.7%)
+
+  GESY seeded GP contribution:
+    GESY (74.3%) vs CCE-TDCCEA (91.4%)
+    Result: GESY WORSE (17.1%)
+
+  SA-PDCoEA pairwise dominance contribution:
+    SA-PDCoEA (77.1%) vs CCE-TDCCEA (91.4%)
+    Result: SA-PDCoEA WORSE (14.3%)
+

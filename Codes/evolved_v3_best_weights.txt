@@ -1,0 +1,27 @@
+# TD-CCEA Evolved Brain v3 — Fog of War Mode
+# Opponents: EconomyMilitaryRush, LightRush, WorkerRush, HeavyDefense, RangedRush, EconomyRush, WorkerRushPlusPlus
+# Map: maps/chambers32x32_many.xml
+# Fitness: 0.000
+# Profile: minimal-workers | Ranged-focused | defensive | scouting | grouped
+# Generated: 2026-04-22 23:13:22
+#
+worker_ratio=0.048693
+max_workers=0.689131
+expand_threshold=0.521610
+light_preference=0.148566
+heavy_preference=0.224161
+ranged_preference=0.305604
+barracks_timing=0.557800
+aggression=0.086414
+attack_threshold=0.366496
+defend_radius=0.997690
+target_priority=0.796685
+defense_trigger=0.122714
+counter_rush=0.316695
+tech_switch=0.637839
+economy_pressure=0.602264
+scout_priority=0.843727
+group_attack=0.832679
+second_barracks=0.850172
+worker_fight_ratio=0.186884
+focus_fire=0.090207

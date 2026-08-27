@@ -35,7 +35,7 @@ COMBAT_INDICES     = [7, 8, 9, 10, 11, 12, 16, 19] # aggression, attack, defend,
 
 N_POP = 20
 K_GAMES = 3
-TOTAL_GENERATIONS = 10
+TOTAL_GENERATIONS = 30
 VALIDATION_GAMES = 5
 A_MAX = 15
 DELTA_S = 0.85

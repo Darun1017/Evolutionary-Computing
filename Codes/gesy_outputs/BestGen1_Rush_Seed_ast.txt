@@ -1,0 +1,27 @@
+╔══════════════════════════════════════════════════════════╗
+║  Strategy Script: BestGen1_Rush_Seed                    ║
+║  Fitness : 0.0000  │  Nodes: 12   │  Depth: 3       ║
+║  W/L/D  : 0/0/0         │  Generation: 0             ║
+╠══════════════════════════════════════════════════════════╣
+║  ABSTRACT SYNTAX TREE                                    ║
+╠══════════════════════════════════════════════════════════╣
+║  IF                                                      ║
+║    AND(                                                  ║
+║      COND(early_game)                                    ║
+║      COND(can_attack)                                    ║
+║    )                                                     ║
+║  THEN                                                    ║
+║    ACTION(rush)                                          ║
+║  ELSE                                                    ║
+║    IF                                                    ║
+║      COND(can_build)                                     ║
+║    THEN                                                  ║
+║      ACTION(build_melee)                                 ║
+║    ELSE                                                  ║
+║      IF                                                  ║
+║        COND(can_attack)                                  ║
+║      THEN                                                ║
+║        ACTION(attack)                                    ║
+║      ELSE                                                ║
+║        ACTION(hold_position)                             ║
+╚══════════════════════════════════════════════════════════╝

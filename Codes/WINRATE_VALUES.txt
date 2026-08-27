@@ -1,0 +1,744 @@
+
+--- Run 1/10 | Date: 2026-06-19 12:23:52 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Standard CCEA           97.1%   1166.1s
+  TD-CCEA                 94.3%    112.8s
+  DE/rand/1/bin           91.4%    155.9s
+  CMA-ES                  88.6%    136.6s
+  PSO                     88.6%    109.3s
+  CCE-TDCCEA              85.7%    916.4s
+  SA-TDCCEA               71.4%    213.9s
+  SA-PDCoEA               71.4%   1043.4s
+  GESY                    62.9%     93.5s
+  Hill Climbing           42.9%    195.7s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush            100%     100%     100%      80%     100%      60%      20%      20%      20%      40%
+    LightRush                       80%      80%      60%      40%      60%      80%      20%      60%      20%       0%
+    WorkerRush                     100%      80%     100%     100%     100%     100%     100%     100%     100%       0%
+    HeavyDefense                   100%     100%     100%     100%     100%      60%      80%      40%      40%     100%
+    RangedRush                     100%     100%      80%     100%     100%     100%     100%     100%      80%     100%
+    EconomyRush                    100%     100%     100%     100%      80%     100%      80%      80%      80%      60%
+    WorkerRushPlusPlus             100%     100%     100%     100%      80%     100%     100%     100%     100%       0%
+
+
+--- Run 1/10 | Date: 2026-06-19 21:13:22 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  CCE-TDCCEA              91.4%    897.7s
+  SA-PDCoEA               88.6%   1930.3s
+  Standard CCEA           85.7%    658.6s
+  DE/rand/1/bin           85.7%     54.5s
+  TD-CCEA                 77.1%    128.4s
+  Hill Climbing           77.1%     79.0s
+  CMA-ES                  71.4%     56.2s
+  GESY                    65.7%     85.0s
+  SA-TDCCEA               42.9%     66.8s
+  PSO                     28.6%     51.0s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%     100%      80%      60%      80%      40%      60%      20%       0%       0%
+    LightRush                       80%      80%      20%      40%      20%      60%     100%      40%       0%       0%
+    WorkerRush                     100%      80%     100%     100%      80%     100%      20%     100%     100%     100%
+    HeavyDefense                   100%     100%     100%     100%      80%      60%     100%      60%     100%       0%
+    RangedRush                      80%      80%     100%     100%      80%     100%     100%     100%       0%       0%
+    EconomyRush                    100%     100%     100%     100%     100%      80%     100%      40%       0%       0%
+    WorkerRushPlusPlus             100%      80%     100%     100%     100%     100%      20%     100%     100%     100%
+
+
+--- Run 1/10 | Date: 2026-06-19 21:31:46 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  SA-PDCoEA               97.1%    352.8s
+  CCE-TDCCEA              94.3%    281.9s
+  Standard CCEA           91.4%    192.8s
+  PSO                     91.4%     33.0s
+  Hill Climbing           88.6%     32.3s
+  CMA-ES                  82.9%     14.3s
+  TD-CCEA                 80.0%     30.9s
+  SA-TDCCEA               71.4%     32.5s
+  DE/rand/1/bin           60.0%     33.0s
+  GESY                    45.7%     28.4s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush            100%      60%     100%      60%      80%      40%      80%      80%      40%       0%
+    LightRush                       80%     100%      40%      80%      80%      60%      40%      20%      80%       0%
+    WorkerRush                     100%     100%     100%     100%     100%     100%      80%      60%       0%      80%
+    HeavyDefense                   100%     100%     100%     100%      80%      80%     100%     100%     100%      40%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%      80%     100%      80%
+    EconomyRush                    100%     100%     100%     100%     100%     100%     100%     100%     100%      20%
+    WorkerRushPlusPlus             100%     100%     100%     100%      80%     100%      60%      60%       0%     100%
+
+
+--- Run 1/10 | Date: 2026-06-19 22:39:28 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  SA-PDCoEA               80.0%    848.7s
+  CCE-TDCCEA              77.1%    633.9s
+  Hill Climbing           77.1%     80.6s
+  SA-TDCCEA               74.3%     58.2s
+  DE/rand/1/bin           65.7%     99.6s
+  GESY                    62.9%     58.5s
+  CMA-ES                  60.0%     88.8s
+  Standard CCEA           34.3%    377.7s
+  PSO                      8.6%     81.2s
+  TD-CCEA                  2.9%     77.7s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%     100%      40%     100%      80%      80%     100%      40%      20%       0%
+    LightRush                       20%       0%      20%       0%       0%       0%       0%       0%       0%       0%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%       0%       0%
+    HeavyDefense                    80%     100%     100%      60%      40%      80%      20%      20%      20%      20%
+    RangedRush                     100%     100%     100%     100%      80%      80%      80%       0%      20%       0%
+    EconomyRush                    100%      40%      80%      60%      60%       0%      20%       0%       0%       0%
+    WorkerRushPlusPlus              80%     100%     100%     100%     100%     100%     100%      80%       0%       0%
+
+
+--- Run 1/10 | Date: 2026-06-20 10:16:50 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Standard CCEA           77.1%    230.6s
+  DE/rand/1/bin           74.3%     59.8s
+  PSO                     74.3%     29.4s
+  TD-CCEA                 68.6%     40.6s
+  SA-PDCoEA               68.6%    513.0s
+  CCE-TDCCEA              62.9%    231.9s
+  CMA-ES                  57.1%      2.0s
+  Hill Climbing           54.3%     27.6s
+  SA-TDCCEA               45.7%     28.8s
+  GESY                    37.1%     40.3s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             40%       0%      40%      40%      60%      20%      20%       0%       0%       0%
+    LightRush                       40%      40%      40%       0%       0%       0%       0%       0%       0%      20%
+    WorkerRush                      80%     100%     100%     100%      80%     100%     100%     100%     100%       0%
+    HeavyDefense                   100%     100%      60%     100%      80%      80%      80%     100%     100%     100%
+    RangedRush                     100%     100%     100%      80%      80%     100%      60%      80%       0%     100%
+    EconomyRush                     80%      80%      80%      60%      80%      40%      40%       0%      20%      40%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%     100%     100%       0%
+
+
+--- Run 2/10 | Date: 2026-06-20 10:47:40 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Standard CCEA           88.6%    333.6s
+  CCE-TDCCEA              85.7%    252.5s
+  TD-CCEA                 82.9%     30.3s
+  Hill Climbing           82.9%    105.4s
+  DE/rand/1/bin           77.1%     43.3s
+  SA-TDCCEA               74.3%     48.1s
+  CMA-ES                  68.6%      7.9s
+  SA-PDCoEA               65.7%    863.9s
+  GESY                    57.1%     78.4s
+  PSO                     51.4%     49.1s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%      60%      80%      60%      40%      20%      60%      20%       0%       0%
+    LightRush                       40%      40%       0%     100%      20%      20%       0%       0%       0%      40%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+    HeavyDefense                   100%     100%     100%      20%      80%     100%      60%     100%     100%       0%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%     100%      80%      80%
+    EconomyRush                    100%     100%     100%     100%     100%      80%      80%      40%      20%      40%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%      80%     100%     100%     100%
+
+
+--- Run 3/10 | Date: 2026-06-20 11:07:39 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Standard CCEA           88.6%    223.2s
+  CMA-ES                  88.6%     10.6s
+  TD-CCEA                 82.9%     28.4s
+  Hill Climbing           82.9%     29.5s
+  SA-PDCoEA               82.9%    510.0s
+  DE/rand/1/bin           77.1%     39.2s
+  CCE-TDCCEA              71.4%    199.9s
+  SA-TDCCEA               68.6%     54.7s
+  GESY                    65.7%     44.4s
+  PSO                     54.3%     33.2s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%      60%      20%      20%      80%      40%      40%      20%       0%      20%
+    LightRush                       40%      60%      60%      60%       0%      40%      20%       0%       0%      20%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%      80%     100%     100%
+    HeavyDefense                   100%     100%     100%     100%     100%      60%      80%     100%     100%      80%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%      40%
+    EconomyRush                    100%     100%     100%     100%     100%     100%      60%     100%      60%      20%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%      80%     100%     100%
+
+
+--- Run 4/10 | Date: 2026-06-20 11:27:01 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Standard CCEA           80.0%    206.7s
+  CCE-TDCCEA              77.1%    246.5s
+  SA-PDCoEA               77.1%    465.4s
+  TD-CCEA                 74.3%     31.9s
+  Hill Climbing           68.6%     42.2s
+  DE/rand/1/bin           62.9%     39.4s
+  PSO                     62.9%     31.4s
+  GESY                    62.9%     38.5s
+  SA-TDCCEA               45.7%     27.8s
+  CMA-ES                  40.0%      4.8s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             60%      20%      60%      20%      20%      40%       0%      20%       0%       0%
+    LightRush                        0%      40%      20%      20%       0%       0%       0%       0%       0%       0%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%      80%     100%
+    HeavyDefense                   100%     100%     100%      80%      80%      60%     100%     100%     100%      60%
+    RangedRush                     100%     100%     100%     100%      80%      80%      60%      80%      40%      20%
+    EconomyRush                    100%      80%      60%     100%     100%      60%      80%      40%       0%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+
+
+--- Run 1/10 | Date: 2026-06-20 12:18:41 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  CCE-TDCCEA              85.7%    310.9s
+  TD-CCEA                 82.9%     51.0s
+  SA-PDCoEA               77.1%    485.9s
+  Hill Climbing           74.3%     34.6s
+  SA-TDCCEA               68.6%     30.4s
+  GESY                    68.6%     52.8s
+  DE/rand/1/bin           54.3%     50.8s
+  Standard CCEA           48.6%    249.3s
+  PSO                     42.9%     34.6s
+  CMA-ES                  20.0%     23.6s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush            100%     100%      80%     100%     100%     100%      60%      80%      60%      80%
+    LightRush                        0%       0%       0%       0%       0%       0%       0%       0%       0%       0%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%      20%
+    HeavyDefense                   100%     100%     100%     100%     100%      80%      40%       0%      60%      40%
+    RangedRush                     100%     100%     100%     100%      80%      80%     100%      40%       0%       0%
+    EconomyRush                    100%      80%      60%      20%       0%      20%      20%      20%       0%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%      60%     100%      80%       0%
+
+
+--- Run 1/10 | Date: 2026-06-20 12:49:20 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  CCE-TDCCEA              82.9%    243.4s
+  Standard CCEA           80.0%    266.3s
+  Hill Climbing           80.0%     50.8s
+  SA-TDCCEA               77.1%     35.0s
+  SA-PDCoEA               77.1%    501.9s
+  GESY                    71.4%     56.5s
+  TD-CCEA                 68.6%     47.1s
+  CMA-ES                  54.3%     13.0s
+  DE/rand/1/bin           54.3%     48.8s
+  PSO                      8.6%     32.5s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush            100%     100%     100%     100%     100%     100%      80%      80%      80%      60%
+    LightRush                        0%       0%       0%       0%       0%       0%       0%       0%       0%       0%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%       0%
+    HeavyDefense                    80%     100%     100%      60%      60%      60%      80%      60%       0%       0%
+    RangedRush                     100%     100%     100%     100%     100%      80%     100%      20%     100%       0%
+    EconomyRush                    100%      60%      60%      80%      80%      60%      20%      20%       0%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%     100%     100%       0%
+
+
+--- Run 1/10 | Date: 2026-06-20 14:45:01 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  CCE-TDCCEA              88.6%    195.7s
+  TD-CCEA                 85.7%     48.0s
+  GESY                    82.9%     84.9s
+  Standard CCEA           80.0%    226.9s
+  DE/rand/1/bin           80.0%     81.4s
+  SA-TDCCEA               77.1%     42.9s
+  PSO                     74.3%    157.7s
+  SA-PDCoEA               60.0%    832.5s
+  CMA-ES                  48.6%      3.5s
+  Hill Climbing           42.9%     26.1s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%      60%      20%      40%      20%      20%      40%      20%       0%       0%
+    LightRush                       60%      40%     100%      20%      60%      80%      20%      20%       0%       0%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+    HeavyDefense                   100%     100%      80%     100%     100%      60%      80%       0%      80%     100%
+    RangedRush                      80%     100%      80%     100%     100%     100%     100%      80%      40%       0%
+    EconomyRush                    100%     100%     100%     100%      80%      80%      80%     100%      40%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%     100%      80%     100%
+
+
+--- Run 1/10 | Date: 2026-06-20 15:07:57 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  CCE-TDCCEA              97.1%    266.4s
+  PSO                     94.3%     27.1s
+  CMA-ES                  82.9%     15.2s
+  GESY                    71.4%     36.4s
+  Standard CCEA           68.6%    296.6s
+  SA-TDCCEA               68.6%     44.1s
+  DE/rand/1/bin           65.7%     36.8s
+  Hill Climbing           65.7%     77.6s
+  TD-CCEA                 57.1%     36.0s
+  SA-PDCoEA               40.0%    496.2s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%      80%      80%       0%      20%      20%       0%       0%      80%       0%
+    LightRush                      100%     100%      60%       0%      40%      20%      40%      60%      20%       0%
+    WorkerRush                     100%     100%      80%     100%     100%     100%      80%     100%       0%      80%
+    HeavyDefense                   100%      80%     100%     100%     100%     100%      60%     100%     100%      40%
+    RangedRush                     100%     100%     100%     100%      60%      80%     100%     100%     100%      60%
+    EconomyRush                    100%     100%     100%     100%      60%      60%     100%       0%     100%       0%
+    WorkerRushPlusPlus             100%     100%      60%     100%     100%     100%      80%     100%       0%     100%
+
+
+--- Run 2/10 | Date: 2026-06-20 15:40:05 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Standard CCEA          100.0%    223.5s
+  CMA-ES                  91.4%      5.8s
+  DE/rand/1/bin           91.4%     55.3s
+  TD-CCEA                 88.6%     51.2s
+  CCE-TDCCEA              82.9%    186.0s
+  GESY                    77.1%     38.7s
+  SA-TDCCEA               71.4%     59.0s
+  SA-PDCoEA               54.3%   1202.4s
+  PSO                     42.9%     26.6s
+  Hill Climbing           42.9%     22.3s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush            100%     100%      40%      60%      40%      40%       0%       0%       0%       0%
+    LightRush                      100%      40%     100%      80%      40%      40%      40%      60%       0%       0%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+    HeavyDefense                   100%     100%     100%     100%     100%     100%     100%       0%      60%     100%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%      80%      20%       0%
+    EconomyRush                    100%     100%     100%      80%     100%      60%      60%      40%      20%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+
+
+--- Run 3/10 | Date: 2026-06-20 16:36:04 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  SA-PDCoEA               94.3%    954.1s
+  Standard CCEA           88.6%    498.7s
+  TD-CCEA                 80.0%     70.3s
+  CCE-TDCCEA              77.1%   1064.7s
+  SA-TDCCEA               71.4%    127.2s
+  CMA-ES                  60.0%      1.8s
+  PSO                     60.0%    315.5s
+  GESY                    54.3%     82.7s
+  DE/rand/1/bin           48.6%     92.1s
+  Hill Climbing           42.9%     52.8s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             60%      60%       0%      40%      40%      20%      40%       0%       0%       0%
+    LightRush                      100%      80%      80%      80%       0%      20%      80%       0%      40%       0%
+    WorkerRush                     100%     100%     100%      80%     100%     100%     100%     100%       0%     100%
+    HeavyDefense                   100%     100%     100%     100%      60%      80%       0%     100%     100%       0%
+    RangedRush                     100%     100%     100%     100%     100%     100%      80%      20%     100%      80%
+    EconomyRush                    100%      80%      80%      80%     100%       0%      20%      60%     100%      20%
+    WorkerRushPlusPlus             100%     100%     100%      60%     100%     100%     100%     100%       0%     100%
+
+
+--- Run 1/10 | Date: 2026-06-20 20:37:22 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  CMA-ES                  94.3%     13.3s
+  SA-TDCCEA               94.3%     50.4s
+  CCE-TDCCEA              91.4%    421.7s
+  Standard CCEA           71.4%    302.0s
+  Hill Climbing           71.4%     30.1s
+  PSO                     68.6%     62.2s
+  SA-PDCoEA               68.6%    915.8s
+  TD-CCEA                 65.7%     54.9s
+  DE/rand/1/bin           62.9%     38.0s
+  GESY                    60.0%     42.1s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             60%      80%      60%     100%       0%      20%       0%      40%     100%       0%
+    LightRush                      100%     100%      80%     100%      20%      80%       0%      60%       0%      20%
+    WorkerRush                     100%     100%     100%       0%     100%     100%     100%       0%       0%     100%
+    HeavyDefense                   100%     100%     100%     100%     100%      20%     100%     100%     100%      80%
+    RangedRush                     100%     100%     100%     100%     100%      80%     100%     100%     100%      80%
+    EconomyRush                    100%     100%     100%     100%      80%      80%      80%      80%     100%      40%
+    WorkerRushPlusPlus             100%      80%     100%       0%     100%     100%     100%      80%      40%     100%
+
+
+--- Run 2/10 | Date: 2026-06-20 21:05:49 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Standard CCEA           91.4%    542.1s
+  CCE-TDCCEA              88.6%    424.9s
+  TD-CCEA                 85.7%     32.1s
+  SA-TDCCEA               80.0%     30.2s
+  SA-PDCoEA               80.0%    516.0s
+  DE/rand/1/bin           65.7%     30.6s
+  PSO                     51.4%     43.4s
+  Hill Climbing           42.9%     20.9s
+  GESY                    42.9%     38.1s
+  CMA-ES                  34.3%      3.0s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%      20%      80%      20%      80%      20%      80%       0%       0%       0%
+    LightRush                       60%     100%      20%      40%       0%      20%       0%       0%      20%       0%
+    WorkerRush                     100%     100%     100%     100%      80%     100%       0%     100%      40%     100%
+    HeavyDefense                   100%     100%     100%     100%     100%      80%     100%     100%      60%      20%
+    RangedRush                     100%     100%     100%     100%     100%     100%      80%       0%      80%      20%
+    EconomyRush                    100%     100%     100%     100%     100%      40%     100%       0%      40%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%       0%     100%      60%     100%
+
+
+--- Run 3/10 | Date: 2026-06-20 21:23:39 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  CCE-TDCCEA              97.1%    260.8s
+  SA-PDCoEA               97.1%    396.0s
+  DE/rand/1/bin           94.3%     29.1s
+  TD-CCEA                 85.7%     31.2s
+  Standard CCEA           80.0%    185.3s
+  Hill Climbing           77.1%     38.1s
+  PSO                     74.3%     37.0s
+  SA-TDCCEA               71.4%     30.2s
+  CMA-ES                  68.6%      4.1s
+  GESY                    54.3%     34.4s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush            100%      80%      80%      60%      40%       0%      20%       0%       0%       0%
+    LightRush                       80%     100%      80%      40%      60%      60%       0%      40%      20%      20%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+    HeavyDefense                   100%     100%     100%     100%      80%     100%     100%     100%      80%      40%
+    RangedRush                     100%     100%     100%     100%      80%     100%     100%     100%     100%      80%
+    EconomyRush                    100%     100%     100%     100%     100%      80%     100%      60%      80%      40%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+
+
+--- Run 4/10 | Date: 2026-06-20 21:48:51 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Hill Climbing           94.3%     80.4s
+  CCE-TDCCEA              91.4%    230.4s
+  TD-CCEA                 91.4%     32.8s
+  SA-TDCCEA               91.4%     33.3s
+  Standard CCEA           88.6%    318.5s
+  SA-PDCoEA               88.6%    668.1s
+  PSO                     80.0%     28.3s
+  GESY                    60.0%     41.3s
+  CMA-ES                  57.1%      9.6s
+  DE/rand/1/bin           42.9%     36.4s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             60%      80%      40%      80%      80%      60%      80%       0%     100%       0%
+    LightRush                      100%     100%     100%      60%      40%      60%      60%      20%      20%      20%
+    WorkerRush                     100%      60%     100%     100%     100%     100%      40%     100%       0%     100%
+    HeavyDefense                   100%     100%     100%     100%     100%     100%     100%      60%     100%      80%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%     100%      80%       0%
+    EconomyRush                    100%     100%     100%     100%     100%     100%     100%      40%     100%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%      80%     100%       0%     100%
+
+
+--- Run 5/10 | Date: 2026-06-20 22:17:58 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  CCE-TDCCEA              88.6%    210.3s
+  Standard CCEA           85.7%    439.6s
+  SA-PDCoEA               82.9%    725.1s
+  PSO                     71.4%     48.6s
+  SA-TDCCEA               68.6%     47.8s
+  Hill Climbing           65.7%     20.3s
+  DE/rand/1/bin           60.0%     75.1s
+  GESY                    54.3%     38.7s
+  CMA-ES                  51.4%      1.7s
+  TD-CCEA                 42.9%    102.8s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush            100%      60%      20%       0%       0%      20%      20%       0%       0%       0%
+    LightRush                       60%      40%      60%      20%      60%      20%      20%       0%       0%       0%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+    HeavyDefense                    60%     100%     100%     100%      60%      60%      20%      80%      60%     100%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%      60%      80%       0%
+    EconomyRush                    100%     100%     100%      80%      60%      60%      60%      40%      20%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+
+
+--- Run 6/10 | Date: 2026-06-20 22:54:54 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  CCE-TDCCEA             100.0%    419.5s
+  Hill Climbing           94.3%     58.8s
+  Standard CCEA           82.9%    327.6s
+  PSO                     77.1%     85.3s
+  SA-PDCoEA               77.1%    862.5s
+  DE/rand/1/bin           65.7%     85.1s
+  SA-TDCCEA               65.7%     60.8s
+  GESY                    62.9%     73.7s
+  CMA-ES                  60.0%      2.1s
+  TD-CCEA                 28.6%    149.5s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush            100%      80%      40%      60%      20%       0%       0%       0%      20%       0%
+    LightRush                      100%     100%      80%       0%      80%      40%      60%      40%       0%      40%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%      60%
+    HeavyDefense                   100%     100%     100%     100%     100%     100%      20%      80%     100%       0%
+    RangedRush                     100%     100%     100%     100%     100%      80%     100%      60%      60%      60%
+    EconomyRush                    100%      80%      60%      80%      60%      40%      80%      60%      40%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%      80%     100%     100%     100%     100%      40%
+
+
+--- Run 7/10 | Date: 2026-06-20 23:23:12 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Standard CCEA           91.4%    372.1s
+  Hill Climbing           91.4%     29.1s
+  CCE-TDCCEA              88.6%    491.4s
+  DE/rand/1/bin           85.7%     43.2s
+  PSO                     85.7%     28.6s
+  SA-PDCoEA               80.0%    536.1s
+  CMA-ES                  71.4%      6.3s
+  TD-CCEA                 71.4%     28.1s
+  GESY                    71.4%     56.1s
+  SA-TDCCEA               51.4%     55.2s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush            100%      80%      60%      80%      40%      60%      20%      20%      20%      40%
+    LightRush                       40%      60%      60%      60%      60%      40%      60%      20%      40%      60%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+    HeavyDefense                   100%     100%     100%      80%     100%     100%     100%      80%     100%       0%
+    RangedRush                     100%     100%     100%      80%     100%     100%     100%     100%     100%      40%
+    EconomyRush                    100%     100%     100%     100%     100%      80%      20%      80%      40%      60%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%      80%     100%     100%     100%      60%
+
+
+--- Run 8/25 | Date: 2026-06-21 09:13:44 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Hill Climbing           91.4%     39.3s
+  CCE-TDCCEA              88.6%    366.1s
+  CMA-ES                  88.6%     13.8s
+  SA-PDCoEA               88.6%    527.4s
+  GESY                    82.9%     40.6s
+  SA-TDCCEA               80.0%     32.8s
+  TD-CCEA                 68.6%     62.2s
+  PSO                     62.9%     42.1s
+  Standard CCEA           51.4%    473.2s
+  DE/rand/1/bin           34.3%     35.4s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%      40%      80%      60%      40%      20%       0%      60%       0%       0%
+    LightRush                       60%      80%      60%      60%      60%      60%       0%     100%      40%       0%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%       0%      80%     100%
+    HeavyDefense                   100%     100%     100%     100%      80%     100%     100%     100%      80%      40%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%     100%      80%       0%
+    EconomyRush                    100%     100%      80%     100%     100%      80%      80%      80%      20%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%       0%      60%     100%
+
+
+--- Run 9/25 | Date: 2026-06-21 09:37:06 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  SA-PDCoEA               94.3%    458.5s
+  CCE-TDCCEA              91.4%    370.0s
+  Standard CCEA           91.4%    238.3s
+  DE/rand/1/bin           82.9%     38.4s
+  SA-TDCCEA               80.0%     43.2s
+  Hill Climbing           77.1%     42.4s
+  GESY                    71.4%     40.0s
+  PSO                     65.7%     95.6s
+  TD-CCEA                 62.9%     42.7s
+  CMA-ES                  48.6%      1.4s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%     100%      80%      60%      40%      40%      20%     100%       0%       0%
+    LightRush                       80%      40%      80%      60%      20%      40%      20%      60%       0%       0%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%       0%     100%     100%
+    HeavyDefense                   100%     100%      80%      80%     100%      60%     100%     100%     100%      80%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%      40%
+    EconomyRush                    100%     100%     100%      80%     100%     100%      60%     100%      40%      20%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%       0%     100%     100%
+
+
+--- Run 10/25 | Date: 2026-06-21 10:16:45 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Standard CCEA           97.1%    392.6s
+  DE/rand/1/bin           94.3%     35.7s
+  TD-CCEA                 88.6%     40.4s
+  CCE-TDCCEA              85.7%    455.0s
+  Hill Climbing           80.0%    107.6s
+  PSO                     77.1%     20.9s
+  CMA-ES                  68.6%     11.2s
+  GESY                    60.0%     72.3s
+  SA-PDCoEA               60.0%   1168.9s
+  SA-TDCCEA               45.7%     37.8s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%      80%     100%      40%      60%       0%      80%       0%      80%       0%
+    LightRush                      100%      80%     100%      60%      80%      40%     100%      20%      40%       0%
+    WorkerRush                     100%     100%      60%     100%      60%     100%       0%     100%       0%     100%
+    HeavyDefense                   100%     100%     100%     100%      80%     100%     100%      80%     100%     100%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%      60%     100%       0%
+    EconomyRush                    100%     100%     100%     100%     100%     100%     100%      60%     100%      20%
+    WorkerRushPlusPlus             100%     100%      60%     100%      80%     100%       0%     100%       0%     100%
+
+
+--- Run 11/25 | Date: 2026-06-21 10:37:29 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  SA-PDCoEA               91.4%    493.6s
+  SA-TDCCEA               88.6%     30.6s
+  PSO                     80.0%     31.0s
+  CCE-TDCCEA              74.3%    218.4s
+  CMA-ES                  74.3%      9.8s
+  DE/rand/1/bin           71.4%     32.1s
+  TD-CCEA                 68.6%     36.1s
+  Hill Climbing           62.9%     56.4s
+  GESY                    60.0%     38.0s
+  Standard CCEA           57.1%    263.8s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%      80%      60%       0%      20%       0%       0%      60%       0%      80%
+    LightRush                       60%      60%      40%      60%      20%      40%       0%      60%       0%      80%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%      40%     100%       0%
+    HeavyDefense                   100%     100%     100%     100%     100%      80%     100%      80%      80%      60%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%      80%
+    EconomyRush                    100%     100%      60%      60%      80%      80%      80%     100%      40%     100%
+    WorkerRushPlusPlus             100%      80%     100%     100%     100%     100%     100%       0%     100%       0%
+
+
+--- Run 12/25 | Date: 2026-06-21 10:56:08 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  CCE-TDCCEA              91.4%    217.9s
+  PSO                     88.6%     45.3s
+  SA-PDCoEA               82.9%    464.8s
+  Standard CCEA           80.0%    188.8s
+  DE/rand/1/bin           74.3%     43.7s
+  SA-TDCCEA               68.6%     38.1s
+  TD-CCEA                 62.9%     30.3s
+  CMA-ES                  60.0%     11.8s
+  GESY                    51.4%     35.0s
+  Hill Climbing           42.9%     19.8s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             60%      80%      40%      40%       0%      20%      80%       0%       0%       0%
+    LightRush                      100%      60%     100%      80%      40%      60%      60%       0%      20%       0%
+    WorkerRush                     100%     100%      80%     100%     100%      60%       0%     100%     100%     100%
+    HeavyDefense                   100%      80%      80%      80%     100%     100%     100%     100%      60%     100%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%     100%      40%       0%
+    EconomyRush                     80%     100%     100%      60%      80%      60%     100%      20%      40%       0%
+    WorkerRushPlusPlus             100%     100%      80%     100%     100%      80%       0%     100%     100%     100%
+
+
+--- Run 13/25 | Date: 2026-06-21 11:22:32 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Standard CCEA           88.6%    205.8s
+  Hill Climbing           85.7%     31.0s
+  CCE-TDCCEA              82.9%    308.9s
+  SA-TDCCEA               82.9%     25.4s
+  DE/rand/1/bin           80.0%     39.0s
+  SA-PDCoEA               80.0%    829.0s
+  TD-CCEA                 77.1%     32.1s
+  PSO                     65.7%     47.4s
+  CMA-ES                  54.3%      1.5s
+  GESY                    54.3%     34.4s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%      40%      60%      80%      60%      20%      40%      20%       0%       0%
+    LightRush                       40%      80%      20%      60%      40%      60%       0%      40%       0%       0%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+    HeavyDefense                   100%     100%     100%      80%     100%     100%     100%      80%      80%      80%
+    RangedRush                     100%     100%     100%      80%     100%     100%     100%     100%      80%      20%
+    EconomyRush                    100%      80%     100%      80%      60%      80%     100%      20%      20%      80%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%     100%     100%     100%
+
+
+--- Run 14/25 | Date: 2026-06-21 11:58:07 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Standard CCEA           85.7%    414.2s
+  TD-CCEA                 85.7%     68.5s
+  SA-PDCoEA               82.9%    988.9s
+  CCE-TDCCEA              80.0%    403.8s
+  SA-TDCCEA               80.0%     66.1s
+  CMA-ES                  71.4%      8.2s
+  Hill Climbing           71.4%     24.0s
+  PSO                     68.6%     41.9s
+  GESY                    68.6%     38.4s
+  DE/rand/1/bin           51.4%     37.5s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             80%      80%      20%      40%      40%       0%      40%     100%       0%       0%
+    LightRush                       60%      40%      80%      60%      40%      60%      40%      60%      60%      40%
+    WorkerRush                     100%      80%     100%     100%     100%     100%     100%      20%     100%     100%
+    HeavyDefense                   100%     100%      80%      60%     100%      80%      60%     100%     100%      20%
+    RangedRush                      60%     100%     100%     100%     100%     100%      80%     100%      60%     100%
+    EconomyRush                    100%     100%     100%     100%      80%      60%      80%     100%      60%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%       0%     100%     100%
+
+
+--- Run 15/25 | Date: 2026-06-21 12:38:14 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  SA-PDCoEA               94.3%    825.5s
+  CCE-TDCCEA              88.6%    356.1s
+  Hill Climbing           88.6%     59.5s
+  Standard CCEA           82.9%    235.8s
+  CMA-ES                  77.1%     35.6s
+  PSO                     77.1%     47.0s
+  SA-TDCCEA               71.4%     42.4s
+  TD-CCEA                 65.7%     99.4s
+  GESY                    60.0%     43.3s
+  DE/rand/1/bin           40.0%     59.3s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush            100%      60%      80%      40%      20%      40%       0%      20%       0%       0%
+    LightRush                       80%      60%      40%      60%      40%      40%      40%      20%      20%      20%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%      80%
+    HeavyDefense                   100%     100%     100%     100%     100%      80%     100%      60%      80%      60%
+    RangedRush                     100%     100%     100%     100%     100%     100%      80%      60%      80%      40%
+    EconomyRush                     80%     100%     100%      80%      80%      80%      80%     100%      40%      40%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%     100%     100%      40%
+
+
+--- Run 16/25 | Date: 2026-06-21 13:00:40 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  CCE-TDCCEA              91.4%    281.0s
+  Hill Climbing           91.4%     55.1s
+  Standard CCEA           82.9%    213.6s
+  TD-CCEA                 80.0%    120.3s
+  CMA-ES                  77.1%      9.4s
+  PSO                     77.1%     51.7s
+  GESY                    74.3%     36.8s
+  SA-PDCoEA               74.3%    460.5s
+  SA-TDCCEA               65.7%     49.3s
+  DE/rand/1/bin           57.1%     40.3s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush             60%      80%      60%      60%      40%      60%       0%      20%      20%      40%
+    LightRush                      100%      80%      60%      40%      20%       0%      80%      80%      20%      40%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%     100%     100%      20%
+    HeavyDefense                    80%      80%      60%     100%      80%     100%      80%     100%      80%      80%
+    RangedRush                     100%     100%     100%     100%     100%     100%     100%      60%     100%     100%
+    EconomyRush                    100%     100%     100%      80%     100%      80%      60%      60%      40%      60%
+    WorkerRushPlusPlus             100%     100%     100%      80%     100%     100%     100%     100%     100%      60%
+
+
+--- Run 17/25 | Date: 2026-06-21 13:20:36 ---
+  Algorithm            Win Rate     Time
+  __________________ __________ ________
+  Hill Climbing          100.0%     19.0s
+  PSO                     94.3%     50.7s
+  CCE-TDCCEA              91.4%    191.8s
+  SA-TDCCEA               85.7%     35.6s
+  SA-PDCoEA               77.1%    490.8s
+  GESY                    74.3%     38.1s
+  DE/rand/1/bin           71.4%     32.5s
+  TD-CCEA                 65.7%     38.8s
+  Standard CCEA           62.9%    197.2s
+  CMA-ES                  54.3%      2.1s
+
+  Per-Bot Breakdown:
+    EconomyMilitaryRush            100%      60%      80%      40%      60%      20%       0%      20%       0%       0%
+    LightRush                      100%     100%     100%      80%      60%      60%      80%      60%      40%      20%
+    WorkerRush                     100%     100%     100%     100%     100%     100%     100%      60%     100%     100%
+    HeavyDefense                   100%     100%      80%     100%      80%     100%     100%     100%     100%      80%
+    RangedRush                     100%     100%     100%     100%     100%      80%     100%      80%      80%      80%
+    EconomyRush                    100%     100%      80%      80%      40%      60%      20%      60%      20%       0%
+    WorkerRushPlusPlus             100%     100%     100%     100%     100%     100%     100%      80%     100%     100%
+

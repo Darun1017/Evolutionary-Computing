@@ -1,0 +1,16 @@
+# Evolved Strategy: BestGen1_Rush_Seed
+# Fitness: 0.0000  |  Nodes: 12  |  Depth: 3
+# W/L/D: 0/0/0  |  Generation: 0
+# ──────────────────────────────────────────────────
+STRATEGY BEGIN
+    IF (EARLY GAME AND CAN ATTACK):
+        RUSH
+    ELSE:
+        IF CAN BUILD:
+            BUILD MELEE
+        ELSE:
+            IF CAN ATTACK:
+                ATTACK
+            ELSE:
+                HOLD POSITION
+STRATEGY END
