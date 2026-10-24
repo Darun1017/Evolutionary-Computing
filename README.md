@@ -1,6 +1,6 @@
-# TD-CCEA: Time-Dependent Cooperative Coevolutionary Algorithm for microRTS
+# TD-CCEA: Trajectory-Driven Competitive Co-Evolutionary Algorithm
 
-An evolutionary computing framework that evolves intelligent agents for real-time strategy (RTS) games using a novel **Time-Dependent Cooperative Coevolutionary Algorithm (TD-CCEA)** with trajectory-based fitness memory.
+An evolutionary computing framework that evolves intelligent agents for real-time strategy (RTS) games using a novel **Trajectory-Driven Competitive Co-evolutionary Algorithm (TD-CCEA)** with trajectory-based fitness memory.
 
 ## Project Structure
 
