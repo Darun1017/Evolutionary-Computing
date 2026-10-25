@@ -17,6 +17,13 @@ build/
 
 # Java compiled files
 *.class
+# Compiled microRTS output directory and the generated source list
+bin/
+sources_compile.txt
+
+# Generated temporary maps written at runtime by the evolution scripts
+# (e.g. temp_dynenv.xml, temp_pr1_64x64.xml, temp_match_48x48.xml)
+**/maps/**/temp_*.xml
 
 # Editor / IDE
 .vscode/
