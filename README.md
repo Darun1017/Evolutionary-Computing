@@ -2,6 +2,20 @@
 
 An evolutionary computing framework that evolves intelligent agents for real-time strategy (RTS) games using a novel **Trajectory-Driven Competitive Co-evolutionary Algorithm (TD-CCEA)** with trajectory-based fitness memory.
 
+## Table of Contents
+
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Setup & Compilation](#setup--compilation)
+- [How to Run](#how-to-run)
+- [Troubleshooting](#troubleshooting)
+- [Algorithm Overview](#algorithm-overview)
+- [Opponent Bots](#opponent-bots)
+- [Results](#results)
+- [StarCraft II Extension](#starcraft-ii-extension)
+- [Repository Map](#repository-map)
+- [Dependencies](#dependencies)
+
 ## Project Structure
 
 ```
@@ -259,3 +273,70 @@ The algorithm trains against 7 built-in microRTS strategies:
 ## Results
 
 TD-CCEA consistently achieves **80-100% win rate** against all opponent types, outperforming Standard GA, Hill Climbing, and Random Search baselines.
+
+Result artifacts are generated into the `Codes/` directory:
+
+| Artifact | What it contains |
+|----------|------------------|
+| `benchmark_results.json` / `benchmark_results_v2.json` | Raw win-rate and timing data per algorithm |
+| `benchmark_winrate.png` | Win-rate comparison across algorithms |
+| `benchmark_convergence.png` / `convergence_curves.png` | Fitness convergence over generations |
+| `benchmark_heatmap.png` | Per-opponent win-rate heatmap |
+| `benchmark_time.png` | Wall-clock cost per algorithm |
+| `benchmark_winrates.xlsx` | Excel export of win-rate tables |
+| `wilcoxon_results.txt` | Wilcoxon signed-rank significance tests vs baselines |
+| `ablation_results.txt` / `ABLATION_TEST.txt` | Component ablation study |
+
+> The Wilcoxon and ablation files contain multiple dated runs. Statistical
+> significance varies by run and baseline; consult the raw files for the exact
+> p-values rather than relying on a single headline figure.
+
+## StarCraft II Extension
+
+The `StarCraft/` directory adapts the TD-CCEA framework from microRTS to
+**StarCraft II build-order planning**. It is the most recent line of work and
+is an active extension rather than a finished pipeline.
+
+Highlights:
+
+- `StarCraft/Post_Review/td_ccea_starcraft.py` — TD-CCEA adapted for SC2 build orders.
+- `StarCraft/protoss_macro_bot.py`, `terran_macro_bot.py`, `terran_bot.py`, `zerg_bot.py` — per-race macro bots.
+- `StarCraft/run_cce_tdccea_sc2.py`, `run_protoss_evaluation.py` — evolution / evaluation drivers.
+- `StarCraft/watch_match.py`, `watch_ai_vs_ai.py` — match visualization utilities.
+- `StarCraft/test_protoss_environment.py`, `test_terran_macro.py` — environment/sanity checks.
+
+## Repository Map
+
+A quick guide to the main entry points under `Codes/` (see the per-file
+docstrings for details):
+
+| File / Folder | Role |
+|---------------|------|
+| `tdccea_evolved_v2.py` | Main TD-CCEA run (rotating opponents) |
+| `tdccea_8x8.py` / `tdccea_16x16.py` / `tdccea_32x32.py` | TD-CCEA on different map sizes |
+| `tdccea_32x32_14strat.py` | TD-CCEA across 14 strategy combinations |
+| `tdccea_blockade.py` / `tdccea_dynamic_env.py` | Dynamic / progressive-blockade environments |
+| `CCE_TDCCEA.py` | Cooperative co-evolution (Macro/Micro split) hybrid |
+| `SA_TDCCEA.py` / `DP_TDCCEA.py` | Sensitivity-adaptive / diversity-preserving variants |
+| `baseline_ga.py` / `baseline_hillclimb.py` / `baseline_random.py` / `baseline_es.py` | Baseline optimizers |
+| `benchmark_all.py` / `FULL_BENCHMARK.py` / `COMPARE_ALL.py` | Benchmark harnesses |
+| `head_to_head.py` / `HEAD_TO_HEAD_ALL.py` | Coevolutionary head-to-head tournaments |
+| `evolve_vs_custom.py` | Evolve a counter-strategy vs custom weights |
+| `*_demo_visual.py` | Concept demos (no Java required) |
+| `MapGenerators/` | Map generation and visualization scripts |
+| `Simulation/microrts/` | Java microRTS engine + `EvolvedBrainAI` |
+| `GESY/` | GESY framework outputs |
+
+## Dependencies
+
+Python dependencies are listed in [`requirements.txt`](requirements.txt):
+
+```bash
+pip install -r requirements.txt
+```
+
+- **Core:** `numpy`, `matplotlib`
+- **Optional:** `openpyxl` (Excel export), `scipy` (SciPy Wilcoxon test), `cma` (CMA-ES baseline)
+
+The Java microRTS engine (JDK 8+) is a separate prerequisite — see
+[Prerequisites](#prerequisites) and [Setup & Compilation](#setup--compilation).
