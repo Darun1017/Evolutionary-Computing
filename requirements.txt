@@ -1,0 +1,24 @@
+# Python dependencies for the TD-CCEA / Evolutionary-Computing project.
+#
+# Install everything with:
+#     pip install -r requirements.txt
+#
+# Note: the Java microRTS engine (JDK 8+) is a separate prerequisite and is
+# NOT installed via pip. See README.md for Java setup and compilation steps.
+
+# ── Core (required by the evolution scripts and all plotting) ──
+numpy
+matplotlib
+
+# ── Optional extras ──
+# openpyxl: Excel (.xlsx) export of benchmark win-rates
+#           (COMPARE_ALL.py, COMPARE_ALL_NEW.py, compute_stats.py).
+openpyxl
+
+# scipy: SciPy implementation of the Wilcoxon signed-rank test (test.py).
+#        Most benchmark scripts ship a pure-Python Wilcoxon and do NOT need this.
+scipy
+
+# cma: CMA-ES baseline used in some comparison scripts
+#      (COMPARE_ALL*.py, BENCHMARK_VS_BOTS*.py, HEAD_TO_HEAD_ALL.py).
+cma
