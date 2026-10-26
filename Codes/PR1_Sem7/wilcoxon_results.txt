@@ -1,0 +1,273 @@
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-04 14:56:13
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                     N/A            N/A  —
+SA-TDCCEA                   N/A            N/A  —
+Std CCEA                    N/A            N/A  —
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:  15  Win Rate:  50.0%
+SA-TDCCEA          Total Wins:  15  Win Rate:  50.0%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-04 15:33:53
+Map: 48×48 dynamic blockades
+Generations: 40, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                     N/A            N/A  —
+SA-TDCCEA                0.0225   YES (p<0.05)  CCE-TDCCEA BETTER (n=7, low power)
+Std CCEA                    N/A            N/A  —
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:  15  Win Rate:  50.0%
+SA-TDCCEA          Total Wins:   1  Win Rate:   3.3%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-04 16:12:48
+Map: 48×48 dynamic blockades
+Generations: 40, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                     N/A            N/A  —
+SA-TDCCEA                   N/A            N/A  —
+Std CCEA                 0.1814  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=3, low power)
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:  15  Win Rate:  50.0%
+SA-TDCCEA          Total Wins:  13  Win Rate:  43.3%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-04 16:39:25
+Map: 48×48 dynamic blockades
+Generations: 22, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                  0.0591  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=5, low power)
+SA-TDCCEA                0.0425   YES (p<0.05)  CCE-TDCCEA BETTER (n=7, low power)
+Std CCEA                 1.0000  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=3, low power)
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:  15  Win Rate:  50.0%
+SA-TDCCEA          Total Wins:   0  Win Rate:   0.0%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-06 11:51:58
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                     N/A            N/A  —
+SA-TDCCEA                0.1814  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=3, low power)
+Std CCEA                 0.1003  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=4, low power)
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:  15  Win Rate:  50.0%
+SA-TDCCEA          Total Wins:  15  Win Rate:  50.0%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-06 12:41:18
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                  0.1003  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=4, low power)
+SA-TDCCEA                0.4227  NO  (p>=0.05)  BASELINE BETTER (n=3, low power)
+Std CCEA                    N/A            N/A  —
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:   1  Win Rate:   3.3%
+SA-TDCCEA          Total Wins:  15  Win Rate:  50.0%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-06 13:06:49
+Map: 48×48 dynamic blockades
+Generations: 22, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                  0.3613  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=4, low power)
+SA-TDCCEA                0.3613  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=4, low power)
+Std CCEA                 0.7893  NO  (p>=0.05)  BASELINE BETTER (n=3, low power)
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:   0  Win Rate:   0.0%
+SA-TDCCEA          Total Wins:   1  Win Rate:   3.3%
+Std CCEA           Total Wins:  14  Win Rate:  46.7%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-06 14:02:29
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                     N/A            N/A  —
+SA-TDCCEA                   N/A            N/A  —
+Std CCEA                 0.1814  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=3, low power)
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:  15  Win Rate:  50.0%
+SA-TDCCEA          Total Wins:  15  Win Rate:  50.0%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-06 16:54:34
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                  0.1814  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=3, low power)
+SA-TDCCEA                0.1003  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=4, low power)
+Std CCEA                    N/A            N/A  —
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:  15  Win Rate:  50.0%
+SA-TDCCEA          Total Wins:  15  Win Rate:  50.0%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-06 17:14:34
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                  0.0591  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=5, low power)
+SA-TDCCEA                0.1056  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=5, low power)
+Std CCEA                 0.1003  NO  (p>=0.05)  BASELINE BETTER (n=4, low power)
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:   3  Win Rate:  10.0%
+SA-TDCCEA          Total Wins:  12  Win Rate:  40.0%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-06 17:37:25
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                     N/A            N/A  —
+SA-TDCCEA                0.0360   YES (p<0.05)  BASELINE BETTER (n=6, low power)
+Std CCEA                 0.4227  NO  (p>=0.05)  BASELINE BETTER (n=3, low power)
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:   0  Win Rate:   0.0%
+SA-TDCCEA          Total Wins:  15  Win Rate:  50.0%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-06 18:12:30
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                  0.0591  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=5, low power)
+SA-TDCCEA                0.0360   YES (p<0.05)  CCE-TDCCEA BETTER (n=6, low power)
+Std CCEA                 0.0591  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=5, low power)
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:  15  Win Rate:  50.0%
+SA-TDCCEA          Total Wins:   0  Win Rate:   0.0%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%
+
+======================================================================
+Wilcoxon Signed-Rank Test Results
+Generated: 2026-09-06 20:34:49
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+Reference algorithm: CCE-TDCCEA
+
+Baseline                p-value   Significant?  Direction
+____________________  _________  _____________  ______________________
+TD-CCEA                  1.0000  NO  (p>=0.05)  BASELINE BETTER (n=3, low power)
+SA-TDCCEA                0.1003  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=4, low power)
+Std CCEA                 0.1003  NO  (p>=0.05)  CCE-TDCCEA BETTER (n=4, low power)
+
+============================================================
+Head-to-Head Tournament Summary
+============================================================
+CCE-TDCCEA         Total Wins:  15  Win Rate:  50.0%
+TD-CCEA            Total Wins:  15  Win Rate:  50.0%
+SA-TDCCEA          Total Wins:  15  Win Rate:  50.0%
+Std CCEA           Total Wins:  15  Win Rate:  50.0%

@@ -1,0 +1,2160 @@
+[
+  {
+    "meta": {
+      "timestamp": "2026-09-04 14:56:13",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 30,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 88.57142857142858,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 20.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1177.9156579971313
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 85.71428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1177.9156579971313
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 91.42857142857143,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 40.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1177.9156579971313
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 88.57142857142858,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 20.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1177.9156579971313
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-04 15:33:53",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 40,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 91.42857142857143,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 40.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1914.0036101341248
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 85.71428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1914.0036101341248
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 8.571428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 0.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 30.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1914.0036101341248
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 85.71428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1914.0036101341248
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          },
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          },
+          null,
+          {
+            "wins": 1,
+            "losses": 5,
+            "draws": 4
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 1,
+            "draws": 4
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        15,
+        1,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        50.0,
+        3.3333333333333335,
+        50.0
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-04 16:12:48",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 40,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 97.14285714285714,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 100.0,
+          "WorkerRush": 80.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1375.2311277389526
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 100.0,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 100.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1375.2311277389526
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 71.42857142857143,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 100.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1375.2311277389526
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 65.42857142857143,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 100.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 58.00000000000001,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1375.2311277389526
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 4,
+            "draws": 1
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 4,
+            "losses": 5,
+            "draws": 1
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 4,
+            "losses": 5,
+            "draws": 1
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 4,
+            "draws": 1
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        15,
+        13,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        50.0,
+        43.333333333333336,
+        50.0
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-04 16:39:25",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 22,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 81.71428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 20.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 72.0,
+          "RangedRush": 80.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1097.9204840660095
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 35.42857142857142,
+        "per_opponent": {
+          "EconomyMilitaryRush": 0.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 18.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 30.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1097.9204840660095
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 31.428571428571434,
+        "per_opponent": {
+          "EconomyMilitaryRush": 20.0,
+          "LightRush": 0.0,
+          "WorkerRush": 20.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 30.0,
+          "WorkerRushPlusPlus": 20.0
+        },
+        "time": 1097.9204840660095
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 78.0,
+        "per_opponent": {
+          "EconomyMilitaryRush": 40.0,
+          "LightRush": 20.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 86.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1097.9204840660095
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          },
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          },
+          null,
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        15,
+        0,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        50.0,
+        0.0,
+        50.0
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-06 11:51:58",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 30,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 97.99999999999999,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 100.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 86.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1776.8947265148163
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 79.71428571428572,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 20.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 38.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1776.8947265148163
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 74.28571428571429,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 20.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 80.0,
+          "RangedRush": 20.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1776.8947265148163
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 58.57142857142856,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 80.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1776.8947265148163
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-06 12:41:18",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 30,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 54.28571428571429,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 60.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 20.0
+        },
+        "time": 1311.105094909668
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 22.857142857142858,
+        "per_opponent": {
+          "EconomyMilitaryRush": 30.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1311.105094909668
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 77.14285714285715,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 40.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1311.105094909668
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 68.57142857142857,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 80.0
+        },
+        "time": 1311.105094909668
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 1,
+            "draws": 4
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 1,
+            "losses": 5,
+            "draws": 4
+          },
+          null,
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          },
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        1,
+        15,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        3.3333333333333335,
+        50.0,
+        50.0
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-06 13:06:49",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 22,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 25.71428571428572,
+        "per_opponent": {
+          "EconomyMilitaryRush": 60.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 0.0,
+          "RangedRush": 20.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1308.4912490844727
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 8.571428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 0.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 30.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1308.4912490844727
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 8.571428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 0.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 30.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1308.4912490844727
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 30.28571428571429,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 12.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1308.4912490844727
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          },
+          null,
+          {
+            "wins": 0,
+            "losses": 1,
+            "draws": 9
+          },
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          }
+        ],
+        [
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          },
+          {
+            "wins": 1,
+            "losses": 0,
+            "draws": 9
+          },
+          null,
+          {
+            "wins": 0,
+            "losses": 4,
+            "draws": 6
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 4,
+            "losses": 0,
+            "draws": 6
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        0,
+        1,
+        14
+      ],
+      "win_rates": [
+        50.0,
+        0.0,
+        3.3333333333333335,
+        46.666666666666664
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-06 14:02:29",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 30,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 85.71428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1188.7465376853943
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 85.71428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1188.7465376853943
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 91.42857142857143,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 40.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1188.7465376853943
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 60.57142857142858,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 20.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 80.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 24.0
+        },
+        "time": 1188.7465376853943
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-06 16:54:34",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 30,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 77.14285714285715,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 40.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1229.635266304016
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 66.57142857142857,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 86.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 0.0,
+          "WorkerRushPlusPlus": 80.0
+        },
+        "time": 1229.635266304016
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 35.714285714285715,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 20.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 30.0,
+          "EconomyRush": 0.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1229.635266304016
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 69.42857142857142,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 86.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 0.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1229.635266304016
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-06 17:14:34",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 30,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 51.142857142857146,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 60.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 18.0,
+          "EconomyRush": 40.0,
+          "WorkerRushPlusPlus": 40.0
+        },
+        "time": 1164.8928406238556
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 27.142857142857146,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 30.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 0.0,
+          "WorkerRushPlusPlus": 30.0
+        },
+        "time": 1164.8928406238556
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 25.142857142857146,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 26.0,
+          "EconomyRush": 0.0,
+          "WorkerRushPlusPlus": 20.0
+        },
+        "time": 1164.8928406238556
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 82.85714285714285,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 100.0,
+          "RangedRush": 80.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1164.8928406238556
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 2,
+            "draws": 3
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 2,
+            "losses": 5,
+            "draws": 3
+          },
+          null,
+          {
+            "wins": 0,
+            "losses": 4,
+            "draws": 6
+          },
+          {
+            "wins": 1,
+            "losses": 5,
+            "draws": 4
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 4,
+            "losses": 0,
+            "draws": 6
+          },
+          null,
+          {
+            "wins": 3,
+            "losses": 5,
+            "draws": 2
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 1,
+            "draws": 4
+          },
+          {
+            "wins": 5,
+            "losses": 3,
+            "draws": 2
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        3,
+        12,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        10.0,
+        40.0,
+        50.0
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-06 17:37:25",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 30,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 19.71428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 0.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 38.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1345.3959000110626
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 8.571428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 0.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 30.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1345.3959000110626
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 74.85714285714286,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 20.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 44.00000000000001,
+          "RangedRush": 60.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1345.3959000110626
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 39.714285714285715,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 18.0,
+          "RangedRush": 60.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1345.3959000110626
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          },
+          null,
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          },
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        0,
+        15,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        0.0,
+        50.0,
+        50.0
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-06 18:12:30",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 30,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 83.71428571428571,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 86.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 1628.6081461906433
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 14.285714285714285,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 0.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 0.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1628.6081461906433
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 12.857142857142856,
+        "per_opponent": {
+          "EconomyMilitaryRush": 30.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 30.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1628.6081461906433
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 24.28571428571429,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 0.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 40.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 1628.6081461906433
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          },
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          },
+          null,
+          {
+            "wins": 0,
+            "losses": 5,
+            "draws": 5
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 0,
+            "draws": 5
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        15,
+        0,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        50.0,
+        0.0,
+        50.0
+      ]
+    }
+  },
+  {
+    "meta": {
+      "timestamp": "2026-09-06 20:34:49",
+      "map": "48\u00d748 dynamic blockades",
+      "generations": 30,
+      "pop_size": 20,
+      "k_games": 3,
+      "h2h_games": 10
+    },
+    "vs_bots": [
+      {
+        "name": "CCE-TDCCEA",
+        "key": "ccea",
+        "overall_winrate": 72.28571428571428,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 40.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 65.99999999999999,
+          "RangedRush": 0.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 2732.401802778244
+      },
+      {
+        "name": "TD-CCEA",
+        "key": "tdccea",
+        "overall_winrate": 78.0,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 100.0,
+          "HeavyDefense": 46.0,
+          "RangedRush": 100.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 100.0
+        },
+        "time": 2732.401802778244
+      },
+      {
+        "name": "SA-TDCCEA",
+        "key": "sa_tdccea",
+        "overall_winrate": 46.85714285714286,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 32.0,
+          "HeavyDefense": 30.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 65.99999999999999
+        },
+        "time": 2732.401802778244
+      },
+      {
+        "name": "Std CCEA",
+        "key": "std_ccea",
+        "overall_winrate": 38.857142857142854,
+        "per_opponent": {
+          "EconomyMilitaryRush": 100.0,
+          "LightRush": 0.0,
+          "WorkerRush": 40.0,
+          "HeavyDefense": 32.0,
+          "RangedRush": 0.0,
+          "EconomyRush": 100.0,
+          "WorkerRushPlusPlus": 0.0
+        },
+        "time": 2732.401802778244
+      }
+    ],
+    "head_to_head": {
+      "algorithms": [
+        "CCE-TDCCEA",
+        "TD-CCEA",
+        "SA-TDCCEA",
+        "Std CCEA"
+      ],
+      "matrix": [
+        [
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null,
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          }
+        ],
+        [
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "draws": 0
+          },
+          null
+        ]
+      ],
+      "total_wins": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "win_rates": [
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ]
+    }
+  }
+]

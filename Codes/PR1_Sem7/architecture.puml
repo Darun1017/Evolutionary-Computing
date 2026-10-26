@@ -1,0 +1,142 @@
+@startuml TD-CCEA_Architecture
+
+skinparam backgroundColor white
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundCorner 10
+
+skinparam rectangle {
+    BorderColor #A4123F
+    BackgroundColor #FDF2F4
+    FontColor #333333
+    StereotypeFontColor #A4123F
+}
+
+skinparam package {
+    BorderColor #2B5B84
+    BackgroundColor #F0F5FA
+    FontColor #2B5B84
+    FontStyle bold
+}
+
+skinparam node {
+    BorderColor #D97925
+    BackgroundColor #FFF8F0
+    FontColor #333333
+}
+
+skinparam arrow {
+    Color #A4123F
+    FontColor #A4123F
+    Thickness 2
+}
+
+title **TD-CCEA: System Architecture**\n//Trajectory-Driven Cooperative Coevolutionary Algorithm for microRTS//
+
+' ============================================================
+'  TOP LEVEL: Python <-> Java
+' ============================================================
+
+package "Python Evolution Engine" as PY #F0F5FA {
+
+    rectangle "**TD-CCEA Core**\n---\n• Centroid computation (c_t)\n• Trajectory memory (H_i)\n• Adaptive mutation (μ_i)\n• Elite archive (A_max=15)\n• Diversity pruning (δ_s=0.85, δ_f=0.20)" as TDCCEA
+
+    rectangle "**SA-TDCCEA**\n//Sensitivity-Adaptive Variant//\n---\n• Phase 1: Influence analysis per weight\n  (set w_j=0.0 and 1.0, measure Δ win rate)\n• Phase 2: Per-weight mutation rates\n  μ_j ∈ [0.08, 0.20] (inverted influence)" as SA
+
+    rectangle "**CCE-TDCCEA**\n//Cooperative Co-Evolutionary Variant//\n---\n• Pop A (Macro/Economy): 8 weights\n  worker_ratio, barracks_timing, ...\n• Pop B (Micro/Combat): 12 weights\n  aggression, focus_fire, ...\n• Cooperative \"handshake\" evaluation" as CCE
+
+    rectangle "**Dynamic Environment Manager**\n---\n• Progressive blockades (6→10→14 walls/gen)\n• 60% unbreakable + 40% breakable walls\n• Gaussian placement (map center)\n• **BFS path validation** (Base₀ ↔ Base₁)" as DYN
+}
+
+node "Java microRTS Engine" as JAVA #FFF8F0 {
+
+    rectangle "**EvolvedBrainAI**\n---\n20-weight parameterized agent\nθ ∈ [0,1]²⁰\n(economy + unit prod + combat)" as BRAIN #FFF3E0
+
+    rectangle "**EvolvedBatchGameRunner**\n---\nHeadless batch server\nstdin → parse weights → run game → stdout" as RUNNER #FFF3E0
+
+    rectangle "**Game Simulation**\n---\n48×48 map | 12000 max cycles\nReal-time unit control\nResource management" as SIM #FFF3E0
+
+    rectangle "**7 Opponent Bots**\n---\nWorkerRush | WorkerRush++\nLightRush | RangedRush\nHeavyDefense | EconomyRush\nEconomyMilitaryRush" as BOTS #FFF3E0
+}
+
+' IPC Communication
+PY -right-> JAVA : **Send:**\n""EVOLVED:w0;w1;...;w19,""  \n""Opponent,map,cycles\n""
+JAVA -left-> PY : **Receive:**\n""RESULT:winner,cycles""
+
+' Internal connections
+BRAIN -down-> RUNNER
+RUNNER -down-> SIM
+SIM -down-> BOTS : plays against
+
+TDCCEA -down-> SA
+SA -down-> CCE
+CCE -down-> DYN
+
+' ============================================================
+'  EVOLUTIONARY LOOP
+' ============================================================
+
+package "Evolutionary Loop (T_max = 30 generations)" as LOOP #FFFDE7 {
+
+    rectangle "**① Initialize**\nPopulation P₀\nN=20 agents\n20D weight vectors" as S1 #E8F5E9
+
+    rectangle "**② Centroid**\nc_t = (1/N) Σ θᵢ\nEnvironment\nmeta-state" as S2 #E3F2FD
+
+    rectangle "**③ Evaluate**\nFitness fᵢ via\nK=3 games\nper agent" as S3 #FFF3E0
+
+    rectangle "**④ Trajectory**\nUpdate Hᵢ ←\nHᵢ ∪ {(fᵢ, cₜ)}\ntrim if |Hᵢ|>W" as S4 #F3E5F5
+
+    rectangle "**⑤ Score**\nαₖ = 1 - d(cₜ,cₖ)/d_max\neᵢ = Σ α̂ₖ · fᵢ⁽ᵏ⁾" as S5 #E8EAF6
+
+    rectangle "**⑥ Mutation**\nμᵢ = μ_base·(1-eᵢ)+ε\nWinners: fine-tune\nLosers: explore" as S6 #FBE9E7
+
+    rectangle "**⑦ Prune**\nRemove clones (S>0.85)\nRemove weak (ē<0.20)\nUpdate archive A" as S7 #EFEBE9
+
+    rectangle "**⑧ Breed**\nTournament selection\nfrom survivors ∪ A\nGaussian mutation" as S8 #E8F5E9
+}
+
+S1 -right-> S2
+S2 -right-> S3
+S3 -right-> S4
+S4 -down-> S5
+S5 -left-> S6
+S6 -left-> S7
+S7 -left-> S8
+S8 ..up..> S2 : <color:#A4123F>**repeat**</color>
+
+' ============================================================
+'  OUTPUTS
+' ============================================================
+
+package "Evaluation Outputs" as OUT #F5F5F5 {
+    rectangle "Win Rate Matrix\n(vs 7 bots)" as O1 #E8F5E9
+    rectangle "Convergence\nCurves" as O2 #E3F2FD
+    rectangle "Wilcoxon\nSigned-Rank\n(p < 0.05)" as O3 #FFF3E0
+    rectangle "Ablation\nStudy" as O4 #F3E5F5
+    rectangle "Head-to-Head\nTournament\n(EVOLVED vs EVOLVED)" as O5 #FBE9E7
+}
+
+LOOP -down-> OUT : generates
+
+' ============================================================
+'  LEGEND
+' ============================================================
+
+legend right
+  |= Color |= Component |
+  | <#F0F5FA> | Python Evolution Engine |
+  | <#FFF8F0> | Java microRTS Engine |
+  | <#FFFDE7> | Evolutionary Loop |
+  | <#F5F5F5> | Evaluation Outputs |
+  ---
+  **Key Parameters:**
+  N = 20 (population)
+  K = 3 (games per eval)
+  T_max = 30 (generations)
+  A_max = 15 (archive size)
+  δ_s = 0.85 (similarity threshold)
+  δ_f = 0.20 (fitness threshold)
+end legend
+
+@enduml

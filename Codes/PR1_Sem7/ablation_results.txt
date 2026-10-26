@@ -1,0 +1,494 @@
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-04 14:56:13
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (88.6%) vs Std CCEA (88.6%)
+   Difference: +0.0%
+   Result: Trajectory HELPS (0.0%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (88.6%) vs TD-CCEA (85.7%)
+   Difference: +2.9%
+   Result: Decomposition HELPS (2.9%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (91.4%) vs TD-CCEA (85.7%)
+   Difference: +5.7%
+   Result: SA Mutation HELPS (5.7%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (88.6%) vs SA-TDCCEA (91.4%)
+   Difference: -2.9%
+   Result: SA-TDCCEA BETTER (2.9%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-5L-0D       5W-5L-0D       5W-5L-0D      15   50.0%
+TD-CCEA                 5W-5L-0D              —       5W-5L-0D       5W-5L-0D      15   50.0%
+SA-TDCCEA               5W-5L-0D       5W-5L-0D              —       5W-5L-0D      15   50.0%
+Std CCEA                5W-5L-0D       5W-5L-0D       5W-5L-0D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-04 15:33:53
+Map: 48×48 dynamic blockades
+Generations: 40, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (91.4%) vs Std CCEA (85.7%)
+   Difference: +5.7%
+   Result: Trajectory HELPS (5.7%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (91.4%) vs TD-CCEA (85.7%)
+   Difference: +5.7%
+   Result: Decomposition HELPS (5.7%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (8.6%) vs TD-CCEA (85.7%)
+   Difference: -77.1%
+   Result: SA Mutation HURTS (77.1%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (91.4%) vs SA-TDCCEA (8.6%)
+   Difference: +82.9%
+   Result: CCE-TDCCEA BETTER (82.9%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-5L-0D       5W-0L-5D       5W-5L-0D      15   50.0%
+TD-CCEA                 5W-5L-0D              —       5W-0L-5D       5W-5L-0D      15   50.0%
+SA-TDCCEA               0W-5L-5D       0W-5L-5D              —       1W-5L-4D       1    3.3%
+Std CCEA                5W-5L-0D       5W-5L-0D       5W-1L-4D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-04 16:12:48
+Map: 48×48 dynamic blockades
+Generations: 40, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (97.1%) vs Std CCEA (65.4%)
+   Difference: +31.7%
+   Result: Trajectory HELPS (31.7%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (97.1%) vs TD-CCEA (100.0%)
+   Difference: -2.9%
+   Result: Decomposition HURTS (2.9%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (71.4%) vs TD-CCEA (100.0%)
+   Difference: -28.6%
+   Result: SA Mutation HURTS (28.6%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (97.1%) vs SA-TDCCEA (71.4%)
+   Difference: +25.7%
+   Result: CCE-TDCCEA BETTER (25.7%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-5L-0D       5W-4L-1D       5W-5L-0D      15   50.0%
+TD-CCEA                 5W-5L-0D              —       5W-5L-0D       5W-5L-0D      15   50.0%
+SA-TDCCEA               4W-5L-1D       5W-5L-0D              —       4W-5L-1D      13   43.3%
+Std CCEA                5W-5L-0D       5W-5L-0D       5W-4L-1D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-04 16:39:25
+Map: 48×48 dynamic blockades
+Generations: 22, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (81.7%) vs Std CCEA (78.0%)
+   Difference: +3.7%
+   Result: Trajectory HELPS (3.7%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (81.7%) vs TD-CCEA (35.4%)
+   Difference: +46.3%
+   Result: Decomposition HELPS (46.3%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (31.4%) vs TD-CCEA (35.4%)
+   Difference: -4.0%
+   Result: SA Mutation HURTS (4.0%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (81.7%) vs SA-TDCCEA (31.4%)
+   Difference: +50.3%
+   Result: CCE-TDCCEA BETTER (50.3%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-5L-0D       5W-0L-5D       5W-5L-0D      15   50.0%
+TD-CCEA                 5W-5L-0D              —       5W-0L-5D       5W-5L-0D      15   50.0%
+SA-TDCCEA               0W-5L-5D       0W-5L-5D              —       0W-5L-5D       0    0.0%
+Std CCEA                5W-5L-0D       5W-5L-0D       5W-0L-5D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-06 11:51:58
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (98.0%) vs Std CCEA (58.6%)
+   Difference: +39.4%
+   Result: Trajectory HELPS (39.4%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (98.0%) vs TD-CCEA (79.7%)
+   Difference: +18.3%
+   Result: Decomposition HELPS (18.3%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (74.3%) vs TD-CCEA (79.7%)
+   Difference: -5.4%
+   Result: SA Mutation HURTS (5.4%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (98.0%) vs SA-TDCCEA (74.3%)
+   Difference: +23.7%
+   Result: CCE-TDCCEA BETTER (23.7%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-5L-0D       5W-5L-0D       5W-5L-0D      15   50.0%
+TD-CCEA                 5W-5L-0D              —       5W-5L-0D       5W-5L-0D      15   50.0%
+SA-TDCCEA               5W-5L-0D       5W-5L-0D              —       5W-5L-0D      15   50.0%
+Std CCEA                5W-5L-0D       5W-5L-0D       5W-5L-0D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-06 12:41:18
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (54.3%) vs Std CCEA (68.6%)
+   Difference: -14.3%
+   Result: Trajectory HURTS (14.3%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (54.3%) vs TD-CCEA (22.9%)
+   Difference: +31.4%
+   Result: Decomposition HELPS (31.4%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (77.1%) vs TD-CCEA (22.9%)
+   Difference: +54.3%
+   Result: SA Mutation HELPS (54.3%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (54.3%) vs SA-TDCCEA (77.1%)
+   Difference: -22.9%
+   Result: SA-TDCCEA BETTER (22.9%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-1L-4D       5W-5L-0D       5W-5L-0D      15   50.0%
+TD-CCEA                 1W-5L-4D              —       0W-5L-5D       0W-5L-5D       1    3.3%
+SA-TDCCEA               5W-5L-0D       5W-0L-5D              —       5W-5L-0D      15   50.0%
+Std CCEA                5W-5L-0D       5W-0L-5D       5W-5L-0D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-06 13:06:49
+Map: 48×48 dynamic blockades
+Generations: 22, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (25.7%) vs Std CCEA (30.3%)
+   Difference: -4.6%
+   Result: Trajectory HURTS (4.6%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (25.7%) vs TD-CCEA (8.6%)
+   Difference: +17.1%
+   Result: Decomposition HELPS (17.1%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (8.6%) vs TD-CCEA (8.6%)
+   Difference: +0.0%
+   Result: SA Mutation HELPS (0.0%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (25.7%) vs SA-TDCCEA (8.6%)
+   Difference: +17.1%
+   Result: CCE-TDCCEA BETTER (17.1%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-0L-5D       5W-0L-5D       5W-5L-0D      15   50.0%
+TD-CCEA                 0W-5L-5D              —       0W-1L-9D       0W-5L-5D       0    0.0%
+SA-TDCCEA               0W-5L-5D       1W-0L-9D              —       0W-4L-6D       1    3.3%
+Std CCEA                5W-5L-0D       5W-0L-5D       4W-0L-6D              —      14   46.7%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-06 14:02:29
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (85.7%) vs Std CCEA (60.6%)
+   Difference: +25.1%
+   Result: Trajectory HELPS (25.1%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (85.7%) vs TD-CCEA (85.7%)
+   Difference: +0.0%
+   Result: Decomposition HELPS (0.0%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (91.4%) vs TD-CCEA (85.7%)
+   Difference: +5.7%
+   Result: SA Mutation HELPS (5.7%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (85.7%) vs SA-TDCCEA (91.4%)
+   Difference: -5.7%
+   Result: SA-TDCCEA BETTER (5.7%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-5L-0D       5W-5L-0D       5W-5L-0D      15   50.0%
+TD-CCEA                 5W-5L-0D              —       5W-5L-0D       5W-5L-0D      15   50.0%
+SA-TDCCEA               5W-5L-0D       5W-5L-0D              —       5W-5L-0D      15   50.0%
+Std CCEA                5W-5L-0D       5W-5L-0D       5W-5L-0D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-06 16:54:34
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (77.1%) vs Std CCEA (69.4%)
+   Difference: +7.7%
+   Result: Trajectory HELPS (7.7%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (77.1%) vs TD-CCEA (66.6%)
+   Difference: +10.6%
+   Result: Decomposition HELPS (10.6%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (35.7%) vs TD-CCEA (66.6%)
+   Difference: -30.9%
+   Result: SA Mutation HURTS (30.9%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (77.1%) vs SA-TDCCEA (35.7%)
+   Difference: +41.4%
+   Result: CCE-TDCCEA BETTER (41.4%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-5L-0D       5W-5L-0D       5W-5L-0D      15   50.0%
+TD-CCEA                 5W-5L-0D              —       5W-5L-0D       5W-5L-0D      15   50.0%
+SA-TDCCEA               5W-5L-0D       5W-5L-0D              —       5W-5L-0D      15   50.0%
+Std CCEA                5W-5L-0D       5W-5L-0D       5W-5L-0D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-06 17:14:34
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (51.1%) vs Std CCEA (82.9%)
+   Difference: -31.7%
+   Result: Trajectory HURTS (31.7%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (51.1%) vs TD-CCEA (27.1%)
+   Difference: +24.0%
+   Result: Decomposition HELPS (24.0%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (25.1%) vs TD-CCEA (27.1%)
+   Difference: -2.0%
+   Result: SA Mutation HURTS (2.0%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (51.1%) vs SA-TDCCEA (25.1%)
+   Difference: +26.0%
+   Result: CCE-TDCCEA BETTER (26.0%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-2L-3D       5W-5L-0D       5W-5L-0D      15   50.0%
+TD-CCEA                 2W-5L-3D              —       0W-4L-6D       1W-5L-4D       3   10.0%
+SA-TDCCEA               5W-5L-0D       4W-0L-6D              —       3W-5L-2D      12   40.0%
+Std CCEA                5W-5L-0D       5W-1L-4D       5W-3L-2D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-06 17:37:25
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (19.7%) vs Std CCEA (39.7%)
+   Difference: -20.0%
+   Result: Trajectory HURTS (20.0%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (19.7%) vs TD-CCEA (8.6%)
+   Difference: +11.1%
+   Result: Decomposition HELPS (11.1%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (74.9%) vs TD-CCEA (8.6%)
+   Difference: +66.3%
+   Result: SA Mutation HELPS (66.3%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (19.7%) vs SA-TDCCEA (74.9%)
+   Difference: -55.1%
+   Result: SA-TDCCEA BETTER (55.1%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-0L-5D       5W-5L-0D       5W-5L-0D      15   50.0%
+TD-CCEA                 0W-5L-5D              —       0W-5L-5D       0W-5L-5D       0    0.0%
+SA-TDCCEA               5W-5L-0D       5W-0L-5D              —       5W-5L-0D      15   50.0%
+Std CCEA                5W-5L-0D       5W-0L-5D       5W-5L-0D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-06 18:12:30
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (83.7%) vs Std CCEA (24.3%)
+   Difference: +59.4%
+   Result: Trajectory HELPS (59.4%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (83.7%) vs TD-CCEA (14.3%)
+   Difference: +69.4%
+   Result: Decomposition HELPS (69.4%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (12.9%) vs TD-CCEA (14.3%)
+   Difference: -1.4%
+   Result: SA Mutation HURTS (1.4%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (83.7%) vs SA-TDCCEA (12.9%)
+   Difference: +70.9%
+   Result: CCE-TDCCEA BETTER (70.9%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-5L-0D       5W-0L-5D       5W-5L-0D      15   50.0%
+TD-CCEA                 5W-5L-0D              —       5W-0L-5D       5W-5L-0D      15   50.0%
+SA-TDCCEA               0W-5L-5D       0W-5L-5D              —       0W-5L-5D       0    0.0%
+Std CCEA                5W-5L-0D       5W-5L-0D       5W-0L-5D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+
+======================================================================
+Ablation Analysis Results
+Generated: 2026-09-06 20:34:49
+Map: 48×48 dynamic blockades
+Generations: 30, Pop: 20, K_Games: 3
+
+1. Trajectory Memory Contribution
+   CCE-TDCCEA (72.3%) vs Std CCEA (38.9%)
+   Difference: +33.4%
+   Result: Trajectory HELPS (33.4%)
+
+2. Cooperative Decomposition Contribution
+   CCE-TDCCEA (72.3%) vs TD-CCEA (78.0%)
+   Difference: -5.7%
+   Result: Decomposition HURTS (5.7%)
+
+3. Sensitivity-Adaptive Mutation Contribution
+   SA-TDCCEA (46.9%) vs TD-CCEA (78.0%)
+   Difference: -31.1%
+   Result: SA Mutation HURTS (31.1%)
+
+4. Full Novel Contribution (CCE-TDCCEA vs SA-TDCCEA)
+   CCE-TDCCEA (72.3%) vs SA-TDCCEA (46.9%)
+   Difference: +25.4%
+   Result: CCE-TDCCEA BETTER (25.4%)
+
+============================================================
+Head-to-Head Tournament Results
+============================================================
+
+                      CCE-TDCCEA        TD-CCEA      SA-TDCCEA       Std CCEA    Wins     WR%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
+CCE-TDCCEA                     —       5W-5L-0D       5W-5L-0D       5W-5L-0D      15   50.0%
+TD-CCEA                 5W-5L-0D              —       5W-5L-0D       5W-5L-0D      15   50.0%
+SA-TDCCEA               5W-5L-0D       5W-5L-0D              —       5W-5L-0D      15   50.0%
+Std CCEA                5W-5L-0D       5W-5L-0D       5W-5L-0D              —      15   50.0%
+───────────────── ────────────── ────────────── ────────────── ──────────────  ──────  ──────
