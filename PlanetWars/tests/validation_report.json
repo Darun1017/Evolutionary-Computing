@@ -1,0 +1,425 @@
+{
+  "timestamp": "2026-11-11 18:48:50",
+  "num_maps": 20,
+  "max_turns": 60,
+  "matchups": [
+    [
+      "BullyBot",
+      "RageBot"
+    ],
+    [
+      "ProspectorBot",
+      "BullyBot"
+    ]
+  ],
+  "total_matches": 40,
+  "winner_matches": 40,
+  "total_turns_checked": 2362,
+  "turn_mismatches": 0,
+  "total_planet_checks": 54326,
+  "planet_mismatches": 0,
+  "match_details": [
+    {
+      "map": "map1",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map1",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map2",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map2",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map3",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map3",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map4",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map4",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map5",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map5",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map6",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map6",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map7",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map7",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map8",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map8",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map9",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map9",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map10",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 41,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map10",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 0,
+      "sim_winner": 0,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map11",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 41,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map11",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 0,
+      "sim_winner": 0,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map12",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map12",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map13",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map13",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map14",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map14",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map15",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map15",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map16",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map16",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map17",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map17",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map18",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map18",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map19",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map19",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 1,
+      "sim_winner": 1,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map20",
+      "p1": "BullyBot",
+      "p2": "RageBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    },
+    {
+      "map": "map20",
+      "p1": "ProspectorBot",
+      "p2": "BullyBot",
+      "turns": 60,
+      "off_winner": 2,
+      "sim_winner": 2,
+      "winner_match": true,
+      "planet_mismatches": 0
+    }
+  ],
+  "planet_mismatch_rate": 0.0,
+  "winner_accuracy": 100.0
+}

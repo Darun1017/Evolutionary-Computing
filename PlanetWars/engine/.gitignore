@@ -1,0 +1,10 @@
+\.idea/
+
+tools/__pycache__/
+starterbots/python_starterbot/__pycache__/
+
+visualizer/generated\.html
+
+generated.txt
+maps/generated\.txt
+maps/multiple*\.txt

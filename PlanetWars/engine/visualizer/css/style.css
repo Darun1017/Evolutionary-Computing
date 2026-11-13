@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html {
+    background: #000000 url("Hyades.jpg");
+}
+
+body {
+    color: #9b9b9b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: small;
+    text-rendering: optimizeLegibility;
+}
+
+#container {
+    margin: auto;
+    width: 640px;
+}
+
+#players {
+    font-size: 24px;
+    width: 100%;
+}
+
+#turnCounter {
+    margin: 0;
+}
+
+#controls {
+    text-align: center;
+    margin: 0;
+}
+
+#controls a {
+    text-decoration: none;
+    font-size: 32px;
+    padding: 0 12px;
+}
+
+a, a:active, a:visited {
+    color: #607890;
+}
+
+#chart {
+    background: #000000;
+    border-top: solid 1px #607890;
+    border-bottom: solid 1px #607890;
+}
