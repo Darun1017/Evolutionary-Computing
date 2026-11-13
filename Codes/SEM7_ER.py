@@ -101,9 +101,9 @@ WORKFLOW:
     - SEM7_ER_comparison.xlsx -> Formatted Excel workbook (if openpyxl installed)
 
 USAGE:
-  python SEM7_ER.py                                # Standard run: evolves against rival algorithms (default)
-  python SEM7_ER.py --eval bots                    # Evolve against rotating microRTS opponent bots (or --bots)
+  python SEM7_ER.py                                # Standard run: all 14 algorithms (30 gens)
   python SEM7_ER.py --mock                         # Fast dry-run without Java microRTS
+  python SEM7_ER.py --eval rivals                  # Evolve against rival champions (COMPARE_ALL / PR1 style)
   python SEM7_ER.py --suite baseline               # Run only the 4 classical baselines (Std CCEA, CMA-ES, PSO, Hill Climbing)
   python SEM7_ER.py --suite cce                    # Run only the 3 Cooperative Co-Evolution variants
   python SEM7_ER.py --suite td                     # Run only the 3 Pure TD-CCEA variants
@@ -641,7 +641,8 @@ def d_env_modes(FA, FB):
 #  DYNAMIC SENSITIVITY & COVARIANCE INTERACTION (EC-SA Parts)
 # ═══════════════════════════════════════════════════════════════
 
-def ablation_update(pool, memory, baseline, opp, E, is_modes=False):
+def ablation_update(pool, memory, baseline, opp, E, is_modes=False,
+                    eval_mode="bots", rivals=None, k_games=1):
     """Local ablation of each parameter j around baseline."""
     vecs = []
     for j in range(D):
@@ -649,7 +650,10 @@ def ablation_update(pool, memory, baseline, opp, E, is_modes=False):
             t = baseline[:]
             t[j] = v
             vecs.append(t)
-    fits = pool.eval_batch_vs_bot(vecs, opp, 1)
+    if eval_mode == "bots" or not rivals:
+        fits = pool.eval_batch_vs_bot(vecs, opp, 1)
+    else:
+        fits = pool.eval_batch_vs_agents(vecs, rivals, k_games=1)
 
     for j in range(D):
         S = abs(fits[2 * j + 1] - fits[2 * j])
@@ -1291,7 +1295,7 @@ class ParallelGamePool:
         with ThreadPoolExecutor(max_workers=self.n_workers) as ex:
             return list(ex.map(_eval_one, weight_list))
 
-    def eval_batch_vs_agents(self, weight_list, opponent_weights_list):
+    def eval_batch_vs_agents(self, weight_list, opponent_weights_list, k_games=1):
         def _eval_one(w):
             s = self.pool_queue.get()
             try:
@@ -1299,16 +1303,17 @@ class ParallelGamePool:
                 n = len(opponent_weights_list)
                 if n == 0:
                     return 0.0
-                for i, opp_w in enumerate(opponent_weights_list):
-                    if i % 2 == 0:
-                        winner, _ = s.run_game_evolved_vs_evolved(w, opp_w)
-                        if winner == 0: score += 1.0
-                        elif winner == -1: score += DRAW_SCORE
-                    else:
-                        winner, _ = s.run_game_evolved_vs_evolved(opp_w, w)
-                        if winner == 1: score += 1.0
-                        elif winner == -1: score += DRAW_SCORE
-                return score / n
+                for _ in range(k_games):
+                    for i, opp_w in enumerate(opponent_weights_list):
+                        if i % 2 == 0:
+                            winner, _ = s.run_game_evolved_vs_evolved(w, opp_w)
+                            if winner == 0: score += 1.0
+                            elif winner == -1: score += DRAW_SCORE
+                        else:
+                            winner, _ = s.run_game_evolved_vs_evolved(opp_w, w)
+                            if winner == 1: score += 1.0
+                            elif winner == -1: score += DRAW_SCORE
+                return score / (n * k_games)
             finally:
                 self.pool_queue.put(s)
 
@@ -1679,10 +1684,8 @@ def main():
     parser.add_argument("--h2h-games", type=int, default=H2H_GAMES, help="Games per H2H matchup pair")
     parser.add_argument("--val-games", type=int, default=VALIDATION_GAMES, help="Validation games per bot")
     parser.add_argument("--workers", type=int, default=None, help="Number of parallel game servers")
-    parser.add_argument("--eval", choices=["rivals", "algorithms", "bots"], default="rivals",
-                        help="Evaluation mode during evolution ('rivals'/'algorithms': rival algorithm champions [DEFAULT], 'bots': rotating opponent bots)")
-    parser.add_argument("--bots", action="store_true",
-                        help="Convenience flag to evolve against microRTS built-in opponent bots instead of rival algorithms")
+    parser.add_argument("--eval", choices=["bots", "rivals", "algorithms"], default="bots",
+                        help="Evaluation mode during evolution ('bots': rotating opponent bots [DEFAULT], 'rivals'/'algorithms': rival algorithm champions)")
     parser.add_argument("--dc-max", type=float, default=DC_MAX_SHARP, help="DC_MAX threshold for sharpened kernel controls")
     parser.add_argument("--d-max", type=float, default=D_MAX, help="D_MAX threshold for upgraded modal OT variants")
     parser.add_argument("--tau0", type=float, default=TAU0, help="Base clustering threshold tau_0")
@@ -1691,9 +1694,7 @@ def main():
 
     args = parser.parse_args()
 
-    if args.bots:
-        args.eval = "bots"
-    elif args.eval == "algorithms":
+    if args.eval == "algorithms":
         args.eval = "rivals"
 
     random.seed(args.seed)
@@ -1911,7 +1912,7 @@ def main():
                     scores_a = pool.eval_batch_vs_bot(combos_a, opp, args.k_games)
                 else:
                     rivals = [current_best_weights[o] for o in active_keys if o != k]
-                    scores_a = pool.eval_batch_vs_agents(combos_a, rivals)
+                    scores_a = pool.eval_batch_vs_agents(combos_a, rivals, k_games=args.k_games)
                 k_b = len(top_b)
                 fits_a = [sum(scores_a[i * k_b : (i + 1) * k_b]) / k_b for i in range(len(pop_a))]
 
@@ -1920,7 +1921,7 @@ def main():
                     scores_b = pool.eval_batch_vs_bot(combos_b, opp, args.k_games)
                 else:
                     rivals = [current_best_weights[o] for o in active_keys if o != k]
-                    scores_b = pool.eval_batch_vs_agents(combos_b, rivals)
+                    scores_b = pool.eval_batch_vs_agents(combos_b, rivals, k_games=args.k_games)
                 k_a = len(top_a)
                 fits_b = [sum(scores_b[j * k_a : (j + 1) * k_a]) / k_a for j in range(len(pop_b))]
 
@@ -1976,7 +1977,7 @@ def main():
                         scores_m = pool.eval_batch_vs_bot(combos_m, opp, args.k_games)
                     else:
                         rivals = [current_best_weights[o] for o in active_keys if o != k]
-                        scores_m = pool.eval_batch_vs_agents(combos_m, rivals)
+                        scores_m = pool.eval_batch_vs_agents(combos_m, rivals, k_games=args.k_games)
                     k_mi = len(tmi)
                     for i in range(len(pm)):
                         bst["fm"][i] = sum(scores_m[i * k_mi : (i + 1) * k_mi]) / k_mi
@@ -1986,7 +1987,7 @@ def main():
                         scores_i = pool.eval_batch_vs_bot(combos_i, opp, args.k_games)
                     else:
                         rivals = [current_best_weights[o] for o in active_keys if o != k]
-                        scores_i = pool.eval_batch_vs_agents(combos_i, rivals)
+                        scores_i = pool.eval_batch_vs_agents(combos_i, rivals, k_games=args.k_games)
                     k_ma = len(tma)
                     for i in range(len(pi)):
                         bst["fi"][i] = sum(scores_i[i * k_ma : (i + 1) * k_ma]) / k_ma
@@ -2017,7 +2018,7 @@ def main():
                             fits = pool.eval_batch_vs_bot(cands, opp, args.k_games)
                         else:
                             rivals = [current_best_weights[o] for o in active_keys if o != k]
-                            fits = pool.eval_batch_vs_agents(cands, rivals)
+                            fits = pool.eval_batch_vs_agents(cands, rivals, k_games=args.k_games)
                         for c, f in zip(cands, fits):
                             if f > bst["best_f"]:
                                 bst["best_f"] = f
@@ -2033,7 +2034,7 @@ def main():
                             fits = pool.eval_batch_vs_bot(cands, opp, args.k_games)
                         else:
                             rivals = [current_best_weights[o] for o in active_keys if o != k]
-                            fits = pool.eval_batch_vs_agents(cands, rivals)
+                            fits = pool.eval_batch_vs_agents(cands, rivals, k_games=args.k_games)
                         for c, f in zip(cands, fits):
                             if f > bst["best_f"]:
                                 bst["best_f"] = f
@@ -2057,7 +2058,7 @@ def main():
                         fits = pool.eval_batch_vs_bot(cands, opp, args.k_games)
                     else:
                         rivals = [current_best_weights[o] for o in active_keys if o != k]
-                        fits = pool.eval_batch_vs_agents(cands, rivals)
+                        fits = pool.eval_batch_vs_agents(cands, rivals, k_games=args.k_games)
                     for i in range(len(cands)):
                         if fits[i] > bst["pf"][i]:
                             bst["pf"][i] = fits[i]
@@ -2085,7 +2086,7 @@ def main():
                         fits = pool.eval_batch_vs_bot(cands, opp, args.k_games)
                     else:
                         rivals = [current_best_weights[o] for o in active_keys if o != k]
-                        fits = pool.eval_batch_vs_agents(cands, rivals)
+                        fits = pool.eval_batch_vs_agents(cands, rivals, k_games=args.k_games)
                     best_idx = max(range(len(cands)), key=lambda i: fits[i])
                     if fits[best_idx] >= bst["cfit"]:
                         bst["current"] = cands[best_idx][:]
@@ -2105,7 +2106,7 @@ def main():
                     fits = pool.eval_batch_vs_bot(params, opp, args.k_games)
                 else:
                     rivals = [current_best_weights[o] for o in active_keys if o != k]
-                    fits = pool.eval_batch_vs_agents(params, rivals)
+                    fits = pool.eval_batch_vs_agents(params, rivals, k_games=args.k_games)
 
                 # Build environment representation
                 env_type = cfg["env_type"]
@@ -2151,7 +2152,10 @@ def main():
 
                     if ablate:
                         ablate_flag = "A"
-                        ablation_update(pool, st["memory"], best_agent.params, opp, E, is_modes=is_modes)
+                        ablation_update(pool, st["memory"], best_agent.params, opp, E, is_modes=is_modes,
+                                        eval_mode=args.eval,
+                                        rivals=[current_best_weights[o] for o in active_keys if o != k],
+                                        k_games=1)
                         st["E_last"] = E
                         st["t_last"] = gen
                         st["R"] = 0.0
