@@ -159,13 +159,16 @@ def find_microrts_dir():
     if os.environ.get("MICRORTS_DIR"):
         candidates.append(os.environ["MICRORTS_DIR"])
     candidates.extend([
-        os.path.join(os.path.dirname(os.path.dirname(SCRIPT_DIR)), "Simulation", "microrts"),
-        os.path.join(os.path.dirname(SCRIPT_DIR), "Simulation", "microrts"),
         os.path.join(SCRIPT_DIR, "Simulation", "microrts"),
+        os.path.join(os.path.dirname(SCRIPT_DIR), "Simulation", "microrts"),
+        os.path.join(os.path.dirname(os.path.dirname(SCRIPT_DIR)), "Simulation", "microrts"),
         os.path.abspath("Simulation/microrts"),
     ])
     for c in candidates:
         if os.path.isfile(os.path.join(c, "bin", "tests", "EvolvedBatchGameRunner.class")):
+            return c
+    for c in candidates:
+        if os.path.isdir(os.path.join(c, "src")):
             return c
     return candidates[0]
 
@@ -1138,12 +1141,17 @@ class GameServer:
         self.process = subprocess.Popen(
             [JAVA_CMD, "-cp", "lib/*;bin", "tests.EvolvedBatchGameRunner"],
             stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL, text=True, cwd=MICRORTS_DIR,
+            stderr=subprocess.PIPE, text=True, cwd=MICRORTS_DIR,
             encoding="utf-8", errors="replace", bufsize=1
         )
         line = self.process.stdout.readline().strip()
         if line != "READY":
-            raise RuntimeError(f"Server failed to start, received: '{line}'")
+            err = ""
+            try:
+                err = self.process.stderr.read()
+            except Exception:
+                pass
+            raise RuntimeError(f"Server failed to start, received: '{line}'. Java Stderr: {err}")
 
     def _check_alive(self):
         return self.process is not None and self.process.poll() is None
