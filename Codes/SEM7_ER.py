@@ -94,6 +94,7 @@ WORKFLOW:
     - Timeout protection: Undecided games hitting MAX_CYCLES (12000) are scored as draws.
 
   Phase 4 — STATISTICAL ARTIFACTS (Prefix: 'SEM7_ER_'):
+    - SEM7_ER_convergence.png -> Publication-quality 300 DPI convergence curve graph
     - SEM7_ER_wilcoxon.txt    -> Wilcoxon signed-rank tests vs top reference algorithm
     - SEM7_ER_ablation.txt    -> Multi-tier ablation breakdown + text H2H matrix
     - SEM7_ER_results.json    -> Structured JSON metadata, validation, and H2H tournament data
@@ -146,6 +147,14 @@ try:
     _OPENPYXL_AVAILABLE = True
 except ImportError:
     _OPENPYXL_AVAILABLE = False
+
+try:
+    import matplotlib
+    matplotlib.use("Agg")  # Headless-safe rendering
+    import matplotlib.pyplot as plt
+    _MATPLOTLIB_AVAILABLE = True
+except ImportError:
+    _MATPLOTLIB_AVAILABLE = False
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -1521,7 +1530,33 @@ def export_excel(results, matrix, algo_names, total_wins, h2h_win_rates, out_pat
             for c in range(1, len(row) + 1):
                 ws_h2h.cell(row=i + 2, column=c).fill = fill_alt
 
-    for sheet in [ws_bots, ws_h2h]:
+    # 3. Convergence History Sheet
+    has_conv = any(r.get("convergence") for r in results)
+    if has_conv:
+        ws_conv = wb.create_sheet(title="Convergence History")
+        conv_headers = ["Generation"] + [r["name"] for r in results]
+        ws_conv.append(conv_headers)
+        for col in range(1, len(conv_headers) + 1):
+            cell = ws_conv.cell(row=1, column=col)
+            cell.font = f_header
+            cell.fill = fill_header
+            cell.alignment = center
+
+        max_g = max(len(r.get("convergence", [])) for r in results)
+        for g in range(max_g):
+            row = [g + 1]
+            for r in results:
+                cv = r.get("convergence", [])
+                if g < len(cv):
+                    row.append(f"{cv[g] * 100.0:.2f}%")
+                else:
+                    row.append("—")
+            ws_conv.append(row)
+            if g % 2 == 1:
+                for c in range(1, len(row) + 1):
+                    ws_conv.cell(row=g + 2, column=c).fill = fill_alt
+
+    for sheet in wb.worksheets:
         for col in sheet.columns:
             max_len = max(len(str(cell.value or '')) for cell in col)
             col_letter = openpyxl.utils.get_column_letter(col[0].column)
@@ -1529,6 +1564,105 @@ def export_excel(results, matrix, algo_names, total_wins, h2h_win_rates, out_pat
 
     wb.save(out_path)
     print(f"  Saved Excel Report -> {out_path}")
+
+
+def plot_convergence(results, total_gens, eval_mode, out_path):
+    """Generate high-resolution (300 DPI) publication-quality convergence plot."""
+    if not _MATPLOTLIB_AVAILABLE:
+        print("  [WARN] matplotlib not available; skipping convergence graph generation.")
+        return
+
+    # Visual design: distinct colors, line styles, and markers per algorithm
+    algo_styles = {
+        # Pure TD-CCEA (Blues)
+        "td":          {"color": "#1976D2", "ls": ":",  "marker": "^", "lw": 2.0},
+        "td_sharp":    {"color": "#0288D1", "ls": "--", "marker": "v", "lw": 2.0},
+        "td_up":       {"color": "#0097A7", "ls": "-",  "marker": "o", "lw": 2.2},
+
+        # Sensitivity-Adaptive SA-TDCCEA (Greens / Teals / Crimson for proposed)
+        "sa":          {"color": "#388E3C", "ls": ":",  "marker": "^", "lw": 2.0},
+        "sa_sharp":    {"color": "#689F38", "ls": "--", "marker": "v", "lw": 2.0},
+        "ec_sa":       {"color": "#00796B", "ls": "-.", "marker": "d", "lw": 2.2},
+        "ec_sa_up":    {"color": "#D32F2F", "ls": "-",  "marker": "*", "lw": 3.0}, # Proposed Champion
+
+        # Cooperative Co-Evolution CCE-TDCCEA (Oranges / Purple)
+        "cce":         {"color": "#F57C00", "ls": ":",  "marker": "^", "lw": 2.0},
+        "cce_sharp":   {"color": "#E64A19", "ls": "--", "marker": "v", "lw": 2.0},
+        "cce_up":      {"color": "#7B1FA2", "ls": "-",  "marker": "s", "lw": 2.4},
+
+        # Classical Baselines (Greys / Browns / Muted)
+        "std_ccea":    {"color": "#5D4037", "ls": "--", "marker": "x", "lw": 1.8},
+        "cmaes":       {"color": "#455A64", "ls": "-.", "marker": "p", "lw": 1.8},
+        "pso":         {"color": "#78909C", "ls": ":",  "marker": "+", "lw": 1.8},
+        "hill":        {"color": "#9E9E9E", "ls": "--", "marker": "1", "lw": 1.6},
+    }
+
+    try:
+        fig, ax = plt.subplots(figsize=(13, 7))
+
+        max_len = 0
+        for r in results:
+            key = r.get("key", "")
+            name = r.get("name", key)
+            conv = r.get("convergence", [])
+            if not conv:
+                continue
+            max_len = max(max_len, len(conv))
+            gens = list(range(1, len(conv) + 1))
+            pct = [float(v) * 100.0 for v in conv]
+
+            style = algo_styles.get(key, {"color": None, "ls": "-", "marker": "o", "lw": 2.0})
+            markevery = max(1, len(gens) // 6) if len(gens) > 6 else 1
+
+            ax.plot(
+                gens, pct,
+                label=name,
+                color=style.get("color"),
+                linestyle=style.get("ls", "-"),
+                linewidth=style.get("lw", 2.0),
+                marker=style.get("marker", "o"),
+                markersize=8 if style.get("marker") == "*" else 5.5,
+                markevery=markevery,
+                alpha=0.92
+            )
+
+        ax.set_xlabel("Generation", fontsize=12, fontweight="bold")
+        ax.set_ylabel("Best Fitness / Win Rate (%)", fontsize=12, fontweight="bold")
+        eval_str = "Rival Algorithms" if eval_mode in ["rivals", "algorithms"] else "microRTS Bots"
+        ax.set_title(
+            f"Fitness Convergence Across {max_len} Generations on 48×48 Dynamic Map\n(Evolution Evaluated Against: {eval_str})",
+            fontsize=13, fontweight="bold", pad=12
+        )
+
+        ax.set_xlim(1, max(max_len, 2))
+        ax.set_ylim(-2, 105)
+        if max_len <= 15:
+            ax.set_xticks(range(1, max_len + 1))
+        else:
+            step = max(1, max_len // 10)
+            ax.set_xticks(range(0, max_len + 1, step))
+        ax.set_yticks(range(0, 101, 10))
+
+        ax.grid(True, linestyle="--", alpha=0.35, linewidth=0.8)
+
+        # Place legend neatly outside to the right so it never overlaps curves
+        ax.legend(
+            loc="upper left",
+            bbox_to_anchor=(1.02, 1.0),
+            fontsize=9.5,
+            frameon=True,
+            framealpha=0.95,
+            edgecolor="#CCCCCC",
+            title="Algorithms",
+            title_fontsize=10.5
+        )
+
+        fig.tight_layout()
+        fig.savefig(out_path, dpi=300, bbox_inches="tight")
+        plt.close(fig)
+        print(f"  Saved Convergence Graph -> {out_path}")
+    except Exception as e:
+        print(f"  [WARN] Failed to render convergence plot: {e}")
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -2287,6 +2421,7 @@ def main():
                 "per_opponent": r["per_opp"],
                 "time": r["time"],
                 "weights": r["weights"],
+                "convergence": [round(float(v), 4) for v in r.get("convergence", [])],
             }
             for r in results
         ],
@@ -2313,6 +2448,10 @@ def main():
     # 4. Excel Summary Artifact: SEM7_ER_comparison.xlsx
     excel_path = os.path.join(SCRIPT_DIR, "SEM7_ER_comparison.xlsx")
     export_excel(results, matrix, algo_names, total_wins, h2h_win_rates, excel_path)
+
+    # 5. Convergence Graph Artifact: SEM7_ER_convergence.png
+    plot_path = os.path.join(SCRIPT_DIR, "SEM7_ER_convergence.png")
+    plot_convergence(results, args.generations, args.eval, plot_path)
 
     pool.stop()
     print("\n" + "═" * 80)
