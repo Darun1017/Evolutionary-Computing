@@ -100,9 +100,9 @@ WORKFLOW:
     - SEM7_ER_comparison.xlsx -> Formatted Excel workbook (if openpyxl installed)
 
 USAGE:
-  python SEM7_ER.py                                # Standard run: all 14 algorithms (30 gens)
+  python SEM7_ER.py                                # Standard run: evolves against rival algorithms (default)
+  python SEM7_ER.py --eval bots                    # Evolve against rotating microRTS opponent bots (or --bots)
   python SEM7_ER.py --mock                         # Fast dry-run without Java microRTS
-  python SEM7_ER.py --eval rivals                  # Evolve against rival champions (COMPARE_ALL / PR1 style)
   python SEM7_ER.py --suite baseline               # Run only the 4 classical baselines (Std CCEA, CMA-ES, PSO, Hill Climbing)
   python SEM7_ER.py --suite cce                    # Run only the 3 Cooperative Co-Evolution variants
   python SEM7_ER.py --suite td                     # Run only the 3 Pure TD-CCEA variants
@@ -1545,8 +1545,10 @@ def main():
     parser.add_argument("--h2h-games", type=int, default=H2H_GAMES, help="Games per H2H matchup pair")
     parser.add_argument("--val-games", type=int, default=VALIDATION_GAMES, help="Validation games per bot")
     parser.add_argument("--workers", type=int, default=None, help="Number of parallel game servers")
-    parser.add_argument("--eval", choices=["bots", "rivals"], default="bots",
-                        help="Evaluation mode during evolution ('bots': rotating opponent bots, 'rivals': rival algorithm champions)")
+    parser.add_argument("--eval", choices=["rivals", "algorithms", "bots"], default="rivals",
+                        help="Evaluation mode during evolution ('rivals'/'algorithms': rival algorithm champions [DEFAULT], 'bots': rotating opponent bots)")
+    parser.add_argument("--bots", action="store_true",
+                        help="Convenience flag to evolve against microRTS built-in opponent bots instead of rival algorithms")
     parser.add_argument("--dc-max", type=float, default=DC_MAX_SHARP, help="DC_MAX threshold for sharpened kernel controls")
     parser.add_argument("--d-max", type=float, default=D_MAX, help="D_MAX threshold for upgraded modal OT variants")
     parser.add_argument("--tau0", type=float, default=TAU0, help="Base clustering threshold tau_0")
@@ -1555,12 +1557,21 @@ def main():
 
     args = parser.parse_args()
 
+    if args.bots:
+        args.eval = "bots"
+    elif args.eval == "algorithms":
+        args.eval = "rivals"
+
     random.seed(args.seed)
     np.random.seed(args.seed)
     rng = np.random.default_rng(args.seed)
 
     active_keys = SUITE_CHOICES[args.suite]
     n_algos = len(active_keys)
+
+    if args.eval == "rivals" and n_algos < 2:
+        print("  [INFO] Suite contains only 1 algorithm; switching evaluation mode to 'bots'.")
+        args.eval = "bots"
 
     n_workers = args.workers or max(1, min(10, (os.cpu_count() or 4) - 1))
 
@@ -1742,7 +1753,8 @@ def main():
         write_map_xml(terrain_walls, breakable_positions, TEMP_MAP_PATH)
 
         opp = OPPONENT_ROTATION[(gen - 1) % N_OPP]
-        gen_log = [f"Gen {gen:2d}/{args.generations:2d} | W:{total_walls:3d} [{bfs_status}] | {opp[:12]:12s}"]
+        eval_label = opp[:12] if args.eval == "bots" else "Rivals(Algos)"
+        gen_log = [f"Gen {gen:2d}/{args.generations:2d} | W:{total_walls:3d} [{bfs_status}] | {eval_label:12s}"]
 
         new_best_weights = {}
 
