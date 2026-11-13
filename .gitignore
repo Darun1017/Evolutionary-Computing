@@ -1,13 +1,27 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
+# ==============================================================================
+#  EVOLUTIONARY COMPUTING — MASTER .GITIGNORE
+# ==============================================================================
+
+# ── Python Virtual Environments ──────────────────────────────────────────────
+.venv/
+env/
+venv/
+ENV/
 *.egg-info/
 dist/
 build/
 *.egg
 
-# C/C++ compiled files
+# ── Python Cache & Bytecode ──────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ── Java & C/C++ Compiled Binaries ───────────────────────────────────────────
+*.class
+bin/
+sources_compile.txt
 *.exe
 *.obj
 *.ilk
@@ -15,20 +29,45 @@ build/
 *.o
 *.out
 
-# Java compiled files
-*.class
-# Compiled microRTS output directory and the generated source list
-bin/
-sources_compile.txt
+# ── Testing & Code Coverage ──────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
 
-# Generated temporary maps written at runtime by the evolution scripts
-# (e.g. temp_dynenv.xml, temp_pr1_64x64.xml, temp_match_48x48.xml)
+# ── Experiment Results, Benchmarks & Artifacts ───────────────────────────────
+SEM7_ER_*
+*_results.json
+*_results.txt
+*_ablation.txt
+*_wilcoxon.txt
+*_comparison.xlsx
+*_winrates.xlsx
+benchmark_*results*.json
+benchmark_*winrates*.xlsx
+ablation_results*.txt
+wilcoxon_results*.txt
+pr1_results*.txt
+pr1_results*.json
+match_results*.json
+sensitivity_scores*.json
+td_report*.txt
+td_trials*.json
+td_winrates*.csv
+results/
+output/
+logs/
+*.log
+*.csv
+*.xlsx
+*.png
+*.jpg
+
+# ── Runtime Temporary Generated Maps ─────────────────────────────────────────
 **/maps/**/temp_*.xml
+temp_*.xml
 
-# Editor / IDE
+# ── IDE & Operating System Files ─────────────────────────────────────────────
 .vscode/
-
-# OS files
 Thumbs.db
 desktop.ini
 .DS_Store
