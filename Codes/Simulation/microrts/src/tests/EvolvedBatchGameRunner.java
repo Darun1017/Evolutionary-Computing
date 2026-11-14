@@ -98,8 +98,10 @@ public class EvolvedBatchGameRunner {
         String line;
         while ((line = reader.readLine()) != null) {
             line = line.trim();
-            if (line.equals("EXIT")) break;
-            if (line.isEmpty()) continue;
+            if (line.equals("EXIT"))
+                break;
+            if (line.isEmpty())
+                continue;
 
             try {
                 AI ai1;
@@ -153,7 +155,6 @@ public class EvolvedBatchGameRunner {
 
                 System.out.println("RESULT:" + gs.winner() + "," + gs.getTime());
                 System.out.flush();
-
             } catch (Exception e) {
                 System.out.println("ERROR:" + e.getMessage());
                 System.out.flush();
