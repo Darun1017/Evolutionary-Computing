@@ -152,3 +152,58 @@ If you want to test these, the highest-leverage quick wins are:
 Fix min_keep to max(1, int(0.2 * target_size)) so new offspring are actively created when --pop-size 10.
 Add 1 unmutated elite champion in select_and_reproduce.
 Set TRAJ_WINDOW = 3.
+
+
+
+
+------------------------------------
+
+
+
+
+
+
+Key Improvements Implemented in SEM7_ERv2.py
+
+Dynamic Elite Retention (min_keep):
+
+Problem in v1: Hardcoded MIN_KEEP = 10 kept all 10 individuals when running --pop-size 10, resulting in 0 new mutated offspring per generation.
+Fix in v2: Replaced with min_keep = max(1, min(int(ELITE_RATIO * target_size), target_size // 2)) (ELITE_RATIO = 0.20). At --pop-size 10, it preserves the top 2 individuals and generates 8 fresh mutated exploratory offspring (80%) every generation.
+
+Strict Champion Elitism:
+
+Guaranteed preservation of the #1 champion completely unmutated into the next generation (nxt = [champ.snapshot()]), preventing regression across generations.
+
+Agile Trajectory Window (TRAJ_WINDOW = 3):
+
+Reduced from 7 to 3 generations so trajectory calculations adapt quickly to adversarial rush shifts rather than being held back by stale historical evaluations.
+
+Hybrid Selection Score (select_score):
+
+Formulated 
+select_score
+=
+0.65
+⋅
+𝑓
+immediate
++
+0.35
+⋅
+𝑒
+trajectory
+select_score=0.65⋅f
+immediate
+	​
+
++0.35⋅e
+trajectory
+	​
+
+.
+Balances immediate situational dominance with multi-generation robustness across partner pairing, tournament selection, and champion extraction.
+
+No Hill Climbing & Clean Artifact Separation:
+
+Hill Climbing remains disabled (10 active algorithms).
+Artifact prefix updated to SEM7_ERv2_ (SEM7_ERv2_results.json, SEM7_ERv2_comparison.xlsx, SEM7_ERv2_ablation.txt, SEM7_ERv2_wilcoxon.txt, SEM7_ERv2_convergence.png) so existing v1 benchmark results remain untouched.
