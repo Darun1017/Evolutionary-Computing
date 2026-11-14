@@ -44,6 +44,9 @@ public class EvolvedBatchGameRunner {
     static UnitTypeTable utt = new UnitTypeTable();
 
     public static AI createAI(String type) {
+        if (type.startsWith("EVOLVED:")) {
+            return createEvolvedAI(type.substring("EVOLVED:".length()));
+        }
         switch (type) {
             case "WorkerRush":
                 return new WorkerRush(utt, new BFSPathFinding());
@@ -117,7 +120,11 @@ public class EvolvedBatchGameRunner {
                     maxCycles = Integer.parseInt(rest[2]);
 
                     ai1 = createEvolvedAI(weightsStr);
-                    ai2 = createAI(opponentType);
+                    if (opponentType.startsWith("EVOLVED:")) {
+                        ai2 = createEvolvedAI(opponentType.substring("EVOLVED:".length()));
+                    } else {
+                        ai2 = createAI(opponentType);
+                    }
                 } else {
                     // Format: ai1_type,ai2_type,map,max_cycles
                     String[] parts = line.split(",");
