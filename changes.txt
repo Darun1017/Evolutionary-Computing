@@ -1,0 +1,154 @@
+1. Fix the MIN_KEEP Population Freezing (Immediate Impact)
+
+In select_and_reproduce (lines 221 & 822):
+
+python
+MIN_KEEP = 10
+min_keep = min(MIN_KEEP, target_size)
+The Problem: When you ran with --pop-size 10, min_keep was min(10, 10) = 10. Because min_keep = 10, the survivor list final held all 10 old individuals, leaving 0 slots for mutate_fn() to generate new offspring. The population was essentially frozen and barely produced new mutations. (Standard CCEA, by contrast, kept only 1 elite and generated 9 new mutated children every single generation).
+The Fix: Make min_keep proportional to population size (e.g., keeping only the top 15%–20% as elites/survivors, and generating 80%–85% new offspring):
+python
+min_keep = max(1, int(0.20 * target_size))  # Keep top 2 when pop=10
+2. Implement Strict Champion Elitism
+The Problem: In select_and_reproduce, when candidate offspring are created, every single child is mutated via mutate_fn(). Even if an agent discovers a lethal combination, TD-CCEA always mutates it in the next generation, risking losing the exact winning timing.
+The Fix: Inject a strict unmutated copy of the generation champion into the next population (identical to what Standard CCEA does):
+python
+# Ensure the #1 absolute champion survives unmutated
+champ = max(pop, key=lambda a: a.e_i)
+nxt = [champ.snapshot()]  # 1 strict elite
+3. Hybrid Fitness: Combine Current Fitness (
+𝑓
+𝑡
+f
+t
+	​
+
+) with Trajectory (
+𝑒
+𝑖
+e
+i
+	​
+
+)
+The Problem: In TD-CCEA, parent selection is guided purely by 
+𝑒
+𝑖
+e
+i
+	​
+
+ (the historical trajectory score across the past 7 generations). In co-evolution against shifting rival algorithms, a 7-generation history creates a heavy time-lag. If an agent discovers a counter-strategy against a rival this generation, its trajectory score 
+𝑒
+𝑖
+e
+i
+	​
+
+ is weighed down by its past evaluations on older opponents.
+The Fix: Use a hybrid selection score blending current generation fitness 
+𝑓
+curr
+f
+curr
+	​
+
+ with historical trajectory robustness 
+𝑒
+𝑖
+e
+i
+	​
+
+:
+Score
+𝑖
+=
+𝛽
+⋅
+𝑓
+curr
++
+(
+1
+−
+𝛽
+)
+⋅
+𝑒
+𝑖
+(
+with 
+𝛽
+≈
+0.65
+)
+Score
+i
+	​
+
+=β⋅f
+curr
+	​
+
++(1−β)⋅e
+i
+	​
+
+(with β≈0.65)
+𝑓
+curr
+f
+curr
+	​
+
+ provides immediate exploitation of current rival weaknesses.
+𝑒
+𝑖
+e
+i
+	​
+
+ prevents catastrophic forgetting across environmental shifts.
+4. Adaptive Trajectory Window (
+TRAJ_WINDOW
+TRAJ_WINDOW)
+The Problem: TRAJ_WINDOW = 7 is too large for a 10- or 20-generation run (7 generations is 35%–70% of the entire run). The trajectory becomes sluggish to react to sudden adversarial meta-shifts.
+The Fix:
+Reduce TRAJ_WINDOW to 3 or 4 generations, or
+Apply an exponential discount factor 
+𝛾
+𝑡
+−
+𝜏
+γ
+t−τ
+ (e.g., 
+𝛾
+=
+0.7
+γ=0.7) so recent games against current rivals carry more weight than games from 6 generations ago.
+5. Counter-Rush Defensive Guard in Dynamic Sensitivity (EC-SA)
+
+Notice something remarkable in your bot validation results:
+
+TD-CCEA-Upgraded scored 95.7% vs Bots (higher than almost every other algorithm).
+EC-SA-TDCCEA scored 91.4% vs Bots.
+But in H2H, Standard CCEA's hyper-aggressive Light Rush caught them off guard.
+
+TD-CCEA variants developed superior broad-spectrum generalization across the 7 bots, but were vulnerable to sudden high-tempo early rushes in 1v1 play.
+
+The Fix: Add a lower bound on defensive response in Agent.params: Clamp worker_fight_ratio (
+≥
+0.30
+≥0.30) and barracks_timing (
+≤
+0.40
+≤0.40) during dynamic sensitivity updates if the opponent's strategy profile indicates early aggression. This creates an "immune response" against rushers without sacrificing economic generalization.
+Suggested Priority
+
+If you want to test these, the highest-leverage quick wins are:
+
+Fix min_keep to max(1, int(0.2 * target_size)) so new offspring are actively created when --pop-size 10.
+Add 1 unmutated elite champion in select_and_reproduce.
+Set TRAJ_WINDOW = 3.
