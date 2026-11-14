@@ -5,7 +5,7 @@ SEM7_ER.py
 ==========
 Dynamic Environment Benchmark of 10 Evolutionary Algorithm Variants across 4 Families
 (Pure TD-CCEA, Sensitivity-Adaptive SA-TDCCEA, and Cooperative Co-Evolution CCE-TDCCEA)
-on a 40×40 Map with Progressive Blockades.
+on a 32×32 Map with Progressive Blockades.
 
 THE 10 ALGORITHMS (2 Pure TD-CCEA + 3 SA-TDCCEA + 2 CCE-TDCCEA + 3 classical baselines):
 
@@ -63,13 +63,13 @@ THE 10 ALGORITHMS (2 Pure TD-CCEA + 3 SA-TDCCEA + 2 CCE-TDCCEA + 3 classical bas
 
 WORKFLOW:
   Phase 1 — DYNAMIC ENVIRONMENT EVOLUTION:
-    - 40×40 map with progressive blockades added generation-by-generation.
+    - 32×32 map with progressive blockades added generation-by-generation.
     - Blockade addition schedule:
-        Gens 1-7:   +6 walls/gen
-        Gens 8-14:  +10 walls/gen
-        Gens 15-30: +14 walls/gen
+        Gens 1-7:   +4 walls/gen
+        Gens 8-14:  +7 walls/gen
+        Gens 15-30: +9 walls/gen
         40% breakable barriers, 60% stone terrain.
-    - BFS reachability validation ensures Base 0 (2,2) and Base 1 (45,45) remain connected.
+    - BFS reachability validation ensures Base 0 (2,2) and Base 1 (29,29) remain connected.
     - All algorithms evolve synchronously generation-by-generation on the dynamic map.
 
   Phase 2 — BOT VALIDATION & RANKING:
@@ -77,7 +77,7 @@ WORKFLOW:
     - Overall ranking table and per-bot win rate matrix with asterisk (*) for best.
 
   Phase 3 — HEAD-TO-HEAD TOURNAMENT MATRIX:
-    - Pairwise matches on the final blockaded 40×40 map (10 games per pair, alternating P0/P1).
+    - Pairwise matches on the final blockaded 32×32 map (10 games per pair, alternating P0/P1).
     - Timeout protection: Undecided games hitting MAX_CYCLES (12000) are scored as draws.
 
   Phase 4 — STATISTICAL ARTIFACTS (Prefix: 'SEM7_ERv2_'):
@@ -169,11 +169,11 @@ def find_microrts_dir():
 
 MICRORTS_DIR = find_microrts_dir()
 
-# 40×40 Map Configuration
-MAP_W, MAP_H   = 40, 40
-BASE_MAP_PATH  = os.path.join(MICRORTS_DIR, "maps", "open40x40.xml")
-TEMP_MAP_PATH  = os.path.join(MICRORTS_DIR, "maps", "temp_pr1_40x40.xml")
-TEMP_MAP_REL   = "maps/temp_pr1_40x40.xml"
+# 32×32 Map Configuration
+MAP_W, MAP_H   = 32, 32
+BASE_MAP_PATH  = os.path.join(MICRORTS_DIR, "maps", "open32x32.xml")
+TEMP_MAP_PATH  = os.path.join(MICRORTS_DIR, "maps", "temp_pr1_32x32.xml")
+TEMP_MAP_REL   = "maps/temp_pr1_32x32.xml"
 MAX_CYCLES     = 12000
 START_TIMEOUT  = 180.0      # seconds for a JVM to print READY
 GAME_TIMEOUT   = 300.0      # seconds for one game before the server is restarted
@@ -242,10 +242,10 @@ I_COUPLING        = 0.60     # Off-diagonal covariance coupling
 RATE_LO           = 0.08     # Normalized mutation rate minimum
 RATE_HI           = 0.20     # Normalized mutation rate maximum
 
-# Wall scheduling parameters
-WALLS_PER_GEN_EARLY = 6
-WALLS_PER_GEN_MID   = 10
-WALLS_PER_GEN_LATE  = 14
+# Wall scheduling parameters (scaled proportionally for 32×32 area: 1024 vs 1600 tiles)
+WALLS_PER_GEN_EARLY = 4
+WALLS_PER_GEN_MID   = 7
+WALLS_PER_GEN_LATE  = 9
 BREAKABLE_RATIO     = 0.4
 
 # Reserved tiles around player bases
@@ -326,7 +326,7 @@ def pick_wall_position(terrain_walls, breakable_positions, gen):
     no_place = all_walls | RESERVED
     for _ in range(300):
         cx, cy = MAP_W // 2, MAP_H // 2
-        spread = 8 + gen // 2
+        spread = 6 + gen // 2
         x = int(random.gauss(cx, spread))
         y = int(random.gauss(cy, spread))
         x = max(0, min(MAP_W - 1, x))
@@ -364,7 +364,7 @@ def add_walls_for_generation(gen, terrain_walls, breakable_positions):
 
 
 def write_map_xml(terrain_walls, breakable_positions, path):
-    """Write 40×40 physical game state XML with blockades encoded in terrain string."""
+    """Write 32×32 physical game state XML with blockades encoded in terrain string."""
     all_blockades = terrain_walls | breakable_positions
     terrain = ['0'] * (MAP_W * MAP_H)
     for wx, wy in all_blockades:
@@ -1712,7 +1712,7 @@ def plot_convergence_curves(convergence_hist, active_keys, out_dir):
                 alpha=0.15
             )
 
-    ax.set_title("SEM7_ER: Evolutionary Convergence Curves (40×40 Dynamic Map)\nMean ± 1 Std Dev Across Runs", fontsize=12, fontweight="bold")
+    ax.set_title(f"SEM7_ER: Evolutionary Convergence Curves ({MAP_W}×{MAP_H} Dynamic Map)\nMean ± 1 Std Dev Across Runs", fontsize=12, fontweight="bold")
     ax.set_xlabel("Generation", fontsize=11)
     ax.set_ylabel("Evaluated Fitness / Performance", fontsize=11)
     ax.grid(True, linestyle="--", alpha=0.5)
@@ -1729,7 +1729,7 @@ def plot_convergence_curves(convergence_hist, active_keys, out_dir):
 # ═══════════════════════════════════════════════════════════════
 
 def main():
-    parser = argparse.ArgumentParser(description="SEM7_ER: Complete 14-Algorithm TD-CCEA, SA, CCE, and Classical Baselines Benchmark on 40×40 Dynamic Map.")
+    parser = argparse.ArgumentParser(description="SEM7_ER: Complete 14-Algorithm TD-CCEA, SA, CCE, and Classical Baselines Benchmark on 32×32 Dynamic Map.")
     parser.add_argument("--suite", choices=["all", "td", "sa", "cce", "baseline"], default="all",
                         help="Algorithm suite to run ('all': active suite algorithms, 'td': pure TD-CCEA, 'sa': sensitivity-adaptive, 'cce': cooperative co-evolution, 'baseline': 3 classical baselines [Std CCEA, CMA-ES, PSO])")
     parser.add_argument("--generations", type=int, default=TOTAL_GENERATIONS, help="Number of evolutionary generations")
@@ -1769,7 +1769,7 @@ def main():
     n_workers = args.workers or max(1, min(14, (os.cpu_count() or 4) - 2))
 
     print("\n" + "═" * 80)
-    print(f"  SEM7_ER — Master Benchmark: {n_algos} Algorithms on 40×40 Dynamic Map")
+    print(f"  SEM7_ER — Master Benchmark: {n_algos} Algorithms on {MAP_W}×{MAP_H} Dynamic Map")
     print("═" * 80)
     print("  Active Suite Algorithms:")
     for idx, k in enumerate(active_keys, 1):
@@ -1786,7 +1786,7 @@ def main():
     terrain_walls = set()
     breakable_positions = set()
     write_map_xml(terrain_walls, breakable_positions, TEMP_MAP_PATH)
-    print(f"  Initialized clean 40×40 map (0 walls): {TEMP_MAP_PATH}")
+    print(f"  Initialized clean {MAP_W}×{MAP_H} map (0 walls): {TEMP_MAP_PATH}")
     print("  [NOTE] microRTS terrain has no breakable tile type: breakable barriers are written as walls.")
 
     pool = ParallelGamePool(n_workers, is_mock=args.mock)
@@ -1794,7 +1794,7 @@ def main():
 
     # Pre-flight diagnostic check
     if not pool.run_test_game():
-        print("\n  [ERROR] Diagnostic test game failed on 40×40 map! Aborting.")
+        print(f"\n  [ERROR] Diagnostic test game failed on {MAP_W}×{MAP_H} map! Aborting.")
         pool.stop()
         return
 
@@ -2289,7 +2289,7 @@ def main():
     # ──────────────────────────────────────────────────────────────
     print(f"\n{'='*80}")
     print(f"  PHASE 2: BOT VALIDATION — Validation vs All 7 microRTS Bots")
-    print(f"  ({args.val_games} games per bot on the final blockaded 40×40 map)")
+    print(f"  ({args.val_games} games per bot on the final blockaded {MAP_W}×{MAP_H} map)")
     print(f"{'='*80}")
 
     results = []
